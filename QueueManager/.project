@@ -32,6 +32,11 @@
 			<locationURI>QueueManagerLogger/Logger</locationURI>
 		</link>
 		<link>
+			<name>stlport</name>
+			<type>2</type>
+			<locationURI>QueueManagerstlport/stlport</locationURI>
+		</link>
+		<link>
 			<name>arduino/core</name>
 			<type>2</type>
 			<locationURI>ArduinoPlatformPath/cores/arduino</locationURI>
