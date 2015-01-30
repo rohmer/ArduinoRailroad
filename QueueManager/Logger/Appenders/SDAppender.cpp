@@ -6,7 +6,7 @@
 */
 
 
-#include "SDAppender.h"
+#include "SDAppender.hpp"
 
 // default constructor
 SDAppender::SDAppender()

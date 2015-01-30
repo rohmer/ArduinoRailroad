@@ -6,7 +6,7 @@
 */
 
 
-#include "SerialAppender.h"
+#include "SerialAppender.hpp"
 
 // default constructor
 SerialAppender::SerialAppender()

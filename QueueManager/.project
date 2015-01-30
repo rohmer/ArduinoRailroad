@@ -29,12 +29,17 @@
 		<link>
 			<name>Logger</name>
 			<type>2</type>
-			<locationURI>QueueManagerLogger/Logger</locationURI>
+			<locationURI>PROJECT_LOC/Logger</locationURI>
 		</link>
 		<link>
 			<name>stlport</name>
 			<type>2</type>
-			<locationURI>QueueManagerstlport/stlport</locationURI>
+			<locationURI>PROJECT_LOC/stlport</locationURI>
+		</link>
+		<link>
+			<name>Libraries/SPI</name>
+			<type>2</type>
+			<locationURI>ArduinoHardwareLibPath/SPI</locationURI>
 		</link>
 		<link>
 			<name>arduino/core</name>
@@ -50,15 +55,15 @@
 	<variableList>
 		<variable>
 			<name>ArduinoHardwareLibPath</name>
-			<value>file:/C:/Arduino/hardware/arduino/avr/libraries</value>
+			<value>file:/C:/Arduino/ArduinoIDE/hardware/arduino/avr/libraries</value>
 		</variable>
 		<variable>
 			<name>ArduinoPinPath</name>
-			<value>file:/C:/Arduino/hardware/arduino/avr/variants</value>
+			<value>file:/C:/Arduino/ArduinoIDE/hardware/arduino/avr/variants</value>
 		</variable>
 		<variable>
 			<name>ArduinoPlatformPath</name>
-			<value>file:/C:/Arduino/hardware/arduino/avr</value>
+			<value>file:/C:/Arduino/ArduinoIDE/hardware/arduino/avr</value>
 		</variable>
 	</variableList>
 </projectDescription>

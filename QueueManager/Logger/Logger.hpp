@@ -11,8 +11,9 @@
 
 #include "Common.h"
 #include "vector"
-#include "Appenders\SDAppender.h"
-#include "Appenders\SerialAppender.h"
+
+#include "Appenders/SDAppender.hpp"
+#include "Appenders/SerialAppender.hpp"
 
 class Logger
 {

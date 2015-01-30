@@ -13,12 +13,10 @@
 #define MEGA_SOFT_SPI 1
 #endif
 
-#include "SdFat/SdFat.h"
-#include "SdFat/SdFatConfig.h"
 #include "WString.h"
-#include "Appender.h"
+#include "Appender.hpp"
 #include "../Common.h"
-#include "Time/Time.h"
+#include "../Time/Time.h"
 
 #if ARDUINO >= 100
 #include <Arduino.h>

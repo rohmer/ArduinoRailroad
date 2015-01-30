@@ -12,7 +12,8 @@
 #include "Common.h"
 #include "Time/Time.h"
 #include "WString.h"
-#include "Appender.h"
+
+#include "Appender.hpp"
 
 #if ARDUINO >= 100
 #include <Arduino.h>

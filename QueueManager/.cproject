@@ -7,8 +7,8 @@
 				<extensions>
 					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
 					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="org.eclipse.cdt.core.MakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.MakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
@@ -16,34 +16,25 @@
 					<folderInfo id="it.baeyens.arduino.core.toolChain.release.1979266129.2098253157" name="/" resourcePath="">
 						<toolChain id="it.baeyens.arduino.core.toolChain.release.308610507" name="Arduino Toolchain" superClass="it.baeyens.arduino.core.toolChain.release">
 							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="it.baeyens.arduino.targetplatform.249267294" name="Arduino Target" osList="all" superClass="it.baeyens.arduino.targetplatform"/>
-							<builder buildPath="${workspace_loc:/QueueManager}/Release" id="it.baeyens.arduino.sketch.builder.719149789" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Arduino sketch builder" superClass="it.baeyens.arduino.sketch.builder">
-								<outputEntries>
-									<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="outputPath" name="Release"/>
-								</outputEntries>
-							</builder>
+							<builder buildPath="${workspace_loc:/QueueManager}/Release" id="it.baeyens.arduino.sketch.builder.852639033" keepEnvironmentInBuildfile="false" name="Arduino sketch builder" superClass="it.baeyens.arduino.sketch.builder"/>
 							<tool id="it.baeyens.arduino.tool.sketch.compiler.cpp.735170823" name="Arduino C++ Compiler" superClass="it.baeyens.arduino.tool.sketch.compiler.cpp">
 								<option id="it.baeyens.arduino.compiler.cpp.sketch.option.incpath.145554576" name="Include Paths (-I)" superClass="it.baeyens.arduino.compiler.cpp.sketch.option.incpath" valueType="includePath">
-									<listOptionValue builtIn="false" value="../QueueManager/stlcpp"/>
-									<listOptionValue builtIn="false" value="../QueueManager/stl"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/QueueManager/stlport}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/QueueManager/stlport/utility}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/QueueManager/arduino/core}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/stlport}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/QueueManager/arduino/variant}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/QueueManager/include}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/QueueManager/include/utility}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:c:\Arduino\ArduinoIDE\hardware\arduino\avr\libraries}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:C:\Arduino\ArduinoIDE\hardware\arduino\avr}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:C:\Arduino\ArduinoIDE\hardware\arduino\avr\libraries\SPI}&quot;"/>
 								</option>
 								<inputType id="it.baeyens.arduino.compiler.cpp.sketch.input.48861434" name="CPP source files" superClass="it.baeyens.arduino.compiler.cpp.sketch.input"/>
 							</tool>
 							<tool id="it.baeyens.arduino.tool.compiler.c.900596366" name="Arduino C Compiler" superClass="it.baeyens.arduino.tool.compiler.c">
 								<option id="it.baeyens.arduino.compiler.c.sketch.option.incpath.1253313079" name="Include Paths (-I)" superClass="it.baeyens.arduino.compiler.c.sketch.option.incpath" valueType="includePath">
-									<listOptionValue builtIn="false" value="../QueueManager/stlcpp"/>
-									<listOptionValue builtIn="false" value="../QueueManager/stl"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/QueueManager/stlport}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/QueueManager/stlport/utility}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/QueueManager/arduino/core}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/QueueManager/arduino/variant}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/QueueManager/include}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/QueueManager/include/utility}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/QueueManager/Libraries/SPI}&quot;"/>
 								</option>
 								<inputType id="it.baeyens.arduino.compiler.c.sketch.input.1142560845" name="C Source Files" superClass="it.baeyens.arduino.compiler.c.sketch.input"/>
 							</tool>
@@ -55,8 +46,34 @@
 							<tool id="it.baeyens.arduino.tool.size.1903918816" name="Arduino tool Print Size" superClass="it.baeyens.arduino.tool.size"/>
 						</toolChain>
 					</folderInfo>
+					<folderInfo id="it.baeyens.arduino.core.toolChain.release.1979266129.1137061493" name="/" resourcePath="Logger">
+						<toolChain id="it.baeyens.arduino.core.toolChain.release.1229202943" name="Arduino Toolchain" superClass="it.baeyens.arduino.core.toolChain.release" unusedChildren="">
+							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="it.baeyens.arduino.targetplatform" name="Arduino Target" osList="all" superClass="it.baeyens.arduino.targetplatform"/>
+							<tool id="it.baeyens.arduino.tool.sketch.compiler.cpp.1310341040" name="Arduino C++ Compiler" superClass="it.baeyens.arduino.tool.sketch.compiler.cpp.735170823">
+								<option id="it.baeyens.arduino.compiler.cpp.sketch.option.incpath.1923030827" name="Include Paths (-I)" superClass="it.baeyens.arduino.compiler.cpp.sketch.option.incpath" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/QueueManager/stlport}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/QueueManager/stlport/utility}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/QueueManager/arduino/core}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/QueueManager/arduino/variant}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/QueueManager/Logger/Time}&quot;"/>
+								</option>
+								<inputType id="it.baeyens.arduino.compiler.cpp.sketch.input.1992974322" name="CPP source files" superClass="it.baeyens.arduino.compiler.cpp.sketch.input"/>
+							</tool>
+							<tool id="it.baeyens.arduino.tool.compiler.c.134161225" name="Arduino C Compiler" superClass="it.baeyens.arduino.tool.compiler.c.900596366">
+								<inputType id="it.baeyens.arduino.compiler.c.sketch.input.339935310" name="C Source Files" superClass="it.baeyens.arduino.compiler.c.sketch.input"/>
+							</tool>
+							<tool id="it.baeyens.arduino.tool.sketch.compiler.s.709919699" name="Arduino Assembler" superClass="it.baeyens.arduino.tool.sketch.compiler.s.1366863670"/>
+							<tool id="it.baeyens.arduino.tool.ar.124289371" name="Arduino archiver" superClass="it.baeyens.arduino.tool.ar.212485252"/>
+							<tool id="it.baeyens.arduino.tool.combine.149756908" name="Arduino combiner" superClass="it.baeyens.arduino.tool.combine.4032556"/>
+							<tool id="it.baeyens.arduino.tool.objcopy.eep.1929819413" name="Arduino tool Create eeprom" superClass="it.baeyens.arduino.tool.objcopy.eep.216220207"/>
+							<tool id="it.baeyens.arduino.tool.objcopy.flash.239637265" name="Arduino tool Create hex" superClass="it.baeyens.arduino.tool.objcopy.flash.845736314"/>
+							<tool id="it.baeyens.arduino.tool.size.846159572" name="Arduino tool Print Size" superClass="it.baeyens.arduino.tool.size.1903918816"/>
+						</toolChain>
+					</folderInfo>
 					<sourceEntries>
-						<entry excluding="stlcpp|Libraries/*/?xamples|Libraries/*/?xtras" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="stlport|Logger|stlcpp|Libraries/*/?xamples|Libraries/*/?xtras" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="Logger"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="stlport"/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -75,5 +92,17 @@
 			<resource resourceType="PROJECT" workspacePath="/QueueManager"/>
 		</configuration>
 	</storageModule>
-	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
+	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
+	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets">
+		<buildTargets>
+			<target name="All" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
+				<buildCommand>make</buildCommand>
+				<buildArguments/>
+				<buildTarget>All</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>true</useDefaultCommand>
+				<runAllBuilders>true</runAllBuilders>
+			</target>
+		</buildTargets>
+	</storageModule>
 </cproject>

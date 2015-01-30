@@ -6,7 +6,7 @@
 */
 
 
-#include "Logger.h"
+#include "Logger.hpp"
 
 // default constructor
 Logger::Logger()

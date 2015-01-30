@@ -1,3 +1,4 @@
+#include <QueueManager.h>
 //The setup function is called once at startup of the sketch
 void setup()
 {
