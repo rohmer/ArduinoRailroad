@@ -10,7 +10,7 @@
 #define __APPENDER_H__
 
 #include "WString.h"
-#include "..\Common.h"
+#include "..\Common.hpp"
 
 class Appender
 {

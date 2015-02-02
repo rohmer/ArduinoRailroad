@@ -27,16 +27,6 @@
 	</natures>
 	<linkedResources>
 		<link>
-			<name>Logger</name>
-			<type>2</type>
-			<locationURI>PROJECT_LOC/Logger</locationURI>
-		</link>
-		<link>
-			<name>stlport</name>
-			<type>2</type>
-			<locationURI>PROJECT_LOC/stlport</locationURI>
-		</link>
-		<link>
 			<name>Libraries/SPI</name>
 			<type>2</type>
 			<locationURI>ArduinoHardwareLibPath/SPI</locationURI>

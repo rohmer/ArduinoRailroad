@@ -1,22 +1,19 @@
 /* 
-* SD.h
+* SDAppender.hpp
 *
 * Created: 1/28/2015 11:43:26 AM
 * Author: rohmer
 */
 
 
-#ifndef __SD_H__
-#define __SD_H__
-
-#ifdef __AVR_ATmega2560__
-#define MEGA_SOFT_SPI 1
-#endif
+#ifndef __SDAppender_H__
+#define __SDAppender_H__
 
 #include "WString.h"
 #include "Appender.hpp"
-#include "../Common.h"
+#include "../Common.hpp"
 #include "../Time/Time.h"
+#include "SD/SD.h"
 
 #if ARDUINO >= 100
 #include <Arduino.h>
@@ -30,14 +27,11 @@ class SDAppender : public Appender
 	public:
 	protected:
 	private:
-		int mosiPin;
-		int misoPin;
-		int clkPin;
 		int csPin;
-		int sckPin;
+		int chipSelect;
+		int ssPin;
 		bool initialized;		
-		SdFile logfile;
-		SdFat sd;
+		File logfile;
 		uint8_t spiSpeed;
 		uint32_t logfileMaxSize;			// 5 Meg Default
 		int flushCounter;
@@ -46,7 +40,7 @@ class SDAppender : public Appender
 //functions
 public:
 	SDAppender();
-	SDAppender(int MOSIPin, int MISOPin, int CLKPin, int CSPin, int ssPin);
+	SDAppender(int CSPin, int ChipSelect);
 	void Log(Severity sev, String msg);		
 	void Log(String msg);
 	void SetSpeed(uint8_t value);

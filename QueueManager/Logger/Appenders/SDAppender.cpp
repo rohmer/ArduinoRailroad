@@ -10,21 +10,16 @@
 
 // default constructor
 SDAppender::SDAppender()
-{	
-	this->mosiPin=SOFT_SPI_MOSI_PIN;
-	this->misoPin=SOFT_SPI_MISO_PIN;
-	this->sckPin=SOFT_SPI_SCK_PIN;
-	this->csPin=10;
+{
+	this->csPin=4;
+	this->chipSelect=4;
 	spiSpeed=SPI_FULL_SPEED;
 } //SD
 
-SDAppender::SDAppender(int MOSIPin, int MISOPin, int CLKPin, int CSPin, int SCKPin)
+SDAppender::SDAppender(int CSPin, int ChipSelect)
 {
-	this->mosiPin=MOSIPin;
-	this->misoPin=MISOPin;
-	this->clkPin=CLKPin;
+	this->chipSelect=ChipSelect;
 	this->csPin=CSPin;	
-	this->sckPin=SCKPin;	
 	spiSpeed=SPI_FULL_SPEED;
 }
 
@@ -39,22 +34,24 @@ void SDAppender::Log(Severity sev, String msg)
 		return;
 		
 	String message=CreateMsg(sev,msg);
-	if(!logfile.isOpen())
+	if(!logfile.available())
 	{
-		if(!logfile.open("logfile.txt", O_RDWR | O_CREAT | O_AT_END))
+		logfile=SD.open("logfile.txt", O_READ | O_WRITE | O_CREAT);
+		if(!logfile.available())
 		{
-			sd.errorHalt("Opening 'logfile.txt' for write failed");
 			return;
 		}		
 	}
 				
-	logfile.write(message.c_str());	
+	char *buf=new char(message.length());
+	message.toCharArray(buf,message.length(),0);
+	logfile.println(buf);
 	flushCounter++;
 	if(flushCounter>flushMax)
 	{		
-		flushCounter=0;
 		logfile.flush();
-		if(logfile.fileSize()>logfileMaxSize)	
+		flushCounter=0;
+		if(logfile.size()>logfileMaxSize)
 		{
 			rotateLogs();
 		}
@@ -72,16 +69,18 @@ void SDAppender::init()
 	logfileMaxSize=5242880;
 	flushCounter=0;
 	flushMax=10;
+
+	pinMode(ssPin,OUTPUT);
 	
-	if(!sd.begin(this->csPin,spiSpeed)) 
+	if(!SD.begin(this->csPin))
 	{
-		sd.initErrorHalt();
 		initialized=false;
 		return;
 	}		
-	if(!logfile.open("logfile.txt", O_RDWR | O_CREAT | O_AT_END))
+
+	logfile=SD.open("logfile.txt", O_READ | O_WRITE | O_CREAT);
+	if(!logfile)
 	{
-		sd.errorHalt("Opening 'logfile.txt' for write failed");
 		return;
 	}
 	
@@ -95,17 +94,28 @@ String SDAppender::CreateMsg(Severity sev, String Message)
 	return msg;
 }
 
+// This could be time consuming, may want to not do it.
 void SDAppender::rotateLogs()
 {
 	logfile.close();
-	if(sd.exists("logfile.old.txt"))
+	if(SD.exists("logfile.old.txt"))
 	{
-		sd.remove("logfile.old.txt");
+		SD.remove("logfile.old.txt");
+		File oldFile=SD.open("logfile.txt",FILE_READ);
+		File newFile=SD.open("logfile.old.txt",FILE_WRITE);
+		while(oldFile.available())
+		{
+			newFile.write(oldFile.read());
+		}
+		oldFile.close();
+		newFile.close();
+		SD.remove("logfile.txt");
 	}
-	sd.rename("logfile.txt","logfile.old.txt");
-	if(!logfile.open("logfile.txt", O_RDWR | O_CREAT | O_AT_END))
+
+	logfile=SD.open("logfile.txt", O_READ | O_WRITE | O_CREAT);
+
+	if(!logfile)
 	{
-		sd.errorHalt("Opening 'logfile.txt' for write failed");
 		initialized=false;
 		return;
 	}	

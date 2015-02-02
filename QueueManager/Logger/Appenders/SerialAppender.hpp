@@ -9,8 +9,8 @@
 #ifndef __SERIALAPPENDER_H__
 #define __SERIALAPPENDER_H__
 
-#include "Common.h"
-#include "Time/Time.h"
+#include "../Common.hpp"
+#include "../Time/Time.h"
 #include "WString.h"
 
 #include "Appender.hpp"

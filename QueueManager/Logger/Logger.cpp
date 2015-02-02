@@ -6,7 +6,7 @@
 */
 
 
-#include "Logger.hpp"
+#include "Logger.h"
 
 // default constructor
 Logger::Logger()
@@ -20,7 +20,7 @@ Logger::Logger()
 Logger::Logger(bool LogSerial, bool LogFile, Severity sev)
 {
 	logFile=LogFile;
-	LogSerial=LogSerial;
+	logSerial=LogSerial;
 	minSevToLog=sev;	
 	appenderCount=0;	
 }
