@@ -8,7 +8,7 @@
 
 #ifndef __QUEUEMANAGER_H__
 #define __QUEUEMANAGER_H__
-#include "Logger.h"
+#include <Logger/Logger.h>
 #include "TaskLibraries/Task.h"
 
 class QueueManager
