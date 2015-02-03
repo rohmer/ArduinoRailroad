@@ -77,6 +77,7 @@ class LedControl {
         int maxDevices;
 
     public:
+        LedControl();
         /* 
          * Create a new controler 
          * Params :
@@ -182,6 +183,7 @@ class LedControl {
          * dp	sets the decimal point.
          */
         void setChar(int addr, int digit, char value, boolean dp);
+        ~LedControl();
 };
 
 #endif	//LedControl.h

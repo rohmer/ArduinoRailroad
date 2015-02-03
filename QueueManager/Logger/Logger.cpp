@@ -15,6 +15,7 @@ Logger::Logger()
 	logSerial=true;
 	appenderCount=0;
 	minSevToLog=WARNING;
+	logAppenders=new Appender*[2];
 } //Logger
 
 Logger::Logger(bool LogSerial, bool LogFile, Severity sev)
@@ -23,11 +24,16 @@ Logger::Logger(bool LogSerial, bool LogFile, Severity sev)
 	logSerial=LogSerial;
 	minSevToLog=sev;	
 	appenderCount=0;	
+	int a=0;
+	if(LogSerial)
+		a++;
+	if(LogFile)
+		a++;
+	logAppenders=new Appender*[2];
 }
 
 void Logger::Init()
 {
-	logAppenders=new Appender*[10];	
 	if(logFile)
 	{
 		logAppenders[appenderCount]=new SDAppender();

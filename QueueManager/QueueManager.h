@@ -9,7 +9,10 @@
 #ifndef __QUEUEMANAGER_H__
 #define __QUEUEMANAGER_H__
 #include <Logger/Logger.h>
-#include "TaskLibraries/Task.h"
+#include <TaskLibraries/TaskBase.h>
+#include "PQueue.h"
+
+using namespace std;
 
 class QueueManager
 {
@@ -22,10 +25,11 @@ private:
 public:
 	QueueManager();
 	~QueueManager();
+	void AddTask(TaskDefinition td, TaskBase *task);
 protected:
 private:
-	QueueManager( const QueueManager &c );
-	QueueManager& operator=( const QueueManager &c );
+	PQueue *taskQueue;
+	Logger *logger;
 
 }; //QueueManager
 
