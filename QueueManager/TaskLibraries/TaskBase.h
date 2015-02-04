@@ -19,6 +19,7 @@
 //TODO: Change this to add start time, to support blinking on and off.
 struct TaskDefinition
 {
+	long NextRun;
 	long IntervalOfExecution;
 	std::vector<String> StringArguments;
 	std::vector<int> NumericArguments;

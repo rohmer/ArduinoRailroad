@@ -32,3 +32,8 @@ void QueueManager::AddTask(TaskDefinition td, TaskBase task)
 	taskQueue->Insert(td,task,td.IntervalOfExecution);
 	logger->Log("Task Added");
 }
+
+unsigned long QueueManager::GetTime()
+{
+	return now();
+}

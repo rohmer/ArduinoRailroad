@@ -28,6 +28,7 @@ public:
 	~QueueManager();
 	void AddTask(TaskDefinition td, TaskBase task);
 	Logger *GetLogger();
+	unsigned long GetTime();
 
 protected:
 private:
