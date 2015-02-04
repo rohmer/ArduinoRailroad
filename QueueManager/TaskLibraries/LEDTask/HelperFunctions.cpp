@@ -42,12 +42,15 @@ void HelperFunctions::CreateBlink(QueueManager* queueManager, bool isMega, int c
 
 	if(startsOn)
 	{
-		taskDefOn.NextRun=0;
-
+		taskDefOn.NextRun=queueManager->GetTime();
+		taskDefOff.NextRun=queueManager->GetTime()+taskDefOn.IntervalOfExecution;
 		queueManager->AddTask(taskDefOn,(TaskBase)ledTask);
 		queueManager->AddTask(taskDefOff,(TaskBase)ledTask);
 	} else
 	{
+		taskDefOff.NextRun=queueManager->GetTime();
+		taskDefOn.NextRun=queueManager->GetTime()+taskDefOff.IntervalOfExecution;
+
 		queueManager->AddTask(taskDefOff,(TaskBase)ledTask);
 		queueManager->AddTask(taskDefOn,(TaskBase)ledTask);
 	}
