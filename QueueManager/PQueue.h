@@ -16,26 +16,17 @@
 class PQueue		// Class Prioriry Queue
 {
 private:
-	struct Node			// Node of Priority Queue
+	struct node			// Node of Priority Queue
 	{
-		struct Node *Previous;
-		TaskBase *data;
-		struct Node *Next;
-	} Current;
-
-	struct Node *head;	// Pointer to Head
-	struct Node *ptr;
-		// Pointer for travelling through Queue
-	static int NumOfNodes;
-		// Keeps track of Number of nodes
+		long priority;
+		TaskDefinition taskDef;
+		TaskBase task;
+		struct node *link;
+	};
+	node *front;
 public:
 	PQueue();
-	PQueue(TaskBase* td);
-	TaskBase Maximum(void);
-	TaskBase Minimum(void);
-	void Insert(TaskBase*);
-	int Delete(TaskDefinition);
-	~PQueue(void);
+	void Insert(TaskDefinition taskDef, TaskBase task, long priority);
 };
 
-#endif /* PQUEUE_H_ */
+#endif

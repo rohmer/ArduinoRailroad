@@ -20,12 +20,15 @@ class QueueManager
 public:
 protected:
 private:
+	bool initialized=false;
 
 //functions
 public:
 	QueueManager();
 	~QueueManager();
-	void AddTask(TaskDefinition td, TaskBase *task);
+	void AddTask(TaskDefinition td, TaskBase task);
+	Logger *GetLogger();
+
 protected:
 private:
 	PQueue *taskQueue;

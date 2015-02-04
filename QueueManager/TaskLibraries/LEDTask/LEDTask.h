@@ -17,6 +17,10 @@ public:
 	virtual ~LEDTask();
 	void Run();
 	String TaskName();
+	static int DefaultDataIn(bool isMega);
+	static int DefaultCLK(bool isMega);
+	static int DefaultLoad(bool isMega);
+
 
 private:
 	short row;

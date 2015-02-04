@@ -15,6 +15,8 @@
 #include "TaskLibraries/LEDTask/LedControl/LedControl.h"
 #include "Logger/Logger.h"
 
+
+//TODO: Change this to add start time, to support blinking on and off.
 struct TaskDefinition
 {
 	long IntervalOfExecution;

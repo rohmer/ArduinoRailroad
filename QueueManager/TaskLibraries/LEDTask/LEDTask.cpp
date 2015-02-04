@@ -7,6 +7,28 @@
 
 #include "LEDTask.h"
 
+int LEDTask::DefaultCLK(bool isMega)
+{
+	if(isMega)
+		return 51;
+	return 11;
+}
+
+int LEDTask::DefaultDataIn(bool isMega)
+{
+	if(isMega)
+		return 50;
+	return 12;
+}
+
+int LEDTask::DefaultLoad(bool isMega)
+{
+	if(isMega)
+		return 52;
+	return 13;
+}
+
+
 // taskDef:
 // 		NumericArguments[0] = DataIn
 //		NumericArguments[1] = CLK
