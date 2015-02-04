@@ -21,7 +21,6 @@
 #include <cstddef>
 #include <locale>
 #include <iosfwd>
-#include <new>
 
 #ifndef __HEADER_STD_IOS
 #define __HEADER_STD_IOS 1
@@ -39,7 +38,7 @@ namespace std{
 #ifdef __UCLIBCXX_EXCEPTION_SUPPORT__
 		class failure : public exception {
 		public:
-			explicit failure(const std::string& msg) { }
+			explicit failure(const std::string&) { }
 			explicit failure() { }
 			virtual const char* what() const throw() {
 				return "std::ios_base failure exception";
@@ -108,21 +107,10 @@ namespace std{
 		_UCXXEXPORT fmtflags flags() const{
 			return mformat;
 		}
+		_UCXXEXPORT fmtflags flags(fmtflags fmtfl);
 
-		_UCXXEXPORT fmtflags flags(fmtflags fmtfl) {
-			fmtflags temp = mformat;
-			mformat = fmtfl;
-			return temp;
-		}
-
-
-		fmtflags setf(fmtflags fmtfl) {
-			return flags(flags() | fmtfl);
-		}
-
-		fmtflags setf(fmtflags fmtfl, fmtflags mask ) {
-			return flags( (flags()& ~mask) | (fmtfl & mask));
-		}
+		fmtflags setf(fmtflags fmtfl);
+		fmtflags setf(fmtflags fmtfl, fmtflags mask );
 
 		_UCXXEXPORT void unsetf(fmtflags mask){
 			mformat&= ~mask;
@@ -132,27 +120,15 @@ namespace std{
 			return mprecision;
 		}
 
-		_UCXXEXPORT streamsize precision(streamsize prec) {
-			streamsize temp = mprecision;
-			mprecision = prec;
-			return temp;
-		}
+		_UCXXEXPORT streamsize precision(streamsize prec);
 
 		_UCXXEXPORT streamsize width() const{
 			return mwidth;
 		}
 
-		_UCXXEXPORT streamsize width(streamsize wide) {
-			streamsize temp = mwidth;
-			mwidth = wide;
-			return temp;
-		}
+		_UCXXEXPORT streamsize width(streamsize wide);
 
-		_UCXXEXPORT locale imbue(const locale& loc) {
-			locale retval = mLocale;
-			mLocale = loc;
-			return retval;
-		}
+		_UCXXEXPORT locale imbue(const locale& loc);
 
 		_UCXXEXPORT locale getloc() const{
 			return mLocale;
@@ -174,7 +150,7 @@ namespace std{
 		inline static bool sync_with_stdio(bool = true) { return true; }
 
 	protected:
-		_UCXXEXPORT ios_base() : mLocale(), mformat(dec | skipws ), mstate(goodbit), 
+		_UCXXEXPORT ios_base() : mLocale(), mformat(dec | skipws ), mstate(goodbit),
 			mmode(), mdir(), mprecision(6), mwidth(0)
 #ifdef __UCLIBCXX_SUPPORT_CDIR__
 			,mInit()
@@ -379,7 +355,7 @@ namespace std{
 		_UCXXEXPORT basic_ostream<charT,traits>* tie(basic_ostream<charT,traits>* tiestr){
 			basic_ostream<charT,traits>* retval= mtied;
 			mtied = tiestr;
-			return retval;			
+			return retval;
 		}
 		_UCXXEXPORT basic_streambuf<charT,traits>* rdbuf() const{
 			return mstreambuf;
@@ -422,7 +398,7 @@ namespace std{
 
 #ifdef __UCLIBCXX_EXPAND_IOS_CHAR__
 #ifndef __UCLIBCXX_COMPILE_IOS__
-	
+
 	template <> _UCXXEXPORT void basic_ios<char, char_traits<char> >::clear(iostate state);
 	template <> _UCXXEXPORT void basic_ios<char, char_traits<char> >::setstate(iostate state);
 
@@ -456,14 +432,14 @@ namespace std{
 
 #endif	//__UCLIBCXX_HAS_WCHAR__
 
-	template <class charT, class traits> 
+	template <class charT, class traits>
 		inline typename basic_ios<charT, traits>::char_type
 		basic_ios<charT, traits>::widen(char c) const
 	{
 		return c;
 	}
 
-	template <> 
+	template <>
 		inline basic_ios<char, char_traits<char> >::char_type
 		basic_ios<char, char_traits<char> >::widen(char c) const
 	{
@@ -472,7 +448,7 @@ namespace std{
 
 #ifdef __UCLIBCXX_HAS_WCHAR__
 
-	template <> 
+	template <>
 		inline basic_ios<wchar_t, char_traits<wchar_t> >::char_type
 		basic_ios<wchar_t, char_traits<wchar_t> >::widen(char c) const
 	{
@@ -497,7 +473,7 @@ namespace std{
 			return st == rhs.st;
 		}
 		_UCXXEXPORT bool operator!=(const fpos &rhs){
-			return st == rhs.st;
+			return st != rhs.st;
 		}
 		_UCXXEXPORT fpos & operator+(const streamoff & o){
 			st += o;
@@ -511,7 +487,6 @@ namespace std{
 			return st - rhs.st;
 		}
 
-		
 	private:
 		stateT st;
 	};

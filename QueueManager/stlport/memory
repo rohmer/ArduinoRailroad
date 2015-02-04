@@ -1,134 +1,196 @@
-/*
- * Copyright (c) 1997-1999
- * Silicon Graphics Computer Systems, Inc.
- *
- * Permission to use, copy, modify, distribute and sell this software
- * and its documentation for any purpose is hereby granted without fee,
- * provided that the above copyright notice appear in all copies and
- * that both that copyright notice and this permission notice appear
- * in supporting documentation.  Silicon Graphics makes no
- * representations about the suitability of this software for any
- * purpose.  It is provided "as is" without express or implied warranty.
- *
- */
+/*	Copyright (C) 2004 Garrett A. Kajmowicz
 
-#ifndef __SGI_STL_MEMORY
-#define __SGI_STL_MEMORY
+	This file is part of the uClibc++ Library.
 
-#include <stl_algobase.h>
-#include <stl_alloc.h>
-#include <stl_construct.h>
-#include <stl_tempbuf.h>
-#include <stl_uninitialized.h>
-#include <stl_raw_storage_iter.h>
+	This library is free software; you can redistribute it and/or
+	modify it under the terms of the GNU Lesser General Public
+	License as published by the Free Software Foundation; either
+	version 2.1 of the License, or (at your option) any later version.
 
+	This library is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+	Lesser General Public License for more details.
 
-__STL_BEGIN_NAMESPACE
+	You should have received a copy of the GNU Lesser General Public
+	License along with this library; if not, write to the Free Software
+	Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+*/
 
-#if defined(__SGI_STL_USE_AUTO_PTR_CONVERSIONS) && \
-    defined(__STL_MEMBER_TEMPLATES)
+#include <new>
+#include <cstddef>
+#include <cstdlib>
+#include <iterator_base>
+#include <utility>
+#include <cstdio>
 
-template<class _Tp1> struct auto_ptr_ref {
-  _Tp1* _M_ptr;
-  auto_ptr_ref(_Tp1* __p) : _M_ptr(__p) {}
+#ifndef HEADER_STD_MEMORY
+#define HEADER_STD_MEMORY 1
+
+#pragma GCC visibility push(default)
+
+namespace std{
+
+template <class T> class allocator;
+	// Specialize for void:
+
+template <> class _UCXXEXPORT allocator<void> {
+public:
+	typedef void*       pointer;
+	typedef const void* const_pointer;
+	typedef void  value_type;
+	template <class U> struct rebind { typedef allocator<U> other; };
 };
+
+template <class T> class _UCXXEXPORT allocator{
+public:
+	typedef T value_type;
+	typedef size_t size_type;
+	typedef ptrdiff_t difference_type;
+	
+	typedef T* pointer;
+	typedef const T* const_pointer;
+
+	typedef T& reference;
+	typedef const T& const_reference;
+
+	pointer address(reference r) const { return &r; }
+	const_pointer address(const_reference r) const { return &r; }
+	
+	allocator() throw(){}
+	template <class U> allocator(const allocator<U>& ) throw();
+	~allocator() throw(){}
+
+	//Space for n Ts
+	pointer allocate(size_type n, typename allocator<void>::const_pointer = 0){
+		return (T*)(::operator new( n * sizeof(T) ));
+	}
+	void deallocate(pointer p, size_type){
+		::operator delete(p);
+	}
+
+	//Use placement new to engage the constructor
+	void construct(pointer p, const T& val) { new((void*)p) T(val); }
+	void destroy(pointer p){ ((T*)p)->~T(); }	//Call destructor
+
+	size_type max_size() const throw();
+	template<class U> struct rebind { typedef allocator<U> other; };
+
+};
+
+template <class Out, class T> class _UCXXEXPORT raw_storage_iterator
+	: public iterator<output_iterator_tag, void, void, void, void>
+{
+		Out p;
+
+public:
+	explicit raw_storage_iterator(Out pp) : p (pp) {  }
+	raw_storage_iterator & operator*() { return *this; }
+	raw_storage_iterator & operator=(const T& val) {
+		T* pp = &*p;
+		new(pp) T(val);
+		return *this;
+	}
+
+	raw_storage_iterator & operator++() { ++p; return *this; }
+	raw_storage_iterator operator++(int) {
+		raw_storage_iterator t = *this;
+		++p;
+		return t;
+	}
+};
+
+template <class T> _UCXXEXPORT pair<T*, ptrdiff_t> get_temporary_buffer(ptrdiff_t n){
+	pair<T*, ptrdiff_t> retval;
+	retval.first = static_cast<T*>(malloc(n * sizeof(T)));
+	if(retval.first == 0){
+		retval.second = 0;
+	}else{
+		retval.second = n;
+	}
+	return retval;
+}
+
+template <class T> _UCXXEXPORT void return_temporary_buffer(T* p){
+	free(p);
+}
+
+
+template <class T> class _UCXXEXPORT auto_ptr{
+
+private:
+	T * object;
+	template <class Y> struct auto_ptr_ref{
+		Y * p;
+	};
+
+public:
+
+	typedef T element_type;
+
+	explicit auto_ptr(T* p =0) throw() : object(p){  }
+	auto_ptr(auto_ptr& p) throw() : object(p.release()){ }
+	auto_ptr(auto_ptr_ref<T> r) throw() : object(r.p){
+		r.p = 0;
+	}
+	template<class Y> auto_ptr(auto_ptr<Y>& p) throw() : object(p.release()){ }
+	auto_ptr& operator=(auto_ptr& p) throw(){
+		if(&p == this){
+			return *this;
+		}
+		delete object;
+		object = p.release();
+		return *this;
+	}
+	template<class Y> auto_ptr& operator=(auto_ptr<Y>& p) throw(){
+		if(&p == this){
+			return *this;
+		}
+		delete object;
+		object = p.release();
+		return *this;
+	}
+	~auto_ptr(){
+		delete object;
+	}
+
+	T& operator*() const throw(){
+		return *object;
+	}
+	T* operator->() const throw(){
+		return object;
+	}
+	T* get() const throw(){
+		return object;
+	}
+	T* release() throw(){
+		T * temp(object);
+		object = 0;
+		return temp;
+	}
+	void reset(T * p=0) throw(){
+		if(p != object){
+			delete object;
+			object = p;
+		}
+	}
+	template<class Y> operator auto_ptr_ref<Y>() throw(){
+		auto_ptr_ref<Y> retval;
+		retval.p = object;
+		object = 0;
+		return retval;
+	}
+	template<class Y> operator auto_ptr<Y>() throw(){
+		auto_ptr<Y> retval(object);
+		object = 0;
+		return retval;
+	}
+	
+};
+
+}	//namespace std
+
+#pragma GCC visibility pop
 
 #endif
 
-template <class _Tp> class auto_ptr {
-private:
-  _Tp* _M_ptr;
-
-public:
-  typedef _Tp element_type;
-
-  explicit auto_ptr(_Tp* __p = 0) __STL_NOTHROW : _M_ptr(__p) {}
-  auto_ptr(auto_ptr& __a) __STL_NOTHROW : _M_ptr(__a.release()) {}
-
-#ifdef __STL_MEMBER_TEMPLATES
-  template <class _Tp1> auto_ptr(auto_ptr<_Tp1>& __a) __STL_NOTHROW
-    : _M_ptr(__a.release()) {}
-#endif /* __STL_MEMBER_TEMPLATES */
-
-  auto_ptr& operator=(auto_ptr& __a) __STL_NOTHROW {
-    if (&__a != this) {
-      delete _M_ptr;
-      _M_ptr = __a.release();
-    }
-    return *this;
-  }
-
-#ifdef __STL_MEMBER_TEMPLATES
-  template <class _Tp1>
-  auto_ptr& operator=(auto_ptr<_Tp1>& __a) __STL_NOTHROW {
-    if (__a.get() != this->get()) {
-      delete _M_ptr;
-      _M_ptr = __a.release();
-    }
-    return *this;
-  }
-#endif /* __STL_MEMBER_TEMPLATES */
-
-  // Note: The C++ standard says there is supposed to be an empty throw
-  // specification here, but omitting it is standard conforming.  Its 
-  // presence can be detected only if _Tp::~_Tp() throws, but (17.4.3.6/2)
-  // this is prohibited.
-  ~auto_ptr() { delete _M_ptr; }
-
-  _Tp& operator*() const __STL_NOTHROW {
-    return *_M_ptr;
-  }
-  _Tp* operator->() const __STL_NOTHROW {
-    return _M_ptr;
-  }
-  _Tp* get() const __STL_NOTHROW {
-    return _M_ptr;
-  }
-  _Tp* release() __STL_NOTHROW {
-    _Tp* __tmp = _M_ptr;
-    _M_ptr = 0;
-    return __tmp;
-  }
-  void reset(_Tp* __p = 0) __STL_NOTHROW {
-    if (__p != _M_ptr) {
-      delete _M_ptr;
-      _M_ptr = __p;
-    }
-  }
-
-  // According to the C++ standard, these conversions are required.  Most
-  // present-day compilers, however, do not enforce that requirement---and, 
-  // in fact, most present-day compilers do not support the language 
-  // features that these conversions rely on.
-  
-#if defined(__SGI_STL_USE_AUTO_PTR_CONVERSIONS) && \
-    defined(__STL_MEMBER_TEMPLATES)
-
-public:
-  auto_ptr(auto_ptr_ref<_Tp> __ref) __STL_NOTHROW
-    : _M_ptr(__ref._M_ptr) {}
-
-  auto_ptr& operator=(auto_ptr_ref<_Tp> __ref) __STL_NOTHROW {
-    if (__ref._M_ptr != this->get()) {
-      delete _M_ptr;
-      _M_ptr = __ref._M_ptr;
-    }
-    return *this;
-  }
-
-  template <class _Tp1> operator auto_ptr_ref<_Tp1>() __STL_NOTHROW 
-    { return auto_ptr_ref<_Tp1>(this->release()); }
-  template <class _Tp1> operator auto_ptr<_Tp1>() __STL_NOTHROW
-    { return auto_ptr<_Tp1>(this->release()); }
-
-#endif /* auto ptr conversions && member templates */
-};
-
-__STL_END_NAMESPACE
-
-#endif /* __SGI_STL_MEMORY */
-
-
-// Local Variables:
-// mode:C++
-// End:

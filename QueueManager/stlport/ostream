@@ -1,4 +1,4 @@
-/*	Copyright (C) 2004 Garrett A. Kajmowicz
+/*	Copyright (C) 2004-2008 Garrett A. Kajmowicz
 
 	This file is part of the uClibc++ Library.
 
@@ -24,10 +24,13 @@
 
 #include <iosfwd>
 #include <streambuf>
-#ifndef __AVR__
 #include <cstdio>
-#endif
 #include <ostream_helpers>
+
+#if defined( __AVR__ )
+#include <avr/pgmspace.h>
+class __FlashStringHelper;
+#endif
 
 #pragma GCC visibility push(default)
 
@@ -87,6 +90,9 @@ namespace std {
 		basic_ostream<charT,traits>& operator<<(long double f);
 		basic_ostream<charT,traits>& operator<<(void* p);
 		basic_ostream<charT,traits>& operator<<(basic_streambuf<char_type,traits>* sb);
+#if defined( __AVR__ )
+		basic_ostream<charT,traits>& operator<<(const __FlashStringHelper* p);
+#endif
 
 		_UCXXEXPORT basic_ostream<charT,traits>& put(char_type c){
 			if(basic_ostream<charT,traits>::traits_type::eq_int_type(
@@ -131,6 +137,25 @@ namespace std {
 			return *this;
 		}
 
+		_UCXXEXPORT void printout(const char_type* s, streamsize n){
+			streamsize extra = ios::width() - n;
+			if ((ios::flags()&ios::adjustfield) == ios::right){
+				while (extra > 0) {
+					--extra;
+					put(ios::fill());
+				}
+			}
+			write(s, n);
+			if ((ios::flags()&ios::adjustfield) == ios::left) {
+				while (extra > 0) {
+					--extra;
+					put(ios::fill());
+				}
+			}
+			// Width value only applies for the next output operation.  Reset to zero.
+			ios::width(0);
+		}
+
 	protected:
 		basic_ostream(const basic_ostream<charT,traits> &){ }
 		basic_ostream<charT,traits> & operator=(const basic_ostream<charT,traits> &){ return *this; }
@@ -144,15 +169,15 @@ namespace std {
 		sentry s(*this);
 		if( basic_ios<charT,traits>::flags() & ios_base::boolalpha){
 			if(n){
-				write("true", 4);
+				printout("true", 4);
 			}else{
-				write("false", 5);
+				printout("false", 5);
 			}
 		}else{
 			if(n){
-				write("1", 1);
+				printout("1", 1);
 			}else{
-				write("0", 1);
+				printout("0", 1);
 			}
 		}
 		if(basic_ios<charT,traits>::flags() & ios_base::unitbuf){
@@ -221,7 +246,7 @@ namespace std {
 	template <class charT, class traits> _UCXXEXPORT basic_ostream<charT,traits>& basic_ostream<charT, traits>::operator<<(void* p){
 		sentry s(*this);
 		char buffer[20];
-		write(buffer, snprintf(buffer, 20, "%p", p) );
+		printout(buffer, snprintf(buffer, 20, "%p", p) );
 		if(basic_ios<charT,traits>::flags() & ios_base::unitbuf){
 			flush();
 		}
@@ -248,6 +273,19 @@ namespace std {
 		}
 		return *this;
 	}
+#if defined( __AVR__ )
+	template <class charT, class traits> _UCXXEXPORT basic_ostream<charT,traits>& basic_ostream<charT, traits>::operator<<(const __FlashStringHelper* p ){
+		sentry s(*this);
+		char buffer[64];
+		size_t p_len = strlcpy_P(buffer,reinterpret_cast<const char*>(p),sizeof(buffer));
+		printout(buffer, (p_len>=sizeof(buffer)) ? sizeof(buffer) - 1 : p_len ); 
+		if(basic_ios<charT,traits>::flags() & ios_base::unitbuf){
+			flush();
+		}
+		return *this;
+	}
+#endif
+
 
 	/*Template Specializations*/
 
@@ -358,7 +396,7 @@ namespace std {
 		operator<<(basic_ostream<charT,traits>& out, const charT* c)
 	{
 		typename basic_ostream<charT,traits>::sentry s(out);
-		out.write(c, traits::length(c) );
+		out.printout(c, traits::length(c) );
 		return out;
 	}
 	
@@ -366,7 +404,7 @@ namespace std {
 		operator<<(basic_ostream<charT,traits>& out, const char* c)
 	{
 		typename basic_ostream<charT,traits>::sentry s(out);
-		out.write(c, char_traits<char>::length(c) );
+		out.printout(c, char_traits<char>::length(c) );
 		return out;
 	}
 
@@ -375,7 +413,7 @@ namespace std {
 		operator<<(basic_ostream<char,traits>& out, const char* c)
 	{
 		typename basic_ostream<char,traits>::sentry s(out);
-		out.write(c, traits::length(c));
+		out.printout(c, traits::length(c));
 		return out;
 	}
 
@@ -391,7 +429,7 @@ namespace std {
 			temp[i] = out.widen(c[i]);
 		}
 
-		out.write(temp, numChars);
+		out.printout(temp, numChars);
 		return out;
 	}
 #endif
@@ -401,7 +439,7 @@ namespace std {
 		operator<<(basic_ostream<char,traits>& out, const signed char* c)
 	{
 		typename basic_ostream<char,traits>::sentry s(out);
-		out.write(reinterpret_cast<const char *>(c), traits::length( reinterpret_cast<const char *>(c)));
+		out.printout(reinterpret_cast<const char *>(c), traits::length( reinterpret_cast<const char *>(c)));
 		return out;
 	}
 	
@@ -409,7 +447,7 @@ namespace std {
 		operator<<(basic_ostream<char,traits>& out, const unsigned char* c)
 	{
 		typename basic_ostream<char,traits>::sentry s(out);
-		out.write(reinterpret_cast<const char *>(c), traits::length( reinterpret_cast<const char *>(c)));
+		out.printout(reinterpret_cast<const char *>(c), traits::length( reinterpret_cast<const char *>(c)));
 		return out;
 	}
 
@@ -421,18 +459,6 @@ namespace std {
 		os.flush();
 		return os;
 	}
-
-#ifdef __AVR__
-	template <class charT, class traits> _UCXXEXPORT basic_ostream<charT,traits>&
-		crlf(basic_ostream<charT,traits>& os)
-	{
-		typename basic_ostream<charT,traits>::sentry s(os);
-		os.put('\r');
-		os.put('\n');
-		os.flush();
-		return os;
-	}
-#endif
 
 	template <class charT, class traits> _UCXXEXPORT basic_ostream<charT,traits>&
 		ends(basic_ostream<charT,traits>& os)

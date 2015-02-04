@@ -23,8 +23,7 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/QueueManager/arduino/variant}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/QueueManager}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/QueueManager/Libraries/SPI}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/QueueManager/Libraries/stlport}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/QueueManager/Libraries/stlport/utility}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/QueueManager/stlport}&quot;"/>
 								</option>
 								<inputType id="it.baeyens.arduino.compiler.cpp.sketch.input.2139688000" name="CPP source files" superClass="it.baeyens.arduino.compiler.cpp.sketch.input"/>
 							</tool>

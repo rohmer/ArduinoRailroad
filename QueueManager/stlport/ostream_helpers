@@ -22,7 +22,6 @@
 #include <ios>
 #include <cctype>
 #include <string>
-#include <stdio.h>
 
 #ifndef __STD_HEADER_OSTREAM_HELPERS
 #define __STD_HEADER_OSTREAM_HELPERS 1
@@ -89,7 +88,7 @@ namespace std{
 				}
 			}
 
-			stream.write(buffer, snprintf(buffer, 20, formatString, n) );
+			stream.printout(buffer, snprintf(buffer, 20, formatString, n) );
 
 			if(stream.flags() & ios_base::unitbuf){
 				stream.flush();
@@ -136,7 +135,7 @@ namespace std{
 				}
 			}
 
-			stream.write(buffer, snprintf(buffer, 20, formatString, n));
+			stream.printout(buffer, snprintf(buffer, 20, formatString, n));
 			if(stream.flags() & ios_base::unitbuf){
 				stream.flush();
 			}
@@ -183,7 +182,7 @@ namespace std{
 				}
 			}
 
-			stream.write(buffer, snprintf(buffer, 27, formatString, n) );
+			stream.printout(buffer, snprintf(buffer, 27, formatString, n) );
 
 			if(stream.flags() & ios_base::unitbuf){
 				stream.flush();
@@ -229,7 +228,7 @@ namespace std{
 				}
 			}
 
-			stream.write(buffer, snprintf(buffer, 27, formatString, n) );
+			stream.printout(buffer, snprintf(buffer, 27, formatString, n) );
 
 			if(stream.flags() & ios_base::unitbuf){
 				stream.flush();
@@ -239,77 +238,68 @@ namespace std{
 
 
 #endif	//__STRICT_ANSI__
-
-	template <class traits> class _UCXXEXPORT __ostream_printout<traits, char, double>{
+#if defined( __UCLIBCXX_HAS_FLOATS__ )
+# if defined( __AVR__ )
+	template <class traits> class _UCXXEXPORT __ostream_printout<traits, char, float>{
 	public:
-		static void printout(basic_ostream<char, traits >& stream, double f)
+		static void printout(basic_ostream<char, traits >& stream, const float f)
 		{
 			char buffer[32];
 			int length;
 
-#ifdef __AVR__
-	// this is lifted from the Arduino Print class
-			char *ptr=buffer;
-			
-		  // Handle negative numbers
-		  if (f < 0.0)
-		  {
-		 	  *ptr++='-';
-		    f = -f;
-		  }
+			//length = snprintf(buffer, 32, "%*.*f",static_cast<int>(stream.width()),static_cast<int>(stream.precision()), f);
+			length = strlen(dtostrf(f, static_cast<int>(stream.width()), static_cast<int>(stream.precision()), buffer));
 
-		  int digits=stream.precision();
-
-		  // Round correctly so that print(1.999, 2) prints as "2.00"
-		  double rounding = 0.5;
-		  for (uint8_t i=0; i<digits; ++i)
-		    rounding /= 10.0;
-		  
-		  f += rounding;
-		
-		  // Extract the integer part of the number and print it
-		  unsigned long int_part = (unsigned long)f;
-		  double remainder = f - (double)int_part;
-
-		  ltoa(int_part,ptr,10);
-		  while(*ptr) ptr++;
-		
-		  // Print the decimal point, but only if there are digits beyond
-		  if (digits > 0)
-		    *ptr++='.';
-		
-		  // Extract digits from the remainder one at a time
-		  while (digits-- > 0)
-		  {
-		    remainder *= 10.0;
-		    int toPrint = int(remainder);
-		    itoa(toPrint,ptr,10);
-		    while(*ptr) ptr++;
-		    remainder -= toPrint; 
-		  }
-
-		  length=ptr-buffer;
-
-#else
+			stream.printout(buffer, length);
+			if(stream.flags() & ios_base::unitbuf){
+				stream.flush();
+			}
+		}
+	};
+# endif
+	template <class traits> class _UCXXEXPORT __ostream_printout<traits, char, double>{
+	public:
+		static void printout(basic_ostream<char, traits >& stream, const double f)
+		{
+			char buffer[32];
+			int length;
 			if(stream.flags() & ios_base::scientific){
 				if(stream.flags() & ios_base::uppercase){
+# if defined( __AVR__ )
+					length = strlen(dtostre(f, buffer, static_cast<int>(stream.precision()),  0x04 ));
+# else
 					length = snprintf(buffer, 32, "%*.*E", static_cast<int>(stream.width()),static_cast<int>(stream.precision()), f);
+# endif
 				}else{
+# if defined( __AVR__ )
+					length = strlen(dtostre(f, buffer, static_cast<int>(stream.precision()), 0));
+# else
 					length = snprintf(buffer, 32, "%*.*e", static_cast<int>(stream.width()),static_cast<int>(stream.precision()), f);
+# endif
 				}
 			} else if(stream.flags() & ios_base::fixed){
+# if defined( __AVR__ )
+				length = strlen(dtostrf(f, static_cast<int>(stream.width()), static_cast<int>(stream.precision()), buffer));
+# else
 				length = snprintf(buffer, 32, "%*.*f",static_cast<int>(stream.width()),static_cast<int>(stream.precision()), f);
+# endif
 			} else {
+# if defined( __AVR__ )
+				length = strlen(dtostrf(f, static_cast<int>(stream.width()), static_cast<int>(stream.precision()), buffer));
+# else
 				length = snprintf(buffer, 32, "%*.*g",static_cast<int>(stream.width()),static_cast<int>(stream.precision()), f);
+# endif
 			}
-#endif
-			stream.write(buffer, length);
+			stream.printout(buffer, length);
 			if(stream.flags() & ios_base::unitbuf){
 				stream.flush();
 			}
 		}
 	};
 
+#endif // __UCLIBCXX_HAS_FLOATS__
+
+#if defined( __UCLIBCXX_HAS_LONG_DOUBLE__ )
 	template <class traits> class _UCXXEXPORT __ostream_printout<traits, char, long double>{
 	public:
 		static void printout(basic_ostream<char, traits >& stream, const long double f)
@@ -327,13 +317,14 @@ namespace std{
 			} else {
 				length = snprintf(buffer, 32, "%*.*Lg", static_cast<int>(stream.width()), static_cast<int>(stream.precision()), f);
 			}
-			stream.write(buffer, length);
+			stream.printout(buffer, length);
 			if(stream.flags() & ios_base::unitbuf){
 				stream.flush();
 			}
 
 		}
 	};
+#endif //  __UCLIBCXX_HAS_LONG_DOUBLE__
 
 #ifdef __UCLIBCXX_HAS_WCHAR__
 	template <class traits> class _UCXXEXPORT __ostream_printout<traits, wchar_t, signed long int>{
@@ -342,25 +333,25 @@ namespace std{
 		{
 			wchar_t buffer[20];
 			if( stream.flags() & ios_base::dec){
-				stream.write(buffer, swprintf(buffer, 20, L"%ld", n));
+				stream.printout(buffer, swprintf(buffer, 20, L"%ld", n));
 			}else if( stream.flags() & ios_base::oct){
 				if( stream.flags() & ios_base::showbase){
-					stream.write(buffer, swprintf(buffer, 20, L"%#lo", n));
+					stream.printout(buffer, swprintf(buffer, 20, L"%#lo", n));
 				}else{
-					stream.write(buffer, swprintf(buffer, 20, L"%lo", n) );
+					stream.printout(buffer, swprintf(buffer, 20, L"%lo", n) );
 				}
 			}else if (stream.flags() & ios_base::hex){
 				if(stream.flags() & ios_base::showbase){
 					if(stream.flags() & ios_base::uppercase){
-						stream.write(buffer, swprintf(buffer, 20, L"%#lX", n) );
+						stream.printout(buffer, swprintf(buffer, 20, L"%#lX", n) );
 					}else{
-						stream.write(buffer, swprintf(buffer, 20, L"%#lx", n) );
+						stream.printout(buffer, swprintf(buffer, 20, L"%#lx", n) );
 					}
 				}else{
 					if(stream.flags() & ios_base::uppercase){
-						stream.write(buffer, swprintf(buffer, 20, L"%lX", n) );
+						stream.printout(buffer, swprintf(buffer, 20, L"%lX", n) );
 					}else{
-						stream.write(buffer, swprintf(buffer, 20, L"%lx", n) );
+						stream.printout(buffer, swprintf(buffer, 20, L"%lx", n) );
 					}
 				}
 			}
@@ -376,25 +367,25 @@ namespace std{
 		{
 			wchar_t buffer[20];
 			if( stream.flags() & ios_base::dec){
-				stream.write(buffer, swprintf(buffer, 20, L"%lu", n));
+				stream.printout(buffer, swprintf(buffer, 20, L"%lu", n));
 			}else if( stream.flags() & ios_base::oct){
 				if( stream.flags() & ios_base::showbase){
-					stream.write(buffer, swprintf(buffer, 20, L"%#lo", n));
+					stream.printout(buffer, swprintf(buffer, 20, L"%#lo", n));
 				}else{
-					stream.write(buffer, swprintf(buffer, 20, L"%lo", n) );
+					stream.printout(buffer, swprintf(buffer, 20, L"%lo", n) );
 				}
 			}else if (stream.flags() & ios_base::hex){
 				if(stream.flags() & ios_base::showbase){
 					if(stream.flags() & ios_base::uppercase){
-						stream.write(buffer, swprintf(buffer, 20, L"%#lX", n) );
+						stream.printout(buffer, swprintf(buffer, 20, L"%#lX", n) );
 					}else{
-						stream.write(buffer, swprintf(buffer, 20, L"%#lx", n) );
+						stream.printout(buffer, swprintf(buffer, 20, L"%#lx", n) );
 					}
 				}else{
 					if(stream.flags() & ios_base::uppercase){
-						stream.write(buffer, swprintf(buffer, 20, L"%lX", n) );
+						stream.printout(buffer, swprintf(buffer, 20, L"%lX", n) );
 					}else{
-						stream.write(buffer, swprintf(buffer, 20, L"%lx", n) );
+						stream.printout(buffer, swprintf(buffer, 20, L"%lx", n) );
 					}
 				}
 			}
@@ -404,7 +395,7 @@ namespace std{
 		}
 	};
 
-#ifndef __STRICT_ANSI__
+# ifndef __STRICT_ANSI__
 
 	template <class traits> class _UCXXEXPORT __ostream_printout<traits, wchar_t, signed long long int>{
 	public:
@@ -412,25 +403,25 @@ namespace std{
 		{
 			wchar_t buffer[28];
 			if( stream.flags() & ios_base::dec){
-				stream.write(buffer, swprintf(buffer, 27, L"%lld", n));
+				stream.printout(buffer, swprintf(buffer, 27, L"%lld", n));
 			}else if( stream.flags() & ios_base::oct){
 				if( stream.flags() & ios_base::showbase){
-					stream.write(buffer, swprintf(buffer, 27, L"%#llo", n));
+					stream.printout(buffer, swprintf(buffer, 27, L"%#llo", n));
 				}else{
-					stream.write(buffer, swprintf(buffer, 27, L"%llo", n) );
+					stream.printout(buffer, swprintf(buffer, 27, L"%llo", n) );
 				}
 			}else if (stream.flags() & ios_base::hex){
 				if(stream.flags() & ios_base::showbase){
 					if(stream.flags() & ios_base::uppercase){
-						stream.write(buffer, swprintf(buffer, 27, L"%#llX", n) );
+						stream.printout(buffer, swprintf(buffer, 27, L"%#llX", n) );
 					}else{
-						stream.write(buffer, swprintf(buffer, 27, L"%#llx", n) );
+						stream.printout(buffer, swprintf(buffer, 27, L"%#llx", n) );
 					}
 				}else{
 					if(stream.flags() & ios_base::uppercase){
-						stream.write(buffer, swprintf(buffer, 27, L"%llX", n) );
+						stream.printout(buffer, swprintf(buffer, 27, L"%llX", n) );
 					}else{
-						stream.write(buffer, swprintf(buffer, 27, L"%llx", n) );
+						stream.printout(buffer, swprintf(buffer, 27, L"%llx", n) );
 					}
 				}
 			}
@@ -446,25 +437,25 @@ namespace std{
 		{
 			wchar_t buffer[28];
 			if( stream.flags() & ios_base::dec){
-				stream.write(buffer, swprintf(buffer, 27, L"%llu", n));
+				stream.printout(buffer, swprintf(buffer, 27, L"%llu", n));
 			}else if( stream.flags() & ios_base::oct){
 				if( stream.flags() & ios_base::showbase){
-					stream.write(buffer, swprintf(buffer, 27, L"%#llo", n));
+					stream.printout(buffer, swprintf(buffer, 27, L"%#llo", n));
 				}else{
-					stream.write(buffer, swprintf(buffer, 27, L"%llo", n) );
+					stream.printout(buffer, swprintf(buffer, 27, L"%llo", n) );
 				}
 			}else if (stream.flags() & ios_base::hex){
 				if(stream.flags() & ios_base::showbase){
 					if(stream.flags() & ios_base::uppercase){
-						stream.write(buffer, swprintf(buffer, 27, L"%#llX", n) );
+						stream.printout(buffer, swprintf(buffer, 27, L"%#llX", n) );
 					}else{
-						stream.write(buffer, swprintf(buffer, 27, L"%#llx", n) );
+						stream.printout(buffer, swprintf(buffer, 27, L"%#llx", n) );
 					}
 				}else{
 					if(stream.flags() & ios_base::uppercase){
-						stream.write(buffer, swprintf(buffer, 27, L"%llX", n) );
+						stream.printout(buffer, swprintf(buffer, 27, L"%llX", n) );
 					}else{
-						stream.write(buffer, swprintf(buffer, 27, L"%llx", n) );
+						stream.printout(buffer, swprintf(buffer, 27, L"%llx", n) );
 					}
 				}
 			}
@@ -475,8 +466,9 @@ namespace std{
 	};
 
 
-#endif	//__STRICT_ANSI__
+# endif	//__STRICT_ANSI__
 
+# if defined( __UCLIBCXX_HAS_FLOATS__ )
 	template <class traits> class _UCXXEXPORT __ostream_printout<traits, wchar_t, double>{
 	public:
 		static void printout(basic_ostream<wchar_t, traits >& stream, const double f)
@@ -494,13 +486,15 @@ namespace std{
 			} else {
 				swprintf(format_string, 32, L"%%%u.%ug", static_cast<int>(stream.width()), static_cast<unsigned int>(stream.precision()));
 			}
-			stream.write(buffer, swprintf(buffer, 32, format_string, f) );
+			stream.printout(buffer, swprintf(buffer, 32, format_string, f) );
 			if(stream.flags() & ios_base::unitbuf){
 				stream.flush();
 			}
 		}
 	};
+# endif // __UCLIBCXX_HAS_FLOATS__
 
+# if defined( __UCLIBCXX_HAS_LONG_DOUBLE__ )
 	template <class traits> class _UCXXEXPORT __ostream_printout<traits, wchar_t, long double>{
 	public:
 		static void printout(basic_ostream<wchar_t, traits >& stream, const long double f)
@@ -518,12 +512,13 @@ namespace std{
 			} else {
 				swprintf(format_string, 32, L"%%%u.%uLg", static_cast<unsigned int>(stream.width()), static_cast<unsigned int>(stream.precision()));
 			}
-			stream.write(buffer, swprintf(buffer, 32, format_string, f) );
+			stream.printout(buffer, swprintf(buffer, 32, format_string, f) );
 			if(stream.flags() & ios_base::unitbuf){
 				stream.flush();
 			}
 		}
 	};
+# endif //  __UCLIBCXX_HAS_LONG_DOUBLE__
 
 #endif //__UCLIBCXX_HAS_WCHAR__
 

@@ -26,16 +26,33 @@
 #include <ios>
 #include <istream>
 #include <ostream>
-
-#ifndef __AVR__
+#ifdef ARDUINO
+#include <serstream>
+#else
 #include <fstream>
-#include <string_iostream>
 #endif
-
+#include <string_iostream>
 
 #pragma GCC visibility push(default)
 
 namespace std{
+#ifdef ARDUINO
+
+#ifdef __UCLIBCXX_SUPPORT_COUT__
+	extern ohserialstream cout;
+#endif
+#ifdef __UCLIBCXX_SUPPORT_CIN__
+	extern ihserialstream cin;
+#endif
+#ifdef __UCLIBCXX_SUPPORT_CERR__
+	extern ohserialstream cerr;
+#endif
+#ifdef __UCLIBCXX_SUPPORT_CLOG__
+	extern ohserialstream clog;
+#endif
+
+#else // ARDUINO
+
 #ifdef __UCLIBCXX_SUPPORT_CIN__
 	extern istream cin;
 #endif
@@ -61,6 +78,7 @@ namespace std{
 	extern wostream wclog;
 #endif
 
+#endif // not ARDUINO
 
 	template <class charT, class traits> class _UCXXEXPORT basic_iostream :
 		public basic_istream<charT,traits>, public basic_ostream<charT,traits> 

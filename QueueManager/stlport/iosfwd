@@ -18,22 +18,26 @@
 */
 
 #include <basic_definitions>
-#include <char_traits.h>
-#include <stl_alloc.h>
+#include <char_traits>
+#include <memory>
 
-#ifdef __AVR__
-class HardwareSerial;
-class LiquidCrystal;
-#endif
 
 #ifndef __HEADER_STD_IOSFWD
 #define __HEADER_STD_IOSFWD 1
 
 #pragma GCC visibility push(default)
 
+#ifdef ARDUINO	
+class HardwareSerial;
+#endif
+
 namespace std {
 	class ios_base;
 	template<> class char_traits<char>;
+
+#ifdef __UCLIBCXX_HAS_WCHAR__
+	template<> class char_traits<wchar_t>;
+#endif
 
 	template <class charT, class traits = char_traits<charT> > class basic_ios;
 
@@ -67,6 +71,9 @@ namespace std {
 	template <class charT, class traits = char_traits<charT> > class basic_ostreambuf_iterator;
 
 	typedef basic_ios<char>       ios;
+#ifdef __UCLIBCXX_HAS_WCHAR__
+	typedef basic_ios<wchar_t>    wios;
+#endif
 
 	typedef basic_streambuf<char> streambuf;
 	typedef basic_istream<char>   istream;
@@ -82,27 +89,38 @@ namespace std {
 	typedef basic_ifstream<char> ifstream;
 	typedef basic_ofstream<char> ofstream;
 	typedef basic_fstream<char>  fstream;
-	
-#ifdef __AVR__
-// specialisations for HardwareSerial
+#ifdef __UCLIBCXX_HAS_WCHAR__
+	typedef basic_streambuf<wchar_t> wstreambuf;
+	typedef basic_istream<wchar_t>   wistream;
+	typedef basic_ostream<wchar_t>   wostream;
+	typedef basic_iostream<wchar_t>  wiostream;
 
-	template <class charT, class traits = char_traits<charT>, class Tserial=HardwareSerial> class basic_serialbuf;
-	template <class charT, class traits = char_traits<charT>, class Tserial=HardwareSerial> class basic_iserialstream;
-	template <class charT, class traits = char_traits<charT>, class Tserial=HardwareSerial> class basic_oserialstream;
+	typedef basic_stringbuf<wchar_t>     wstringbuf;
+	typedef basic_istringstream<wchar_t> wistringstream;
+	typedef basic_ostringstream<wchar_t> wostringstream;
+	typedef basic_stringstream<wchar_t>  wstringstream;
 
-	typedef basic_iserialstream<char> ihserialstream;
-	typedef basic_oserialstream<char> ohserialstream;
-
-// specialisations for LiquidCrystal
-
-	template <class charT, class traits = char_traits<charT> > class basic_lcdbuf;
-	template <class charT, class traits = char_traits<charT> > class basic_olcdstream;
-
-	typedef basic_olcdstream<char> olcdstream;
+	typedef basic_filebuf<wchar_t>  wfilebuf;
+	typedef basic_ifstream<wchar_t> wifstream;
+	typedef basic_ofstream<wchar_t> wofstream;
+	typedef basic_fstream<wchar_t>  wfstream;
 #endif
 
+#ifdef ARDUINO
+	using ::HardwareSerial;
+        template <class charT, class traits = char_traits<charT>, class Tserial=HardwareSerial> class basic_serialbuf;
+        template <class charT, class traits = char_traits<charT>, class Tserial=HardwareSerial> class basic_iserialstream;
+        template <class charT, class traits = char_traits<charT>, class Tserial=HardwareSerial> class basic_oserialstream;
+
+        typedef basic_iserialstream<char> ihserialstream;
+        typedef basic_oserialstream<char> ohserialstream;
+#endif
+	
 	template <class state> class fpos;
 	typedef fpos<char_traits<char>::state_type> streampos;
+#ifdef __UCLIBCXX_HAS_WCHAR__
+	typedef fpos<char_traits<wchar_t>::state_type> wstreampos;
+#endif
 }
 
 #pragma GCC visibility pop

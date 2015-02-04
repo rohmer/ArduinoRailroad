@@ -13,12 +13,13 @@
 
 #include <basic_definitions>
 
-#include <stl_config.h>
+//#include <stl_config.h>
 #include <iosfwd>
 #include <ios>
 #include <istream>
 #include <ostream>
 #include <iostream>
+#include <HardwareSerial.h>
 
 
 namespace std
@@ -94,8 +95,16 @@ namespace std
 
 		virtual streamsize xsputn(const char_type* s, streamsize n){
 			
+			//_serial.print("[PUT ");
+			//_serial.print(n);
+			//_serial.print("] ");
 			for(streamsize i=0;i<n;i++)
-				_serial.print(s[i]);
+			{
+				char_type c = s[i];
+				if ( c == '\n' )
+					_serial.print('\r');
+				_serial.print(c);
+			}
 
 			return n;
 		}
@@ -106,8 +115,12 @@ namespace std
 
 		virtual int_type overflow (int_type c = traits::eof()) {
 			if(!traits::eq_int_type(c,traits::eof()))
+			{
+				//_serial.print("[OF]");
+				if ( (char_type)c == '\n' )
+					_serial.print('\r');
 				_serial.print((char_type)c);
-
+			}
 			return traits::not_eof(c);
 		}
 
@@ -138,7 +151,7 @@ namespace std
 	 * Our wrapped arduino class
 	 */
 
-		Tserial _serial;
+		Tserial& _serial;
 	};
 
 
@@ -180,6 +193,7 @@ namespace std
 
 		void begin(long speed_) {
 			sb.serial().begin(speed_);
+			sb.serial().println(__FUNCTION__);
 		}
 		
 	/*
@@ -287,7 +301,9 @@ namespace std
 	private:
 		basic_serialbuf<charT, traits, Tserial> sb;
 	};
-}
 
+
+
+}
 
 #endif
