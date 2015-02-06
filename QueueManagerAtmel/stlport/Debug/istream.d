@@ -17,7 +17,8 @@ istream.d istream.o: .././istream.cpp ../istream ../ios \
  c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/avr/pgmspace.h \
  c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/avr/io.h \
  c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/avr/sfr_defs.h \
- c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/avr/iom328p.h \
+ c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/avr/iom2560.h \
+ c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/avr/iomxx0_1.h \
  c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/avr/portpins.h \
  c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/avr/common.h \
  c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/avr/version.h \
@@ -102,7 +103,9 @@ c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/avr/io.h:
 
 c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/avr/sfr_defs.h:
 
-c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/avr/iom328p.h:
+c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/avr/iom2560.h:
+
+c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/avr/iomxx0_1.h:
 
 c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/avr/portpins.h:
 

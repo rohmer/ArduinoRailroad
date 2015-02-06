@@ -17,13 +17,21 @@ iostream.d iostream.o: .././iostream.cpp ../iostream ../basic_definitions \
  c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/avr/pgmspace.h \
  c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/avr/io.h \
  c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/avr/sfr_defs.h \
- c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/avr/iom328p.h \
+ c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/avr/iom2560.h \
+ c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/avr/iomxx0_1.h \
  c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/avr/portpins.h \
  c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/avr/common.h \
  c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/avr/version.h \
  c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/avr/fuse.h \
  c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/avr/lock.h \
- ../fstream ../string_iostream
+ ../serstream \
+ c:/Program\ Files\ (x86)/Arduino/hardware/arduino/avr/cores/arduino/HardwareSerial.h \
+ c:/Program\ Files\ (x86)/Arduino/hardware/arduino/avr/cores/arduino/Stream.h \
+ c:/Program\ Files\ (x86)/Arduino/hardware/arduino/avr/cores/arduino/Print.h \
+ c:/Program\ Files\ (x86)/Arduino/hardware/arduino/avr/cores/arduino/WString.h \
+ c:/Program\ Files\ (x86)/Arduino/hardware/arduino/avr/cores/arduino/Printable.h \
+ c:/Program\ Files\ (x86)/Arduino/hardware/arduino/avr/cores/arduino/new.h \
+ ../string_iostream
 
 ../iostream:
 
@@ -105,7 +113,9 @@ c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/avr/io.h:
 
 c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/avr/sfr_defs.h:
 
-c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/avr/iom328p.h:
+c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/avr/iom2560.h:
+
+c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/avr/iomxx0_1.h:
 
 c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/avr/portpins.h:
 
@@ -117,6 +127,18 @@ c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/avr/fuse.h:
 
 c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/avr/lock.h:
 
-../fstream:
+../serstream:
+
+c:/Program\ Files\ (x86)/Arduino/hardware/arduino/avr/cores/arduino/HardwareSerial.h:
+
+c:/Program\ Files\ (x86)/Arduino/hardware/arduino/avr/cores/arduino/Stream.h:
+
+c:/Program\ Files\ (x86)/Arduino/hardware/arduino/avr/cores/arduino/Print.h:
+
+c:/Program\ Files\ (x86)/Arduino/hardware/arduino/avr/cores/arduino/WString.h:
+
+c:/Program\ Files\ (x86)/Arduino/hardware/arduino/avr/cores/arduino/Printable.h:
+
+c:/Program\ Files\ (x86)/Arduino/hardware/arduino/avr/cores/arduino/new.h:
 
 ../string_iostream:

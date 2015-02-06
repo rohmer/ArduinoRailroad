@@ -219,6 +219,7 @@ ADDITIONAL_DEPENDENCIES:=
 OUTPUT_FILE_DEP:= ./makedep.mk
 
 LIB_DEP+=  \
+../../arduinoCore/libcore.a \
 C:/Arduino/ArduinoRailroad/QueueManagerAtmel/stlport/Debug/libstlport.a
 
 LINKER_SCRIPT_DEP+= 

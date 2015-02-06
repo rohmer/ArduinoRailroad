@@ -8,12 +8,6 @@
 #ifndef _MYCLASS_h
 #define _MYCLASS_h
 
-#if defined(ARDUINO) && ARDUINO >= 100
-	#include "Arduino.h"
-#else
-	#include "WProgram.h"
-#endif
-
 class MyClass
 {
  private:
