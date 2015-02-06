@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{E66E83B9-2572-4076-B26E-6BE79FF3018A}") = "QueueManagerAtmel", "QueueManagerAtmel\QueueManagerAtmel.cppproj", "{7A49DDAA-2C5D-49B3-BF78-ABC85D5DDEC0}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7B4501F2-6435-4861-A51B-421D79AE62B4} = {7B4501F2-6435-4861-A51B-421D79AE62B4}
+	EndProjectSection
+EndProject
+Project("{E66E83B9-2572-4076-B26E-6BE79FF3018A}") = "stlport", "stlport\stlport.cppproj", "{7B4501F2-6435-4861-A51B-421D79AE62B4}"
+EndProject
+Project("{E66E83B9-2572-4076-B26E-6BE79FF3018A}") = "Test", "Test\Test.cppproj", "{582B9CBF-655C-47D5-A2E7-2606F9CDA709}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7A49DDAA-2C5D-49B3-BF78-ABC85D5DDEC0}.Debug|AVR.ActiveCfg = Debug|AVR
+		{7A49DDAA-2C5D-49B3-BF78-ABC85D5DDEC0}.Debug|AVR.Build.0 = Debug|AVR
+		{7A49DDAA-2C5D-49B3-BF78-ABC85D5DDEC0}.Release|AVR.ActiveCfg = Release|AVR
+		{7A49DDAA-2C5D-49B3-BF78-ABC85D5DDEC0}.Release|AVR.Build.0 = Release|AVR
+		{7B4501F2-6435-4861-A51B-421D79AE62B4}.Debug|AVR.ActiveCfg = Debug|AVR
+		{7B4501F2-6435-4861-A51B-421D79AE62B4}.Debug|AVR.Build.0 = Debug|AVR
+		{7B4501F2-6435-4861-A51B-421D79AE62B4}.Release|AVR.ActiveCfg = Release|AVR
+		{7B4501F2-6435-4861-A51B-421D79AE62B4}.Release|AVR.Build.0 = Release|AVR
+		{582B9CBF-655C-47D5-A2E7-2606F9CDA709}.Debug|AVR.ActiveCfg = Debug|AVR
+		{582B9CBF-655C-47D5-A2E7-2606F9CDA709}.Debug|AVR.Build.0 = Debug|AVR
+		{582B9CBF-655C-47D5-A2E7-2606F9CDA709}.Release|AVR.ActiveCfg = Release|AVR
+		{582B9CBF-655C-47D5-A2E7-2606F9CDA709}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

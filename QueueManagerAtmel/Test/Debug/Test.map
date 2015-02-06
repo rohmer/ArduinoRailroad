@@ -1,0 +1,8 @@
+Archive member included because of file (symbol)
+
+C:\Arduino\ArduinoRailroad\QueueManagerAtmel\QueueManagerAtmel\Debug\libQueueManagerAtmel.a(main.o)
+                              c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr6/crtm2560.o (main)
+C:\Arduino\ArduinoRailroad\QueueManagerAtmel\QueueManagerAtmel\Debug\libQueueManagerAtmel.a(wiring.o)
+                              C:\Arduino\ArduinoRailroad\QueueManagerAtmel\QueueManagerAtmel\Debug\libQueueManagerAtmel.a(main.o) (init)
+C:\Arduino\ArduinoRailroad\QueueManagerAtmel\QueueManagerAtmel\Debug\libQueueManagerAtmel.a(hooks.o)
+                              C:\Arduino\ArduinoRailroad\QueueManagerAtmel\QueueManagerAtmel\Debug\libQueueManagerAtmel.a(wiring.o) (yield)
