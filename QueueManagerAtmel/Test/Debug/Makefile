@@ -67,8 +67,14 @@ ADDITIONAL_DEPENDENCIES:=
 OUTPUT_FILE_DEP:= ./makedep.mk
 
 LIB_DEP+=  \
+<<<<<<< HEAD:QueueManagerAtmel/Test/Debug/Makefile
 C:/Users/Ron/Documents/ArduinoRailroad/QueueManagerAtmel/QueueManagerAtmel/Debug/libQueueManagerAtmel.a \
 C:/Users/Ron/Documents/ArduinoRailroad/QueueManagerAtmel/stlport/Debug/libstlport.a
+=======
+C:/Arduino/ArduinoRailroad/QueueManagerAtmel/arduinoCore/libcore.a \
+C:/Arduino/GitHub/QueueManagerAtmel/QueueManagerAtmel/Release/libQueueManagerAtmel.a \
+C:/Arduino/GitHub/QueueManagerAtmel/stlport/Release/libstlport.a
+>>>>>>> Release now worked:QueueManagerAtmel/Test/Release/Makefile
 
 LINKER_SCRIPT_DEP+= 
 
@@ -109,7 +115,11 @@ all: $(OUTPUT_FILE_PATH) $(ADDITIONAL_DEPENDENCIES)
 $(OUTPUT_FILE_PATH): $(OBJS) $(USER_OBJS) $(OUTPUT_FILE_DEP) $(LIB_DEP) $(LINKER_SCRIPT_DEP)
 	@echo Building target: $@
 	@echo Invoking: AVR8/GNU Linker : 4.8.1
+<<<<<<< HEAD:QueueManagerAtmel/Test/Debug/Makefile
 	$(QUOTE)C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR8 GCC\Native\3.4.1061\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -o$(OUTPUT_FILE_PATH_AS_ARGS) $(OBJS_AS_ARGS) $(USER_OBJS) $(LIBS) -Wl,-Map="Test.map" -Wl,--start-group -Wl,-lm -Wl,-lQueueManagerAtmel -Wl,-lstlport  -Wl,--end-group -Wl,-L"C:\Users\Ron\Documents\ArduinoRailroad\QueueManagerAtmel\QueueManagerAtmel\Debug" -Wl,-L"C:\Users\Ron\Documents\ArduinoRailroad\QueueManagerAtmel\stlport\Debug"  -Wl,--gc-sections -mrelax -mmcu=atmega2560  
+=======
+	$(QUOTE)C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR8 GCC\Native\3.4.1061\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -o$(OUTPUT_FILE_PATH_AS_ARGS) $(OBJS_AS_ARGS) $(USER_OBJS) $(LIBS) -Wl,-Map="Test.map" -Wl,--start-group -Wl,-lcore -Wl,-lQueueManagerAtmel -Wl,-lstlport  -Wl,--end-group -Wl,-L"C:\Arduino\ArduinoRailroad\QueueManagerAtmel\arduinoCore" -Wl,-L"C:\Arduino\GitHub\QueueManagerAtmel\QueueManagerAtmel\Release" -Wl,-L"C:\Arduino\GitHub\QueueManagerAtmel\stlport\Release"  -Wl,--gc-sections -mmcu=atmega2560  
+>>>>>>> Release now worked:QueueManagerAtmel/Test/Release/Makefile
 	@echo Finished building target: $@
 	"C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR8 GCC\Native\3.4.1061\avr8-gnu-toolchain\bin\avr-objcopy.exe" -O ihex -R .eeprom -R .fuse -R .lock -R .signature -R .user_signatures  "Test.elf" "Test.hex"
 	"C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR8 GCC\Native\3.4.1061\avr8-gnu-toolchain\bin\avr-objcopy.exe" -j .eeprom  --set-section-flags=.eeprom=alloc,load --change-section-lma .eeprom=0  --no-change-warnings -O ihex "Test.elf" "Test.eep" || exit 0

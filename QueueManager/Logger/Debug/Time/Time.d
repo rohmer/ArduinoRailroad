@@ -1,3 +1,4 @@
+<<<<<<< HEAD:QueueManager/Logger/Debug/Time/Time.d
 Time/Time.d Time/Time.o: ../Time/Time.cpp \
  c:/Program\ Files\ (x86)/Arduino/hardware/arduino/avr/cores/arduino/Arduino.h \
  c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/stdlib.h \
@@ -95,3 +96,8 @@ c:/Program\ Files\ (x86)/Arduino/hardware/arduino/avr/cores/arduino/USBAPI.h:
 c:/Program\ Files\ (x86)/Arduino/hardware/arduino/avr/variants/mega/pins_arduino.h:
 
 ../Time/Time.h:
+=======
+MyClass.d MyClass.o: .././MyClass.cpp .././MyClass.h
+
+.././MyClass.h:
+>>>>>>> Release now worked:QueueManagerAtmel/Test/Release/MyClass.d
