@@ -1,11 +1,11 @@
 Archive member included because of file (symbol)
 
-C:\Arduino\ArduinoRailroad\QueueManagerAtmel\arduinoCore\libcore.a(main.cpp.o)
+../../../arduinoCore\libcore.a(main.cpp.o)
                               c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr6/crtm2560.o (main)
-C:\Arduino\ArduinoRailroad\QueueManagerAtmel\arduinoCore\libcore.a(wiring.c.o)
-                              C:\Arduino\ArduinoRailroad\QueueManagerAtmel\arduinoCore\libcore.a(main.cpp.o) (init)
-C:\Arduino\ArduinoRailroad\QueueManagerAtmel\arduinoCore\libcore.a(hooks.c.o)
-                              C:\Arduino\ArduinoRailroad\QueueManagerAtmel\arduinoCore\libcore.a(wiring.c.o) (yield)
+../../../arduinoCore\libcore.a(wiring.c.o)
+                              ../../../arduinoCore\libcore.a(main.cpp.o) (init)
+../../../arduinoCore\libcore.a(hooks.c.o)
+                              ../../../arduinoCore\libcore.a(wiring.c.o) (yield)
 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr6\libgcc.a(_exit.o)
                               c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr6/crtm2560.o (exit)
 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr6\libgcc.a(_clear_bss.o)
@@ -29,52 +29,52 @@ Discarded input sections
                 0x00000000       0x28 MyClass.o
  .debug_ranges  0x00000000       0x18 MyClass.o
  .debug_line    0x00000000       0x59 MyClass.o
- .debug_str     0x00000000      0x14c MyClass.o
+ .debug_str     0x00000000      0x158 MyClass.o
  .comment       0x00000000       0x31 MyClass.o
  .debug_frame   0x00000000       0x34 MyClass.o
- .text          0x00000000        0x0 C:\Arduino\ArduinoRailroad\QueueManagerAtmel\arduinoCore\libcore.a(main.cpp.o)
- .data          0x00000000        0x0 C:\Arduino\ArduinoRailroad\QueueManagerAtmel\arduinoCore\libcore.a(main.cpp.o)
- .bss           0x00000000        0x0 C:\Arduino\ArduinoRailroad\QueueManagerAtmel\arduinoCore\libcore.a(main.cpp.o)
- .text.atexit   0x00000000        0x6 C:\Arduino\ArduinoRailroad\QueueManagerAtmel\arduinoCore\libcore.a(main.cpp.o)
- .debug_info    0x00000000      0x24e C:\Arduino\ArduinoRailroad\QueueManagerAtmel\arduinoCore\libcore.a(main.cpp.o)
- .debug_abbrev  0x00000000       0xd7 C:\Arduino\ArduinoRailroad\QueueManagerAtmel\arduinoCore\libcore.a(main.cpp.o)
- .debug_loc     0x00000000       0x26 C:\Arduino\ArduinoRailroad\QueueManagerAtmel\arduinoCore\libcore.a(main.cpp.o)
+ .text          0x00000000        0x0 ../../../arduinoCore\libcore.a(main.cpp.o)
+ .data          0x00000000        0x0 ../../../arduinoCore\libcore.a(main.cpp.o)
+ .bss           0x00000000        0x0 ../../../arduinoCore\libcore.a(main.cpp.o)
+ .text.atexit   0x00000000        0x6 ../../../arduinoCore\libcore.a(main.cpp.o)
+ .debug_info    0x00000000      0x24e ../../../arduinoCore\libcore.a(main.cpp.o)
+ .debug_abbrev  0x00000000       0xd7 ../../../arduinoCore\libcore.a(main.cpp.o)
+ .debug_loc     0x00000000       0x26 ../../../arduinoCore\libcore.a(main.cpp.o)
  .debug_aranges
-                0x00000000       0x30 C:\Arduino\ArduinoRailroad\QueueManagerAtmel\arduinoCore\libcore.a(main.cpp.o)
- .debug_ranges  0x00000000       0x20 C:\Arduino\ArduinoRailroad\QueueManagerAtmel\arduinoCore\libcore.a(main.cpp.o)
- .debug_line    0x00000000      0x156 C:\Arduino\ArduinoRailroad\QueueManagerAtmel\arduinoCore\libcore.a(main.cpp.o)
- .debug_str     0x00000000      0x1e0 C:\Arduino\ArduinoRailroad\QueueManagerAtmel\arduinoCore\libcore.a(main.cpp.o)
- .debug_frame   0x00000000       0x44 C:\Arduino\ArduinoRailroad\QueueManagerAtmel\arduinoCore\libcore.a(main.cpp.o)
- .text          0x00000000        0x0 C:\Arduino\ArduinoRailroad\QueueManagerAtmel\arduinoCore\libcore.a(wiring.c.o)
- .data          0x00000000        0x0 C:\Arduino\ArduinoRailroad\QueueManagerAtmel\arduinoCore\libcore.a(wiring.c.o)
- .bss           0x00000000        0x0 C:\Arduino\ArduinoRailroad\QueueManagerAtmel\arduinoCore\libcore.a(wiring.c.o)
- .text.millis   0x00000000       0x18 C:\Arduino\ArduinoRailroad\QueueManagerAtmel\arduinoCore\libcore.a(wiring.c.o)
- .text.micros   0x00000000       0x46 C:\Arduino\ArduinoRailroad\QueueManagerAtmel\arduinoCore\libcore.a(wiring.c.o)
- .text.delay    0x00000000       0x50 C:\Arduino\ArduinoRailroad\QueueManagerAtmel\arduinoCore\libcore.a(wiring.c.o)
+                0x00000000       0x30 ../../../arduinoCore\libcore.a(main.cpp.o)
+ .debug_ranges  0x00000000       0x20 ../../../arduinoCore\libcore.a(main.cpp.o)
+ .debug_line    0x00000000      0x156 ../../../arduinoCore\libcore.a(main.cpp.o)
+ .debug_str     0x00000000      0x1e0 ../../../arduinoCore\libcore.a(main.cpp.o)
+ .debug_frame   0x00000000       0x44 ../../../arduinoCore\libcore.a(main.cpp.o)
+ .text          0x00000000        0x0 ../../../arduinoCore\libcore.a(wiring.c.o)
+ .data          0x00000000        0x0 ../../../arduinoCore\libcore.a(wiring.c.o)
+ .bss           0x00000000        0x0 ../../../arduinoCore\libcore.a(wiring.c.o)
+ .text.millis   0x00000000       0x18 ../../../arduinoCore\libcore.a(wiring.c.o)
+ .text.micros   0x00000000       0x46 ../../../arduinoCore\libcore.a(wiring.c.o)
+ .text.delay    0x00000000       0x50 ../../../arduinoCore\libcore.a(wiring.c.o)
  .text.delayMicroseconds
-                0x00000000       0x14 C:\Arduino\ArduinoRailroad\QueueManagerAtmel\arduinoCore\libcore.a(wiring.c.o)
- .debug_info    0x00000000      0x320 C:\Arduino\ArduinoRailroad\QueueManagerAtmel\arduinoCore\libcore.a(wiring.c.o)
- .debug_abbrev  0x00000000      0x143 C:\Arduino\ArduinoRailroad\QueueManagerAtmel\arduinoCore\libcore.a(wiring.c.o)
- .debug_loc     0x00000000      0x22b C:\Arduino\ArduinoRailroad\QueueManagerAtmel\arduinoCore\libcore.a(wiring.c.o)
+                0x00000000       0x14 ../../../arduinoCore\libcore.a(wiring.c.o)
+ .debug_info    0x00000000      0x320 ../../../arduinoCore\libcore.a(wiring.c.o)
+ .debug_abbrev  0x00000000      0x143 ../../../arduinoCore\libcore.a(wiring.c.o)
+ .debug_loc     0x00000000      0x22b ../../../arduinoCore\libcore.a(wiring.c.o)
  .debug_aranges
-                0x00000000       0x48 C:\Arduino\ArduinoRailroad\QueueManagerAtmel\arduinoCore\libcore.a(wiring.c.o)
- .debug_ranges  0x00000000       0x38 C:\Arduino\ArduinoRailroad\QueueManagerAtmel\arduinoCore\libcore.a(wiring.c.o)
- .debug_line    0x00000000      0x1c7 C:\Arduino\ArduinoRailroad\QueueManagerAtmel\arduinoCore\libcore.a(wiring.c.o)
- .debug_str     0x00000000      0x1a0 C:\Arduino\ArduinoRailroad\QueueManagerAtmel\arduinoCore\libcore.a(wiring.c.o)
- .debug_frame   0x00000000       0xbc C:\Arduino\ArduinoRailroad\QueueManagerAtmel\arduinoCore\libcore.a(wiring.c.o)
- .text          0x00000000        0x0 C:\Arduino\ArduinoRailroad\QueueManagerAtmel\arduinoCore\libcore.a(hooks.c.o)
- .data          0x00000000        0x0 C:\Arduino\ArduinoRailroad\QueueManagerAtmel\arduinoCore\libcore.a(hooks.c.o)
- .bss           0x00000000        0x0 C:\Arduino\ArduinoRailroad\QueueManagerAtmel\arduinoCore\libcore.a(hooks.c.o)
- .text.__empty  0x00000000        0x2 C:\Arduino\ArduinoRailroad\QueueManagerAtmel\arduinoCore\libcore.a(hooks.c.o)
- .debug_info    0x00000000       0x3a C:\Arduino\ArduinoRailroad\QueueManagerAtmel\arduinoCore\libcore.a(hooks.c.o)
- .debug_abbrev  0x00000000       0x28 C:\Arduino\ArduinoRailroad\QueueManagerAtmel\arduinoCore\libcore.a(hooks.c.o)
+                0x00000000       0x48 ../../../arduinoCore\libcore.a(wiring.c.o)
+ .debug_ranges  0x00000000       0x38 ../../../arduinoCore\libcore.a(wiring.c.o)
+ .debug_line    0x00000000      0x1c7 ../../../arduinoCore\libcore.a(wiring.c.o)
+ .debug_str     0x00000000      0x1a0 ../../../arduinoCore\libcore.a(wiring.c.o)
+ .debug_frame   0x00000000       0xbc ../../../arduinoCore\libcore.a(wiring.c.o)
+ .text          0x00000000        0x0 ../../../arduinoCore\libcore.a(hooks.c.o)
+ .data          0x00000000        0x0 ../../../arduinoCore\libcore.a(hooks.c.o)
+ .bss           0x00000000        0x0 ../../../arduinoCore\libcore.a(hooks.c.o)
+ .text.__empty  0x00000000        0x2 ../../../arduinoCore\libcore.a(hooks.c.o)
+ .debug_info    0x00000000       0x3a ../../../arduinoCore\libcore.a(hooks.c.o)
+ .debug_abbrev  0x00000000       0x28 ../../../arduinoCore\libcore.a(hooks.c.o)
  .debug_aranges
-                0x00000000       0x20 C:\Arduino\ArduinoRailroad\QueueManagerAtmel\arduinoCore\libcore.a(hooks.c.o)
- .debug_ranges  0x00000000       0x10 C:\Arduino\ArduinoRailroad\QueueManagerAtmel\arduinoCore\libcore.a(hooks.c.o)
- .debug_line    0x00000000       0x7a C:\Arduino\ArduinoRailroad\QueueManagerAtmel\arduinoCore\libcore.a(hooks.c.o)
- .debug_str     0x00000000       0x9e C:\Arduino\ArduinoRailroad\QueueManagerAtmel\arduinoCore\libcore.a(hooks.c.o)
- .comment       0x00000000       0x12 C:\Arduino\ArduinoRailroad\QueueManagerAtmel\arduinoCore\libcore.a(hooks.c.o)
- .debug_frame   0x00000000       0x24 C:\Arduino\ArduinoRailroad\QueueManagerAtmel\arduinoCore\libcore.a(hooks.c.o)
+                0x00000000       0x20 ../../../arduinoCore\libcore.a(hooks.c.o)
+ .debug_ranges  0x00000000       0x10 ../../../arduinoCore\libcore.a(hooks.c.o)
+ .debug_line    0x00000000       0x7a ../../../arduinoCore\libcore.a(hooks.c.o)
+ .debug_str     0x00000000       0x9e ../../../arduinoCore\libcore.a(hooks.c.o)
+ .comment       0x00000000       0x12 ../../../arduinoCore\libcore.a(hooks.c.o)
+ .debug_frame   0x00000000       0x24 ../../../arduinoCore\libcore.a(hooks.c.o)
  .text          0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr6\libgcc.a(_exit.o)
  .data          0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr6\libgcc.a(_exit.o)
  .bss           0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr6\libgcc.a(_exit.o)
@@ -126,9 +126,9 @@ Address of section .data set to 0x800200
 LOAD c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr6/crtm2560.o
 LOAD MyClass.o
 START GROUP
-LOAD C:\Arduino\ArduinoRailroad\QueueManagerAtmel\arduinoCore\libcore.a
-LOAD C:\Arduino\ArduinoRailroad\QueueManagerAtmel\QueueManagerAtmel\Debug\libQueueManagerAtmel.a
-LOAD C:\Arduino\ArduinoRailroad\QueueManagerAtmel\stlport\Debug\libstlport.a
+LOAD ../../../arduinoCore\libcore.a
+LOAD C:\Users\Ron\Documents\ArduinoRailroad\QueueManagerAtmel\QueueManagerAtmel\Debug\libQueueManagerAtmel.a
+LOAD C:\Users\Ron\Documents\ArduinoRailroad\QueueManagerAtmel\stlport\Debug\libstlport.a
 END GROUP
 LOAD c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr6\libgcc.a
 LOAD c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr6\libm.a
@@ -342,15 +342,15 @@ END GROUP
                 0x00000110                . = ALIGN (0x2)
  *(.text.*)
  .text.initVariant
-                0x00000110        0x2 C:\Arduino\ArduinoRailroad\QueueManagerAtmel\arduinoCore\libcore.a(main.cpp.o)
+                0x00000110        0x2 ../../../arduinoCore\libcore.a(main.cpp.o)
                 0x00000110                initVariant
  .text.startup.main
-                0x00000112       0x1e C:\Arduino\ArduinoRailroad\QueueManagerAtmel\arduinoCore\libcore.a(main.cpp.o)
+                0x00000112       0x1e ../../../arduinoCore\libcore.a(main.cpp.o)
                 0x00000112                main
  .text.__vector_23
-                0x00000130       0x94 C:\Arduino\ArduinoRailroad\QueueManagerAtmel\arduinoCore\libcore.a(wiring.c.o)
+                0x00000130       0x94 ../../../arduinoCore\libcore.a(wiring.c.o)
                 0x00000130                __vector_23
- .text.init     0x000001c4       0xc4 C:\Arduino\ArduinoRailroad\QueueManagerAtmel\arduinoCore\libcore.a(wiring.c.o)
+ .text.init     0x000001c4       0xc4 ../../../arduinoCore\libcore.a(wiring.c.o)
                 0x000001c4                init
                 0x00000288                . = ALIGN (0x2)
  *(.fini9)
@@ -395,12 +395,12 @@ END GROUP
  *(.bss)
  *(.bss*)
  .bss.timer0_fract
-                0x00800200        0x1 C:\Arduino\ArduinoRailroad\QueueManagerAtmel\arduinoCore\libcore.a(wiring.c.o)
+                0x00800200        0x1 ../../../arduinoCore\libcore.a(wiring.c.o)
  .bss.timer0_millis
-                0x00800201        0x4 C:\Arduino\ArduinoRailroad\QueueManagerAtmel\arduinoCore\libcore.a(wiring.c.o)
+                0x00800201        0x4 ../../../arduinoCore\libcore.a(wiring.c.o)
                 0x00800201                timer0_millis
  .bss.timer0_overflow_count
-                0x00800205        0x4 C:\Arduino\ArduinoRailroad\QueueManagerAtmel\arduinoCore\libcore.a(wiring.c.o)
+                0x00800205        0x4 ../../../arduinoCore\libcore.a(wiring.c.o)
                 0x00800205                timer0_overflow_count
  *(COMMON)
                 0x00800209                PROVIDE (__bss_end, .)
@@ -453,9 +453,9 @@ END GROUP
 
 .comment        0x00000000       0x11
  *(.comment)
- .comment       0x00000000       0x11 C:\Arduino\ArduinoRailroad\QueueManagerAtmel\arduinoCore\libcore.a(main.cpp.o)
+ .comment       0x00000000       0x11 ../../../arduinoCore\libcore.a(main.cpp.o)
                                  0x12 (size before relaxing)
- .comment       0x00000000       0x12 C:\Arduino\ArduinoRailroad\QueueManagerAtmel\arduinoCore\libcore.a(wiring.c.o)
+ .comment       0x00000000       0x12 ../../../arduinoCore\libcore.a(wiring.c.o)
 
 .note.gnu.build-id
  *(.note.gnu.build-id)

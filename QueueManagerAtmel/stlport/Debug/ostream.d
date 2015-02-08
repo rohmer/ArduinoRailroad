@@ -1,28 +1,28 @@
 ostream.d ostream.o: .././ostream.cpp ../ostream ../basic_definitions \
  ../system_configuration.h ../iosfwd ../char_traits \
- c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/string.h \
- c:/program\ files\ (x86)/arduino/hardware/tools/avr/lib/gcc/avr/4.3.2/include/stddef.h \
+ ../../../ArduinoSrc/tools/avr/avr/include/string.h \
+ ../../../ArduinoSrc/tools/avr/lib/gcc/avr/4.8.1/include/stddef.h \
  ../exception ../memory ../new ../cstddef ../cstdlib \
- c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/stdlib.h \
- ../iterator_base ../utility ../cstdio \
- c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/stdio.h \
- c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/inttypes.h \
- c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/stdint.h \
- c:/program\ files\ (x86)/arduino/hardware/tools/avr/lib/gcc/avr/4.3.2/include/stdarg.h \
+ ../../../ArduinoSrc/tools/avr/avr/include/stdlib.h ../iterator_base \
+ ../utility ../cstdio ../../../ArduinoSrc/tools/avr/avr/include/stdio.h \
+ ../../../ArduinoSrc/tools/avr/avr/include/inttypes.h \
+ ../../../ArduinoSrc/tools/avr/lib/gcc/avr/4.8.1/include/stdint.h \
+ ../../../ArduinoSrc/tools/avr/avr/include/stdint.h \
+ ../../../ArduinoSrc/tools/avr/lib/gcc/avr/4.8.1/include/stdarg.h \
  ../streambuf ../locale ../string ../func_exception ../vector ../iterator \
  ../algorithm ../functional ../type_traits ../initializer_list ../ios \
  ../ostream_helpers ../cctype \
- c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/ctype.h \
- c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/avr/pgmspace.h \
- c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/avr/io.h \
- c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/avr/sfr_defs.h \
- c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/avr/iom2560.h \
- c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/avr/iomxx0_1.h \
- c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/avr/portpins.h \
- c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/avr/common.h \
- c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/avr/version.h \
- c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/avr/fuse.h \
- c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/avr/lock.h
+ ../../../ArduinoSrc/tools/avr/avr/include/ctype.h \
+ ../../../ArduinoSrc/tools/avr/avr/include/avr/pgmspace.h \
+ ../../../ArduinoSrc/tools/avr/avr/include/avr/io.h \
+ ../../../ArduinoSrc/tools/avr/avr/include/avr/sfr_defs.h \
+ ../../../ArduinoSrc/tools/avr/avr/include/avr/iom2560.h \
+ ../../../ArduinoSrc/tools/avr/avr/include/avr/iomxx0_1.h \
+ ../../../ArduinoSrc/tools/avr/avr/include/avr/portpins.h \
+ ../../../ArduinoSrc/tools/avr/avr/include/avr/common.h \
+ ../../../ArduinoSrc/tools/avr/avr/include/avr/version.h \
+ ../../../ArduinoSrc/tools/avr/avr/include/avr/fuse.h \
+ ../../../ArduinoSrc/tools/avr/avr/include/avr/lock.h
 
 ../ostream:
 
@@ -34,9 +34,9 @@ ostream.d ostream.o: .././ostream.cpp ../ostream ../basic_definitions \
 
 ../char_traits:
 
-c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/string.h:
+../../../ArduinoSrc/tools/avr/avr/include/string.h:
 
-c:/program\ files\ (x86)/arduino/hardware/tools/avr/lib/gcc/avr/4.3.2/include/stddef.h:
+../../../ArduinoSrc/tools/avr/lib/gcc/avr/4.8.1/include/stddef.h:
 
 ../exception:
 
@@ -48,7 +48,7 @@ c:/program\ files\ (x86)/arduino/hardware/tools/avr/lib/gcc/avr/4.3.2/include/st
 
 ../cstdlib:
 
-c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/stdlib.h:
+../../../ArduinoSrc/tools/avr/avr/include/stdlib.h:
 
 ../iterator_base:
 
@@ -56,13 +56,15 @@ c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/stdlib.h:
 
 ../cstdio:
 
-c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/stdio.h:
+../../../ArduinoSrc/tools/avr/avr/include/stdio.h:
 
-c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/inttypes.h:
+../../../ArduinoSrc/tools/avr/avr/include/inttypes.h:
 
-c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/stdint.h:
+../../../ArduinoSrc/tools/avr/lib/gcc/avr/4.8.1/include/stdint.h:
 
-c:/program\ files\ (x86)/arduino/hardware/tools/avr/lib/gcc/avr/4.3.2/include/stdarg.h:
+../../../ArduinoSrc/tools/avr/avr/include/stdint.h:
+
+../../../ArduinoSrc/tools/avr/lib/gcc/avr/4.8.1/include/stdarg.h:
 
 ../streambuf:
 
@@ -90,24 +92,24 @@ c:/program\ files\ (x86)/arduino/hardware/tools/avr/lib/gcc/avr/4.3.2/include/st
 
 ../cctype:
 
-c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/ctype.h:
+../../../ArduinoSrc/tools/avr/avr/include/ctype.h:
 
-c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/avr/pgmspace.h:
+../../../ArduinoSrc/tools/avr/avr/include/avr/pgmspace.h:
 
-c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/avr/io.h:
+../../../ArduinoSrc/tools/avr/avr/include/avr/io.h:
 
-c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/avr/sfr_defs.h:
+../../../ArduinoSrc/tools/avr/avr/include/avr/sfr_defs.h:
 
-c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/avr/iom2560.h:
+../../../ArduinoSrc/tools/avr/avr/include/avr/iom2560.h:
 
-c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/avr/iomxx0_1.h:
+../../../ArduinoSrc/tools/avr/avr/include/avr/iomxx0_1.h:
 
-c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/avr/portpins.h:
+../../../ArduinoSrc/tools/avr/avr/include/avr/portpins.h:
 
-c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/avr/common.h:
+../../../ArduinoSrc/tools/avr/avr/include/avr/common.h:
 
-c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/avr/version.h:
+../../../ArduinoSrc/tools/avr/avr/include/avr/version.h:
 
-c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/avr/fuse.h:
+../../../ArduinoSrc/tools/avr/avr/include/avr/fuse.h:
 
-c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/avr/lock.h:
+../../../ArduinoSrc/tools/avr/avr/include/avr/lock.h:

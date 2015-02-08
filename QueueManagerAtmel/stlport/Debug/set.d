@@ -1,18 +1,17 @@
 set.d set.o: .././set.cpp ../set ../memory ../new ../basic_definitions \
  ../system_configuration.h ../exception ../cstddef \
- c:/program\ files\ (x86)/arduino/hardware/tools/avr/lib/gcc/avr/4.3.2/include/stddef.h \
- ../cstdlib \
- c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/stdlib.h \
+ ../../../ArduinoSrc/tools/avr/lib/gcc/avr/4.8.1/include/stddef.h \
+ ../cstdlib ../../../ArduinoSrc/tools/avr/avr/include/stdlib.h \
  ../iterator_base ../utility ../cstdio \
- c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/stdio.h \
- c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/inttypes.h \
- c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/stdint.h \
- c:/program\ files\ (x86)/arduino/hardware/tools/avr/lib/gcc/avr/4.3.2/include/stdarg.h \
+ ../../../ArduinoSrc/tools/avr/avr/include/stdio.h \
+ ../../../ArduinoSrc/tools/avr/avr/include/inttypes.h \
+ ../../../ArduinoSrc/tools/avr/lib/gcc/avr/4.8.1/include/stdint.h \
+ ../../../ArduinoSrc/tools/avr/avr/include/stdint.h \
+ ../../../ArduinoSrc/tools/avr/lib/gcc/avr/4.8.1/include/stdarg.h \
  ../iterator ../iosfwd ../char_traits \
- c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/string.h \
- ../deque ../stdexcept ../string ../func_exception ../vector ../algorithm \
- ../functional ../type_traits ../initializer_list ../associative_base \
- ../list
+ ../../../ArduinoSrc/tools/avr/avr/include/string.h ../deque ../stdexcept \
+ ../string ../func_exception ../vector ../algorithm ../functional \
+ ../type_traits ../initializer_list ../associative_base ../list
 
 ../set:
 
@@ -28,11 +27,11 @@ set.d set.o: .././set.cpp ../set ../memory ../new ../basic_definitions \
 
 ../cstddef:
 
-c:/program\ files\ (x86)/arduino/hardware/tools/avr/lib/gcc/avr/4.3.2/include/stddef.h:
+../../../ArduinoSrc/tools/avr/lib/gcc/avr/4.8.1/include/stddef.h:
 
 ../cstdlib:
 
-c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/stdlib.h:
+../../../ArduinoSrc/tools/avr/avr/include/stdlib.h:
 
 ../iterator_base:
 
@@ -40,13 +39,15 @@ c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/stdlib.h:
 
 ../cstdio:
 
-c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/stdio.h:
+../../../ArduinoSrc/tools/avr/avr/include/stdio.h:
 
-c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/inttypes.h:
+../../../ArduinoSrc/tools/avr/avr/include/inttypes.h:
 
-c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/stdint.h:
+../../../ArduinoSrc/tools/avr/lib/gcc/avr/4.8.1/include/stdint.h:
 
-c:/program\ files\ (x86)/arduino/hardware/tools/avr/lib/gcc/avr/4.3.2/include/stdarg.h:
+../../../ArduinoSrc/tools/avr/avr/include/stdint.h:
+
+../../../ArduinoSrc/tools/avr/lib/gcc/avr/4.8.1/include/stdarg.h:
 
 ../iterator:
 
@@ -54,7 +55,7 @@ c:/program\ files\ (x86)/arduino/hardware/tools/avr/lib/gcc/avr/4.3.2/include/st
 
 ../char_traits:
 
-c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/string.h:
+../../../ArduinoSrc/tools/avr/avr/include/string.h:
 
 ../deque:
 

@@ -1,14 +1,14 @@
 iterator.d iterator.o: .././iterator.cpp ../iterator ../basic_definitions \
  ../system_configuration.h ../iosfwd ../char_traits \
- c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/string.h \
- c:/program\ files\ (x86)/arduino/hardware/tools/avr/lib/gcc/avr/4.3.2/include/stddef.h \
+ ../../../ArduinoSrc/tools/avr/avr/include/string.h \
+ ../../../ArduinoSrc/tools/avr/lib/gcc/avr/4.8.1/include/stddef.h \
  ../exception ../memory ../new ../cstddef ../cstdlib \
- c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/stdlib.h \
- ../iterator_base ../utility ../cstdio \
- c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/stdio.h \
- c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/inttypes.h \
- c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/stdint.h \
- c:/program\ files\ (x86)/arduino/hardware/tools/avr/lib/gcc/avr/4.3.2/include/stdarg.h
+ ../../../ArduinoSrc/tools/avr/avr/include/stdlib.h ../iterator_base \
+ ../utility ../cstdio ../../../ArduinoSrc/tools/avr/avr/include/stdio.h \
+ ../../../ArduinoSrc/tools/avr/avr/include/inttypes.h \
+ ../../../ArduinoSrc/tools/avr/lib/gcc/avr/4.8.1/include/stdint.h \
+ ../../../ArduinoSrc/tools/avr/avr/include/stdint.h \
+ ../../../ArduinoSrc/tools/avr/lib/gcc/avr/4.8.1/include/stdarg.h
 
 ../iterator:
 
@@ -20,9 +20,9 @@ iterator.d iterator.o: .././iterator.cpp ../iterator ../basic_definitions \
 
 ../char_traits:
 
-c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/string.h:
+../../../ArduinoSrc/tools/avr/avr/include/string.h:
 
-c:/program\ files\ (x86)/arduino/hardware/tools/avr/lib/gcc/avr/4.3.2/include/stddef.h:
+../../../ArduinoSrc/tools/avr/lib/gcc/avr/4.8.1/include/stddef.h:
 
 ../exception:
 
@@ -34,7 +34,7 @@ c:/program\ files\ (x86)/arduino/hardware/tools/avr/lib/gcc/avr/4.3.2/include/st
 
 ../cstdlib:
 
-c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/stdlib.h:
+../../../ArduinoSrc/tools/avr/avr/include/stdlib.h:
 
 ../iterator_base:
 
@@ -42,10 +42,12 @@ c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/stdlib.h:
 
 ../cstdio:
 
-c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/stdio.h:
+../../../ArduinoSrc/tools/avr/avr/include/stdio.h:
 
-c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/inttypes.h:
+../../../ArduinoSrc/tools/avr/avr/include/inttypes.h:
 
-c:/program\ files\ (x86)/arduino/hardware/tools/avr/avr/include/stdint.h:
+../../../ArduinoSrc/tools/avr/lib/gcc/avr/4.8.1/include/stdint.h:
 
-c:/program\ files\ (x86)/arduino/hardware/tools/avr/lib/gcc/avr/4.3.2/include/stdarg.h:
+../../../ArduinoSrc/tools/avr/avr/include/stdint.h:
+
+../../../ArduinoSrc/tools/avr/lib/gcc/avr/4.8.1/include/stdarg.h:
