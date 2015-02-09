@@ -37,7 +37,7 @@ SUBDIRS :=
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
-../MyClass.cpp
+../Test.cpp
 
 
 PREPROCESSING_SRCS += 
@@ -47,16 +47,16 @@ ASM_SRCS +=
 
 
 OBJS +=  \
-MyClass.o
+Test.o
 
 OBJS_AS_ARGS +=  \
-MyClass.o
+Test.o
 
 C_DEPS +=  \
-MyClass.d
+Test.d
 
 C_DEPS_AS_ARGS +=  \
-MyClass.d
+Test.d
 
 OUTPUT_FILE_PATH +=Test.elf
 
@@ -80,7 +80,7 @@ LINKER_SCRIPT_DEP+=
 ./%.o: .././%.cpp
 	@echo Building file: $<
 	@echo Invoking: AVR8/GNU C Compiler : 4.8.1
-	$(QUOTE)C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR8 GCC\Native\3.4.1061\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -D__AVR_ATmega2560__ -DARDUINO=156 -DARDUINO_MAIN -DF_CPU=16000000L -D__AVR__  -I"c:/program files (x86)/arduino/hardware/tools/avr/lib/gcc/avr/4.3.2/include" -I"c:/program files (x86)/arduino/hardware/tools/avr/avr" -I"c:/program files (x86)/arduino/hardware/tools/avr/avr/include/avr" -I"c:/program files (x86)/arduino/hardware/tools/avr/avr/include" -I"c:/users/rohmer/Arduino/libraries/libraries" -I"c:/Program Files (x86)/Arduino/hardware/arduino/avr/libraries" -I"c:/Program Files (x86)/Arduino/libraries" -I"../../Test"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega2560 -c -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	$(QUOTE)C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR8 GCC\Native\3.4.1061\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG -D__AVR_ATmega2560__ -DARDUINO=156 -DARDUINO_MAIN -DF_CPU=16000000L -D__AVR__  -I"../../../ArduinoSrc/tools/avr/lib/gcc/avr/4.8.1/include" -I"../../../ArduinoSrc/tools/avr/avr/include" -I"../../../ArduinoSrc/tools/avr/avr/include/avr" -I"../../../ArduinoSrc/avr/libraries" -I"../../QueueManagerAtmel" -I"../../../ArduinoSrc/avr/variants/mega" -I"../../../ArduinoSrc/avr/cores/arduino" -I"../../../ArduinoLibraries/SoftwareSerial" -I"../../../ArduinoLibraries/SPI" -I"../../stlport"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -mmcu=atmega2560 -c -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
 	@echo Finished building: $<
 	
 
@@ -109,7 +109,7 @@ all: $(OUTPUT_FILE_PATH) $(ADDITIONAL_DEPENDENCIES)
 $(OUTPUT_FILE_PATH): $(OBJS) $(USER_OBJS) $(OUTPUT_FILE_DEP) $(LIB_DEP) $(LINKER_SCRIPT_DEP)
 	@echo Building target: $@
 	@echo Invoking: AVR8/GNU Linker : 4.8.1
-	$(QUOTE)C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR8 GCC\Native\3.4.1061\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -o$(OUTPUT_FILE_PATH_AS_ARGS) $(OBJS_AS_ARGS) $(USER_OBJS) $(LIBS) -Wl,-static -Wl,-Map="Test.map" -Wl,--start-group -Wl,-lcore -Wl,-lQueueManagerAtmel -Wl,-lstlport  -Wl,--end-group -Wl,-L"../../../arduinoCore" -Wl,-L"C:\Users\Ron\Documents\ArduinoRailroad\QueueManagerAtmel\QueueManagerAtmel\Debug" -Wl,-L"C:\Users\Ron\Documents\ArduinoRailroad\QueueManagerAtmel\stlport\Debug"  -Wl,--gc-sections -mmcu=atmega2560 -Wl,--gc-sections  -Wl,-e,_trampoline,-nostartfiles,-sma  
+	$(QUOTE)C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR8 GCC\Native\3.4.1061\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -o$(OUTPUT_FILE_PATH_AS_ARGS) $(OBJS_AS_ARGS) $(USER_OBJS) $(LIBS) -Wl,-Map="Test.map" -Wl,--start-group -Wl,-lm -Wl,-lQueueManagerAtmel -Wl,-lstlport  -Wl,--end-group -Wl,-L"C:\Users\Ron\Documents\ArduinoRailroad\QueueManagerAtmel\QueueManagerAtmel\Debug" -Wl,-L"C:\Users\Ron\Documents\ArduinoRailroad\QueueManagerAtmel\stlport\Debug"  -Wl,--gc-sections -mrelax -mmcu=atmega2560  
 	@echo Finished building target: $@
 	"C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR8 GCC\Native\3.4.1061\avr8-gnu-toolchain\bin\avr-objcopy.exe" -O ihex -R .eeprom -R .fuse -R .lock -R .signature -R .user_signatures  "Test.elf" "Test.hex"
 	"C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR8 GCC\Native\3.4.1061\avr8-gnu-toolchain\bin\avr-objcopy.exe" -j .eeprom  --set-section-flags=.eeprom=alloc,load --change-section-lma .eeprom=0  --no-change-warnings -O ihex "Test.elf" "Test.eep" || exit 0

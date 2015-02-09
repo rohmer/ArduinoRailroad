@@ -8,7 +8,7 @@ Project("{E66E83B9-2572-4076-B26E-6BE79FF3018A}") = "QueueManagerAtmel", "QueueM
 EndProject
 Project("{E66E83B9-2572-4076-B26E-6BE79FF3018A}") = "stlport", "stlport\stlport.cppproj", "{7B4501F2-6435-4861-A51B-421D79AE62B4}"
 EndProject
-Project("{E66E83B9-2572-4076-B26E-6BE79FF3018A}") = "Test", "Test\Test.cppproj", "{582B9CBF-655C-47D5-A2E7-2606F9CDA709}"
+Project("{E66E83B9-2572-4076-B26E-6BE79FF3018A}") = "Test", "Test\Test.cppproj", "{010F377E-EB60-4204-A4A9-D060AE7B3EFE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,10 +24,10 @@ Global
 		{7B4501F2-6435-4861-A51B-421D79AE62B4}.Debug|AVR.Build.0 = Debug|AVR
 		{7B4501F2-6435-4861-A51B-421D79AE62B4}.Release|AVR.ActiveCfg = Release|AVR
 		{7B4501F2-6435-4861-A51B-421D79AE62B4}.Release|AVR.Build.0 = Release|AVR
-		{582B9CBF-655C-47D5-A2E7-2606F9CDA709}.Debug|AVR.ActiveCfg = Debug|AVR
-		{582B9CBF-655C-47D5-A2E7-2606F9CDA709}.Debug|AVR.Build.0 = Debug|AVR
-		{582B9CBF-655C-47D5-A2E7-2606F9CDA709}.Release|AVR.ActiveCfg = Release|AVR
-		{582B9CBF-655C-47D5-A2E7-2606F9CDA709}.Release|AVR.Build.0 = Release|AVR
+		{010F377E-EB60-4204-A4A9-D060AE7B3EFE}.Debug|AVR.ActiveCfg = Debug|AVR
+		{010F377E-EB60-4204-A4A9-D060AE7B3EFE}.Debug|AVR.Build.0 = Debug|AVR
+		{010F377E-EB60-4204-A4A9-D060AE7B3EFE}.Release|AVR.ActiveCfg = Release|AVR
+		{010F377E-EB60-4204-A4A9-D060AE7B3EFE}.Release|AVR.Build.0 = Release|AVR
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
