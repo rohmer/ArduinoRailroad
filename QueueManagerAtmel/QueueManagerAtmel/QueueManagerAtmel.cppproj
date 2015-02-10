@@ -80,7 +80,6 @@
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <ToolchainSettings>
       <AvrGccCpp>
-<<<<<<< HEAD
         <avrgcc.common.optimization.RelaxBranches>True</avrgcc.common.optimization.RelaxBranches>
         <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
         <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
@@ -177,107 +176,6 @@
         </avrgcccpp.assembler.general.IncludePaths>
         <avrgcccpp.assembler.debugging.DebugLevel>Default (-Wa,-g)</avrgcccpp.assembler.debugging.DebugLevel>
       </AvrGccCpp>
-=======
-  <avrgcc.common.optimization.RelaxBranches>True</avrgcc.common.optimization.RelaxBranches>
-  <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
-  <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
-  <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
-  <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
-  <avrgcc.common.outputfiles.usersignatures>False</avrgcc.common.outputfiles.usersignatures>
-  <avrgcc.compiler.symbols.DefSymbols>
-    <ListValues>
-      <Value>__AVR_ATmega2560__</Value>
-      <Value>ARDUINO=156</Value>
-      <Value>ARDUINO_MAIN</Value>
-      <Value>F_CPU=16000000L</Value>
-      <Value>__AVR__</Value>
-    </ListValues>
-  </avrgcc.compiler.symbols.DefSymbols>
-  <avrgcc.compiler.directories.IncludePaths>
-    <ListValues>
-      <Value>c:/program files (x86)/arduino/hardware/tools/avr/lib/gcc/avr/4.3.2/include/</Value>
-      <Value>c:/program files (x86)/arduino/hardware/tools/avr/avr/</Value>
-      <Value>c:/program files (x86)/arduino/hardware/tools/avr/avr/include/avr/</Value>
-      <Value>c:/program files (x86)/arduino/hardware/tools/avr/avr/include/</Value>
-      <Value>c:/users/rohmer/Arduino/libraries/libraries</Value>
-      <Value>C:/Program Files (x86)/Visual Micro/Visual Micro for Arduino/Micro Platforms/default/debuggers</Value>
-      <Value>c:/Program Files (x86)/Arduino/hardware/arduino/avr/libraries</Value>
-      <Value>c:/Program Files (x86)/Arduino/libraries</Value>
-      <Value>../../QueueManagerAtmel</Value>
-      <Value>c:/Program Files (x86)/Arduino/hardware/arduino/avr/variants/mega</Value>
-      <Value>c:/Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino</Value>
-    </ListValues>
-  </avrgcc.compiler.directories.IncludePaths>
-  <avrgcc.compiler.optimization.level>Optimize (-O1)</avrgcc.compiler.optimization.level>
-  <avrgcc.compiler.optimization.OtherFlags>-fdata-sections</avrgcc.compiler.optimization.OtherFlags>
-  <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
-  <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
-  <avrgcc.compiler.optimization.DebugLevel>Maximum (-g3)</avrgcc.compiler.optimization.DebugLevel>
-  <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
-  <avrgcc.compiler.miscellaneous.OtherFlags>-std=gnu99 -fno-strict-aliasing -Wstrict-prototypes -Wmissing-prototypes -Werror-implicit-function-declaration -Wpointer-arith -mrelax</avrgcc.compiler.miscellaneous.OtherFlags>
-  <avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>
-  <avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>
-  <avrgcccpp.compiler.symbols.DefSymbols>
-    <ListValues>
-      <Value>__AVR_ATmega2560__</Value>
-      <Value>ARDUINO=156</Value>
-      <Value>ARDUINO_MAIN</Value>
-      <Value>F_CPU=16000000L</Value>
-      <Value>__AVR__</Value>
-    </ListValues>
-  </avrgcccpp.compiler.symbols.DefSymbols>
-  <avrgcccpp.compiler.directories.IncludePaths>
-    <ListValues>
-      <Value>c:/program files (x86)/arduino/hardware/tools/avr/lib/gcc/avr/4.3.2/include/</Value>
-      <Value>c:/program files (x86)/arduino/hardware/tools/avr/avr/</Value>
-      <Value>c:/program files (x86)/arduino/hardware/tools/avr/avr/include/avr/</Value>
-      <Value>c:/program files (x86)/arduino/hardware/tools/avr/avr/include/</Value>
-      <Value>c:/users/rohmer/Arduino/libraries/libraries</Value>
-      <Value>C:/Program Files (x86)/Visual Micro/Visual Micro for Arduino/Micro Platforms/default/debuggers</Value>
-      <Value>c:/Program Files (x86)/Arduino/hardware/arduino/avr/libraries</Value>
-      <Value>c:/Program Files (x86)/Arduino/libraries</Value>
-      <Value>../../QueueManagerAtmel</Value>
-      <Value>c:/Program Files (x86)/Arduino/hardware/arduino/avr/variants/mega</Value>
-      <Value>c:/Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino</Value>
-      <Value>../ArduinoLibraries/SoftwareSerial</Value>
-      <Value>../ArduinoLibraries/SPI</Value>
-      <Value>../../stlport</Value>
-    </ListValues>
-  </avrgcccpp.compiler.directories.IncludePaths>
-  <avrgcccpp.compiler.optimization.level>Optimize for size (-Os)</avrgcccpp.compiler.optimization.level>
-  <avrgcccpp.compiler.optimization.PackStructureMembers>True</avrgcccpp.compiler.optimization.PackStructureMembers>
-  <avrgcccpp.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcccpp.compiler.optimization.AllocateBytesNeededForEnum>
-  <avrgcccpp.compiler.optimization.DebugLevel>Default (-g2)</avrgcccpp.compiler.optimization.DebugLevel>
-  <avrgcccpp.compiler.warnings.AllWarnings>True</avrgcccpp.compiler.warnings.AllWarnings>
-  <avrgcccpp.compiler.warnings.Undefined>True</avrgcccpp.compiler.warnings.Undefined>
-  <avrgcccpp.compiler.warnings.Pedantic>True</avrgcccpp.compiler.warnings.Pedantic>
-  <avrgcccpp.compiler.miscellaneous.OtherFlags>-fno-exceptions -include Arduino.h -I"C:\Arduino\ArduinoRailroad\QueueManagerAtmel"</avrgcccpp.compiler.miscellaneous.OtherFlags>
-  <avrgcccpp.compiler.miscellaneous.Verbose>True</avrgcccpp.compiler.miscellaneous.Verbose>
-  <avrgcccpp.linker.libraries.Libraries>
-    <ListValues>
-      <Value>libcore.a</Value>
-    </ListValues>
-  </avrgcccpp.linker.libraries.Libraries>
-  <avrgcccpp.linker.libraries.LibrarySearchPaths>
-    <ListValues>
-      <Value>../../arduinoCore</Value>
-      <Value>C:\Arduino\ArduinoRailroad\QueueManagerAtmel\arduinoCore</Value>
-    </ListValues>
-  </avrgcccpp.linker.libraries.LibrarySearchPaths>
-  <avrgcccpp.assembler.general.IncludePaths>
-    <ListValues>
-      <Value>../common/applications/user_application/atmega2560_stk600-mega/config</Value>
-      <Value>../src/config</Value>
-      <Value>../src/ASF/common/boards</Value>
-      <Value>../src/ASF/mega/utils</Value>
-      <Value>../src/ASF/common/utils</Value>
-      <Value>../src/ASF/mega/utils/preprocessor</Value>
-      <Value>../src</Value>
-    </ListValues>
-  </avrgcccpp.assembler.general.IncludePaths>
-  <avrgcccpp.assembler.debugging.DebugLevel>Default (-Wa,-g)</avrgcccpp.assembler.debugging.DebugLevel>
-</AvrGccCpp>
->>>>>>> Release now worked
     </ToolchainSettings>
     <VMSETTING_IncludePaths>c:/Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino;c:/Program Files (x86)/Arduino/hardware/arduino/avr/variants/mega;../../QueueManagerAtmel;c:/Program Files (x86)/Arduino/libraries;c:/Program Files (x86)/Arduino/hardware/arduino/avr/libraries;C:/Program Files (x86)/Visual Micro/Visual Micro for Arduino/Micro Platforms/default/debuggers;c:/users/rohmer/Arduino/libraries/libraries;c:/program files (x86)/arduino/hardware/tools/avr/avr/include/;c:/program files (x86)/arduino/hardware/tools/avr/avr/include/avr/;c:/program files (x86)/arduino/hardware/tools/avr/avr/;c:/program files (x86)/arduino/hardware/tools/avr/lib/gcc/avr/4.3.2/include/;;c:/Program Files (x86)/Arduino/hardware/arduino/avr/variants/yun;c:/Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/avr-libc;</VMSETTING_IncludePaths>
     <OutputFileName>libQueueManagerAtmel</OutputFileName>
