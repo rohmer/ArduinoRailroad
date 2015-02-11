@@ -16,7 +16,7 @@ Logger *QueueManager::GetLogger()
 // default constructor
 QueueManager::QueueManager()
 {
-	taskQueue=new PQueue();
+	taskQueue=PQueue();
 	logger=new Logger(true,true,INFO);
 	logger->Log("QueueManager Initalized");
 } //QueueManager
@@ -29,7 +29,7 @@ QueueManager::~QueueManager()
 void QueueManager::AddTask(TaskDefinition td, TaskBase task)
 {
 	logger->Log("Adding task: "+task.TaskName()+" with interval: "+td.IntervalOfExecution);
-	taskQueue->Insert(td,task,td.IntervalOfExecution);
+	taskQueue.Insert(td,task,td.IntervalOfExecution);
 	logger->Log("Task Added");
 }
 

@@ -32,7 +32,7 @@ public:
 
 protected:
 private:
-	PQueue *taskQueue;
+	PQueue taskQueue;
 	Logger *logger;
 
 }; //QueueManager

@@ -6,6 +6,11 @@ PQueue::PQueue()
 	front = NULL;
 }
 
+PQueue::~PQueue()
+{
+	// Need to actually clean up
+}
+
 /*
 * Insert into Priority Queue
 */
