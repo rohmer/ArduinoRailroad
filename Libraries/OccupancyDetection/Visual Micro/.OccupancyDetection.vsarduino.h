@@ -79,8 +79,12 @@ extern "C" void __cxa_pure_virtual() {;}
 #define portInputRegister(P)
 #define portModeRegister(P)
 #include <OccupancyDetection.ino>
+#include <BaseTask.cpp>
+#include <BaseTask.h>
 #include <DetectorCollection.cpp>
 #include <DetectorCollection.h>
+#include <LEDTask.cpp>
+#include <LEDTask.h>
 #include <OccupancyBlock.cpp>
 #include <OccupancyBlock.h>
 #include <OccupancyLibrary.cpp>
