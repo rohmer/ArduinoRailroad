@@ -1,3 +1,7 @@
+#include <Servo.h>
+#include "ServoTask.h"
+#include <stlport.h>
+#include <stdlib.h>
 #include <SPI.h>
 #include <Logger.h>
 #include "LEDTask.h"

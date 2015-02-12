@@ -18,6 +18,7 @@ class LEDTask:BaseTask
 	 LedControl ledControl;
 	 int dataPin, clkPin, loadPin, numMax, ledRow, ledCol, maxAddr;
 	 bool occupiedTurnsOnLED;
+	 void ledLog(int row, int col, bool state);
 
  protected:
 
@@ -26,6 +27,7 @@ class LEDTask:BaseTask
 	 void Init();
 	 void Run(bool occupied);
 	 LEDTask(std::vector<byte> arguments, Logger log); 
+	 String GetName();
 };
 
 

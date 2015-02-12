@@ -10,16 +10,20 @@
 #endif
 
 #include "DetectorCollection.h"
-#include "Logger.h"
+#include "OccupancyBlock.h"
+#include "Common.h"
 
 class OccupancyLibrary
 {
  private:
+	
 	 DetectorCollection detectors;
 	 bool debugMode = false;
 
 	 int mPinA, mPinB, mPinC;
 	 Logger logger;
+	 std::vector<OccupancyBlock*> occupancyBlocks;
+	 int currentNum;
 
  protected:
 	 void init();
@@ -28,6 +32,9 @@ class OccupancyLibrary
 	 OccupancyLibrary(int multiplexerPinBitA, int multiplexerPinBitB, int multiplexerPinBitC, bool logSerial, bool logSD, Severity minSevToLog);		
 	 OccupancyLibrary(int multiplexerPinBitA, int multiplexerPinBitB, int multiplexerPinBitC, bool logSerial, bool logSD, Severity minSevToLog, bool debug);
 
+	 int CreateBlock(std::vector<DetectorPins> activationTriggers, std::vector<DetectorPins> closingTriggers, std::vector<BaseTask*> tasks);
+	 void AddAdjacentBlocks(int block, std::vector<int> adjacentBlocks);
+	 
 	 void Update();
 
 };

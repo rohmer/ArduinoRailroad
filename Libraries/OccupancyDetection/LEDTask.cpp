@@ -29,6 +29,7 @@ LEDTask::LEDTask(std::vector<byte> arguments, Logger log) : BaseTask(arguments, 
 {
 	if (arguments.size() != 8)
 		return;
+	logger = log;
 	dataPin = arguments[0];
 	clkPin = arguments[1];
 	loadPin = arguments[2];
@@ -50,7 +51,8 @@ LEDTask::LEDTask(std::vector<byte> arguments, Logger log) : BaseTask(arguments, 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 /// <summary>	Runs the task, turning on and off LEDs based on the definition </summary>
 ///
-/// <remarks>	Rohmer, 2/12/2015. </remarks>
+/// <remarks>	Rohmer, 2/12/2015. 
+/// 			May change this eventually to only build with logging in </remarks>
 ///
 ////////////////////////////////////////////////////////////////////////////////////////////////
 void LEDTask::Run(bool occupied)
@@ -58,12 +60,14 @@ void LEDTask::Run(bool occupied)
 	if (occupied)
 	{
 		if (occupiedTurnsOnLED)
-		{
+		{						
 			ledControl.setLed(maxAddr, ledRow, ledCol, true);
+			ledLog(ledRow, ledCol, true);
 		}
 		else
 		{
 			ledControl.setLed(maxAddr, ledRow, ledCol, false);
+			ledLog(ledRow, ledCol, false);
 		}
 	}
 	else
@@ -71,10 +75,12 @@ void LEDTask::Run(bool occupied)
 		if (occupiedTurnsOnLED)
 		{
 			ledControl.setLed(maxAddr, ledRow, ledCol, false);
+			ledLog(ledRow, ledCol, false);
 		}
 		else
 		{
 			ledControl.setLed(maxAddr, ledRow, ledCol, true);
+			ledLog(ledRow, ledCol, true);
 		}
 	}
 }
@@ -96,5 +102,26 @@ void LEDTask::Init()
 		ledControl.setIntensity(address, 15);
 		// Clear
 		ledControl.clearDisplay(address);
+		logger.Log("LEDTask init");
 	}
+}
+
+void LEDTask::ledLog(int row, int col, bool state)
+{
+	char buf[25];
+	if (state)
+	{
+		sprintf(buf, "LED: %d,%d is ON", row, col);
+		logger.Log(buf);
+	}
+	else
+	{
+		sprintf(buf, "LED: %d,%d is ON", row, col);
+		logger.Log(buf);
+	}
+}
+
+String LEDTask::GetName()
+{
+	return "LEDTask";
 }

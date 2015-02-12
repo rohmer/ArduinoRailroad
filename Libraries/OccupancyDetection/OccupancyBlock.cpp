@@ -4,9 +4,10 @@
 
 #include "OccupancyBlock.h"
 
-OccupancyBlock::OccupancyBlock(DetectorCollection detectors)
+OccupancyBlock::OccupancyBlock(DetectorCollection detectors, int number)
 {	
 	detectorCollection = detectors;
+	this->number = number;
 	init();
 }
 
@@ -56,13 +57,22 @@ void OccupancyBlock::ProcessBlock()
 	{
 		if (detectorCollection.IsActive(*it))
 		{
-			isOccupied = true;
-			std::vector<OccupancyBlock*>::iterator iter;
-			for (iter = adjacentBlocks.begin(); iter != adjacentBlocks.end(); iter++)
+			if (!isOccupied)						// Only run on state change
 			{
-				(*iter)->AdjacentOccupied(true);
+				isOccupied = true;
+				std::vector<OccupancyBlock*>::iterator iter;
+				for (iter = adjacentBlocks.begin(); iter != adjacentBlocks.end(); iter++)
+				{
+					(*iter)->AdjacentOccupied(true);
+				}
+				
+				std::vector<BaseTask*>::iterator taskIterator;
+				for (taskIterator = tasks.begin(); taskIterator != tasks.end(); taskIterator++)
+				{
+					(*taskIterator)->Run(isOccupied);
+				}
+				return;
 			}
-			return;
 		}
 	}
 
@@ -75,6 +85,12 @@ void OccupancyBlock::ProcessBlock()
 		if (!detectorCollection.IsActive(*it))
 		{
 			isOccupied = false;
+			std::vector<BaseTask*>::iterator taskIterator;
+			for (taskIterator = tasks.begin(); taskIterator != tasks.end(); taskIterator++)
+			{
+				(*taskIterator)->Run(isOccupied);
+			}
+
 			return;
 		}
 	}

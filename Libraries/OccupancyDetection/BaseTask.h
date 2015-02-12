@@ -22,6 +22,7 @@ class BaseTask
  public:	
 	 BaseTask(std::vector<byte> arguments, Logger log);
 	 virtual void Run(bool occupied);
+	 virtual String GetName();
 };
 
 

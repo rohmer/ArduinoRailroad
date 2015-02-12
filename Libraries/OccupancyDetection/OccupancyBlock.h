@@ -26,9 +26,10 @@ class OccupancyBlock
 	 bool adjacentOccupied;
 	 DetectorCollection detectorCollection;
 	 void init();
+	 int number;
 
  public:
-	 OccupancyBlock(DetectorCollection detectors);
+	 OccupancyBlock(DetectorCollection detectors, int number);
 	 void AddActivationTrigger(int pin, int bit);
 	 void AddClosingTrigger(int pin, int bit);	 
 	 void ProcessBlock();

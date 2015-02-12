@@ -81,6 +81,7 @@ extern "C" void __cxa_pure_virtual() {;}
 #include <OccupancyDetection.ino>
 #include <BaseTask.cpp>
 #include <BaseTask.h>
+#include <Common.h>
 #include <DetectorCollection.cpp>
 #include <DetectorCollection.h>
 #include <LEDTask.cpp>
@@ -91,4 +92,6 @@ extern "C" void __cxa_pure_virtual() {;}
 #include <OccupancyBlock.h>
 #include <OccupancyLibrary.cpp>
 #include <OccupancyLibrary.h>
+#include <ServoTask.cpp>
+#include <ServoTask.h>
 #endif

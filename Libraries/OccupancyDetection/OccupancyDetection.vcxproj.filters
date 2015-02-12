@@ -14,22 +14,34 @@
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
     <Filter Include="_core">
-      <UniqueIdentifier>{75846cea-1ebf-48ab-9e03-4b7b564c96c5}</UniqueIdentifier>
+      <UniqueIdentifier>{292d06bc-e255-4dd7-8368-7b414fd9e0f0}</UniqueIdentifier>
     </Filter>
     <Filter Include="_libraries">
-      <UniqueIdentifier>{08a5c127-06de-4bd4-a1f8-07055cb7aef5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="_libraries\stlport">
-      <UniqueIdentifier>{d2a8a236-c320-4c7f-9689-119b70da161e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="_libraries\Logger">
-      <UniqueIdentifier>{fa69997e-9f3e-4738-b129-b9050ac656a5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="_libraries\Logger\utility">
-      <UniqueIdentifier>{c95a5abf-0d56-4ad6-b223-270c3fdc2ba2}</UniqueIdentifier>
+      <UniqueIdentifier>{7cdb7f1b-5a44-4d44-b8e3-d565d555969b}</UniqueIdentifier>
     </Filter>
     <Filter Include="_libraries\SPI">
-      <UniqueIdentifier>{8e0fc794-8672-41c6-bd00-e0a128c983ac}</UniqueIdentifier>
+      <UniqueIdentifier>{1f7a89c7-d60c-4e71-a79c-53754c40e3af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_libraries\Logger">
+      <UniqueIdentifier>{8c5428d7-a240-49ca-9a46-adf873a8a72f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_libraries\Logger\utility">
+      <UniqueIdentifier>{be984b3a-3b61-4591-a380-21b16ba0270d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_libraries\stlport">
+      <UniqueIdentifier>{81eba2d6-9b94-439f-aacc-1f3dd558b948}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_libraries\Servo">
+      <UniqueIdentifier>{458f55dc-4706-48e0-9af2-25f5d6083157}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_libraries\Servo\src">
+      <UniqueIdentifier>{90d4e8be-833a-4495-8010-9f5bbdba02e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_libraries\Servo\src\avr">
+      <UniqueIdentifier>{39855294-70bc-4ef6-a8a4-b8992c1c64bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_libraries\Servo\src\sam">
+      <UniqueIdentifier>{5f6f8b26-23bc-4b5f-8750-8e62279231c5}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -52,6 +64,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="LEDTask.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LedControl.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\Arduino.h">
@@ -111,17 +126,8 @@
     <ClInclude Include="..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\variants\mega\pins_arduino.h">
       <Filter>_core</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\StandardCplusplus.h">
-      <Filter>_libraries\stlport</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\system_configuration.h">
-      <Filter>_libraries\stlport</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\unwind-cxx.h">
-      <Filter>_libraries\stlport</Filter>
-    </ClInclude>
-    <ClInclude Include="LedControl.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\libraries\SPI\SPI.h">
+      <Filter>_libraries\SPI</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\Logger\Logger.h">
       <Filter>_libraries\Logger</Filter>
@@ -153,8 +159,29 @@
     <ClInclude Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\Logger\utility\Time.h">
       <Filter>_libraries\Logger\utility</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\libraries\SPI\SPI.h">
-      <Filter>_libraries\SPI</Filter>
+    <ClInclude Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\StandardCplusplus.h">
+      <Filter>_libraries\stlport</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\system_configuration.h">
+      <Filter>_libraries\stlport</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\unwind-cxx.h">
+      <Filter>_libraries\stlport</Filter>
+    </ClInclude>
+    <ClInclude Include="Common.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ServoTask.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Program Files (x86)\Arduino\libraries\Servo\src\Servo.h">
+      <Filter>_libraries\Servo\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Program Files (x86)\Arduino\libraries\Servo\src\avr\ServoTimers.h">
+      <Filter>_libraries\Servo\src\avr</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Program Files (x86)\Arduino\libraries\Servo\src\sam\ServoTimers.h">
+      <Filter>_libraries\Servo\src\sam</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -171,6 +198,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="LEDTask.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LedControl.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\abi.cpp">
@@ -244,6 +274,42 @@
     </ClCompile>
     <ClCompile Include="..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\WString.cpp">
       <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\libraries\SPI\SPI.cpp">
+      <Filter>_libraries\SPI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\Logger\Logger.cpp">
+      <Filter>_libraries\Logger</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\Logger\utility\Appender.cpp">
+      <Filter>_libraries\Logger\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\Logger\utility\DateStrings.cpp">
+      <Filter>_libraries\Logger\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\Logger\utility\File.cpp">
+      <Filter>_libraries\Logger\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\Logger\utility\SD.cpp">
+      <Filter>_libraries\Logger\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\Logger\utility\Sd2Card.cpp">
+      <Filter>_libraries\Logger\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\Logger\utility\SDAppender.cpp">
+      <Filter>_libraries\Logger\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\Logger\utility\SdFile.cpp">
+      <Filter>_libraries\Logger\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\Logger\utility\SdVolume.cpp">
+      <Filter>_libraries\Logger\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\Logger\utility\SerialAppender.cpp">
+      <Filter>_libraries\Logger\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\Logger\utility\Time.cpp">
+      <Filter>_libraries\Logger\utility</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\algorithm.cpp">
       <Filter>_libraries\stlport</Filter>
@@ -368,44 +434,14 @@
     <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\vector.cpp">
       <Filter>_libraries\stlport</Filter>
     </ClCompile>
-    <ClCompile Include="LedControl.cpp">
+    <ClCompile Include="ServoTask.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\Logger\Logger.cpp">
-      <Filter>_libraries\Logger</Filter>
+    <ClCompile Include="..\..\..\..\Program Files (x86)\Arduino\libraries\Servo\src\avr\Servo.cpp">
+      <Filter>_libraries\Servo\src\avr</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\Logger\utility\Appender.cpp">
-      <Filter>_libraries\Logger\utility</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\Logger\utility\DateStrings.cpp">
-      <Filter>_libraries\Logger\utility</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\Logger\utility\File.cpp">
-      <Filter>_libraries\Logger\utility</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\Logger\utility\SD.cpp">
-      <Filter>_libraries\Logger\utility</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\Logger\utility\Sd2Card.cpp">
-      <Filter>_libraries\Logger\utility</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\Logger\utility\SDAppender.cpp">
-      <Filter>_libraries\Logger\utility</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\Logger\utility\SdFile.cpp">
-      <Filter>_libraries\Logger\utility</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\Logger\utility\SdVolume.cpp">
-      <Filter>_libraries\Logger\utility</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\Logger\utility\SerialAppender.cpp">
-      <Filter>_libraries\Logger\utility</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\Logger\utility\Time.cpp">
-      <Filter>_libraries\Logger\utility</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\libraries\SPI\SPI.cpp">
-      <Filter>_libraries\SPI</Filter>
+    <ClCompile Include="..\..\..\..\Program Files (x86)\Arduino\libraries\Servo\src\sam\Servo.cpp">
+      <Filter>_libraries\Servo\src\sam</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
