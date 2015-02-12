@@ -10,6 +10,7 @@
 #endif
 
 #include "DetectorCollection.h"
+#include "Logger.h"
 
 class OccupancyLibrary
 {
@@ -18,13 +19,14 @@ class OccupancyLibrary
 	 bool debugMode = false;
 
 	 int mPinA, mPinB, mPinC;
+	 Logger logger;
 
  protected:
 	 void init();
 
  public:
-	 OccupancyLibrary(int multiplexerPinBitA, int multiplexerPinBitB, int multiplexerPinBitC);		
-	 OccupancyLibrary(int multiplexerPinBitA, int multiplexerPinBitB, int multiplexerPinBitC, bool debug);
+	 OccupancyLibrary(int multiplexerPinBitA, int multiplexerPinBitB, int multiplexerPinBitC, bool logSerial, bool logSD, Severity minSevToLog);		
+	 OccupancyLibrary(int multiplexerPinBitA, int multiplexerPinBitB, int multiplexerPinBitC, bool logSerial, bool logSD, Severity minSevToLog, bool debug);
 
 	 void Update();
 

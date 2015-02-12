@@ -1,3 +1,5 @@
+#include <SPI.h>
+#include <Logger.h>
 #include "LEDTask.h"
 #include "BaseTask.h"
 #include <unwind-cxx.h>

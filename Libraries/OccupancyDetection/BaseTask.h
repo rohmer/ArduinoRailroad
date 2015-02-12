@@ -9,17 +9,19 @@
 	#include "WProgram.h"
 #endif
 
-#include<iterator>
-#include<vector>
+#include <iterator>
+#include <vector>
+#include "Logger.h"
 
 class BaseTask
 {
  protected:
-	 std::vector<int> taskArguments;
+	 std::vector<byte> taskArguments;
+	 Logger logger;
 
  public:	
-	 BaseTask(std::vector<int> arguments);
-	 virtual void Run();
+	 BaseTask(std::vector<byte> arguments, Logger log);
+	 virtual void Run(bool occupied);
 };
 
 

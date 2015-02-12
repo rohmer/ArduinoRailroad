@@ -4,11 +4,12 @@
 
 #include "BaseTask.h"
 
-BaseTask::BaseTask(std::vector<int> arguments)
+BaseTask::BaseTask(std::vector<byte> arguments, Logger log)
 {
-	std::vector<int>::const_iterator it;
+	std::vector<byte>::const_iterator it;
 	for (it = arguments.begin(); it != arguments.end(); it++)
 		taskArguments.push_back(*it);
+	logger = log;
 }
 
 

@@ -4,19 +4,21 @@
 
 #include "OccupancyLibrary.h"
 
-OccupancyLibrary::OccupancyLibrary(int multiplexerPinBitA, int multiplexerPinBitB, int multiplexerPinBitC)
+OccupancyLibrary::OccupancyLibrary(int multiplexerPinBitA, int multiplexerPinBitB, int multiplexerPinBitC, bool logSerial, bool logSD, Severity minSevToLog)
 {
 	mPinA = multiplexerPinBitA;
 	mPinB = multiplexerPinBitB;
-	mPinC = multiplexerPinBitC;
+	mPinC = multiplexerPinBitC;	
+	logger = Logger(logSerial, logSD, minSevToLog);
 	init();
 }
 
-OccupancyLibrary::OccupancyLibrary(int multiplexerPinBitA, int multiplexerPinBitB, int multiplexerPinBitC, bool debug)
+OccupancyLibrary::OccupancyLibrary(int multiplexerPinBitA, int multiplexerPinBitB, int multiplexerPinBitC, bool logSerial, bool logSD, Severity minSevToLog, bool debug)
 {
 	mPinA = multiplexerPinBitA;
 	mPinB = multiplexerPinBitB;
 	mPinC = multiplexerPinBitC;
+	logger = Logger(logSerial, logSD, minSevToLog);
 	debugMode = debug;
 	init();
 }

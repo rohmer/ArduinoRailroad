@@ -85,9 +85,10 @@ extern "C" void __cxa_pure_virtual() {;}
 #include <DetectorCollection.h>
 #include <LEDTask.cpp>
 #include <LEDTask.h>
+#include <LedControl.cpp>
+#include <LedControl.h>
 #include <OccupancyBlock.cpp>
 #include <OccupancyBlock.h>
 #include <OccupancyLibrary.cpp>
 #include <OccupancyLibrary.h>
-#include <OccupationDetection.ino>
 #endif

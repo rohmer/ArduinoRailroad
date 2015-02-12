@@ -12,6 +12,7 @@
 #include <iterator>
 #include <vector>
 #include "DetectorCollection.h"
+#include "BaseTask.h"
 
 class OccupancyBlock
 {
@@ -19,6 +20,7 @@ class OccupancyBlock
 	 std::vector<int> activationTriggers;
 	 std::vector<int> closingTriggers;
 	 std::vector<OccupancyBlock*> adjacentBlocks;
+	 std::vector<BaseTask*> tasks;
 
 	 bool isOccupied;
 	 bool adjacentOccupied;
@@ -32,6 +34,7 @@ class OccupancyBlock
 	 void ProcessBlock();
 	 void AddAdjacentBlock(OccupancyBlock* obPtr);
 	 void AdjacentOccupied(bool flag);	 
+	 void AddTask(BaseTask* task);
 };
 
 #endif

@@ -63,7 +63,7 @@ void OccupancyBlock::ProcessBlock()
 				(*iter)->AdjacentOccupied(true);
 			}
 			return;
-		}		
+		}
 	}
 
 	// We havent hit occupied, so we arent, but we might be closing
@@ -78,6 +78,9 @@ void OccupancyBlock::ProcessBlock()
 			return;
 		}
 	}
+}
 	
-	
+void OccupancyBlock::AddTask(BaseTask* task)
+{
+	tasks.push_back(task);
 }

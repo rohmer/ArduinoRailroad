@@ -9,17 +9,23 @@
 	#include "WProgram.h"
 #endif
 #include "BaseTask.h"
-
+#include "LedControl.h"
+#include "Logger.h"
 
 class LEDTask:BaseTask
 {
+ private:
+	 LedControl ledControl;
+	 int dataPin, clkPin, loadPin, numMax, ledRow, ledCol, maxAddr;
+	 bool occupiedTurnsOnLED;
+
  protected:
 
 
  public:
 	 void Init();
-	 void Run();
-	 LEDTask(std::vector<int> arguments); 
+	 void Run(bool occupied);
+	 LEDTask(std::vector<byte> arguments, Logger log); 
 };
 
 
