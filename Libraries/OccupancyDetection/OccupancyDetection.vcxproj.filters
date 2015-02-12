@@ -30,6 +30,12 @@
     <ClInclude Include="OccupancyLibrary.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="BaseTask.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LEDTask.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="OccupancyLibrary.cpp">
@@ -39,6 +45,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="DetectorCollection.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseTask.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LEDTask.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

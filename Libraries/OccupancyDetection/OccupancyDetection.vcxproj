@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{10E87A0B-CF1F-4CCC-8694-F6E8F840B830}</ProjectGuid>
+    <ProjectGuid>{BA7EADA7-9A8E-42A6-A526-ECF977362731}</ProjectGuid>
     <RootNamespace>OccupancyDetection</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -44,7 +44,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>c:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino;c:\Program Files (x86)\Arduino\hardware\arduino\avr\variants\mega;C:\Users\rohmer\Documents\Arduino\OccupancyDetection;c:\Program Files (x86)\Arduino\hardware\arduino\avr\libraries\SPI;c:\Program Files (x86)\Arduino\hardware\arduino\avr\libraries\SPI\utility;C:\Users\rohmer\Documents\Arduino\libraries\Logger;C:\Users\rohmer\Documents\Arduino\libraries\Logger\utility;C:\Users\rohmer\Documents\Arduino\libraries\QueueManager;C:\Users\rohmer\Documents\Arduino\libraries\QueueManager\utility;C:\Users\rohmer\Documents\Arduino\libraries\stlport;C:\Users\rohmer\Documents\Arduino\libraries\stlport\utility;c:\Program Files (x86)\Arduino\libraries;c:\Program Files (x86)\Arduino\hardware\arduino\avr\libraries;C:\Program Files (x86)\Visual Micro\Visual Micro for Arduino\Micro Platforms\default\debuggers;C:\Users\rohmer\Documents\Arduino\libraries;c:\program files (x86)\arduino\hardware\tools\avr\avr\include\;c:\program files (x86)\arduino\hardware\tools\avr\avr\include\avr\;c:\program files (x86)\arduino\hardware\tools\avr\avr\;c:\program files (x86)\arduino\hardware\tools\avr\lib\gcc\avr\4.8.1\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>c:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino;c:\Program Files (x86)\Arduino\hardware\arduino\avr\variants\mega;C:\Users\rohmer\Documents\Arduino\OccupancyDetection;C:\Users\rohmer\Documents\Arduino\libraries\stlport;C:\Users\rohmer\Documents\Arduino\libraries\stlport\utility;c:\Program Files (x86)\Arduino\libraries;c:\Program Files (x86)\Arduino\hardware\arduino\avr\libraries;C:\Program Files (x86)\Visual Micro\Visual Micro for Arduino\Micro Platforms\default\debuggers;C:\Users\rohmer\Documents\Arduino\libraries;c:\program files (x86)\arduino\hardware\tools\avr\avr\include\;c:\program files (x86)\arduino\hardware\tools\avr\avr\include\avr\;c:\program files (x86)\arduino\hardware\tools\avr\avr\;c:\program files (x86)\arduino\hardware\tools\avr\lib\gcc\avr\4.8.1\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>C:\Users\rohmer\Documents\Arduino\OccupancyDetection\Visual Micro\.OccupancyDetection.vsarduino.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
       <IgnoreStandardIncludePath>true</IgnoreStandardIncludePath>
       <PreprocessorDefinitions>__AVR_ATmega2560__;ARDUINO=160;ARDUINO_MAIN;__AVR__;__avr__;F_CPU=16000000L;__cplusplus;GCC_VERSION=40301;ARDUINO_ARCH_AVR;ARDUINO_AVR_MEGA2560;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -73,13 +73,17 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BaseTask.h" />
     <ClInclude Include="DetectorCollection.h" />
+    <ClInclude Include="LEDTask.h" />
     <ClInclude Include="OccupancyBlock.h" />
     <ClInclude Include="OccupancyLibrary.h" />
     <ClInclude Include="Visual Micro\.OccupancyDetection.vsarduino.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BaseTask.cpp" />
     <ClCompile Include="DetectorCollection.cpp" />
+    <ClCompile Include="LEDTask.cpp" />
     <ClCompile Include="OccupancyBlock.cpp" />
     <ClCompile Include="OccupancyLibrary.cpp" />
   </ItemGroup>
