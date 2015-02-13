@@ -9,18 +9,25 @@
 	#include "WProgram.h"
 #endif
 
+#include <iterator>
+#include <vector>
+#include <Logger.h>
+#include "BaseTask.h"
 #include <Servo.h>
 
-class ServoTask 
+class ServoTask:BaseTask
 {
- protected:
-	 byte pin, occupiedPosition, unoccupiedPosition, delay, step;
+ private:
+	 byte pin, occupiedPosition, unoccupiedPosition, delayMS, step;
 	 Servo servo;
+
+ protected:
 
  public:
 	ServoTask(std::vector<byte> arguments, Logger log);
 	void Init();
 	String GetName();
+	void Run(bool occupied);
 };
 
 #endif

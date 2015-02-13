@@ -35,7 +35,7 @@ ServoTask::ServoTask(std::vector<byte> arguments, Logger log) : BaseTask(argumen
 	pin = arguments[0];
 	occupiedPosition = arguments[1];
 	unoccupiedPosition = arguments[2];
-	delay = arguments[3];
+	delayMS = arguments[3];
 	step = arguments[4];
 	servo.attach(pin);
 	char msg[40] = "ServoTask initalized";
@@ -44,8 +44,6 @@ ServoTask::ServoTask(std::vector<byte> arguments, Logger log) : BaseTask(argumen
 
 void ServoTask::Init()
 {
-
-
 }
 
 String ServoTask::GetName()
@@ -53,4 +51,53 @@ String ServoTask::GetName()
 	return "ServoTask";
 }
 
+void ServoTask::Run(bool occupied)
+{
+	if (occupied)
+	{
+		int pos = unoccupiedPosition;
+		if (unoccupiedPosition < occupiedPosition)
+		{
+			while (pos <= occupiedPosition)
+			{
+				delay(delayMS);
+				pos += step;
+				servo.write(pos);
+			}
+		}
+		else
+		{
+			while (pos >= occupiedPosition)
+			{
+				delay(delayMS);
+				pos -= step;
+				servo.write(pos);
+			}
+		}
+		servo.write(occupiedPosition);
+	}
+	else
+	{
+		int pos = occupiedPosition;
+		if (occupiedPosition < unoccupiedPosition)
+		{
+			while (pos <= unoccupiedPosition)
+			{
+				delay(delayMS);
+				pos += step;
+				servo.write(pos);
+			}
+		}
+		else
+		{
+			while (pos >= unoccupiedPosition)
+			{
+				delay(delayMS);
+				pos -= step;
+				servo.write(pos);
+			}
+		}
+		servo.write(unoccupiedPosition);
+	}
 
+}
