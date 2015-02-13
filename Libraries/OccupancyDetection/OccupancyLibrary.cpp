@@ -29,7 +29,7 @@ void OccupancyLibrary::init()
 	currentNum = 0;
 }
 
-int OccupancyLibrary::CreateBlock(std::vector<DetectorPins> activationTriggers, std::vector<DetectorPins> closingTriggers, std::vector<BaseTask*> tasks)
+int OccupancyLibrary::CreateBlock(std::vector<DetectorPins> activationTriggers, std::vector<DetectorPins> closingTriggers)
 {
 	OccupancyBlock block = OccupancyBlock(detectors,currentNum);
 	currentNum++;
@@ -42,6 +42,7 @@ int OccupancyLibrary::CreateBlock(std::vector<DetectorPins> activationTriggers, 
 	{
 		block.AddClosingTrigger(it->pin, it->bit);
 	}
+	
 	return currentNum;
 }
 
@@ -67,6 +68,28 @@ void OccupancyLibrary::AddAdjacentBlocks(int number, std::vector<int> adjacentBl
 			occupancyBlocks[number]->AddAdjacentBlock(occupancyBlocks[*it]);
 		}
 	}
+}
+
+void OccupancyLibrary::AddBlockTask(int blockNumber, BaseTask task, std::vector<byte> arguments)
+{
+	if (blockNumber > currentNum)
+	{
+		logger.Log(ERROR, "Number>current number of blocks defined");
+		return;
+	}
+	
+	occupancyBlocks[blockNumber]->AddTask(task&);
+	bool dupeTask = false;
+	for (int a = 0; a <= tasksInitialized.size(); a++)
+	{
+		if (tasksInitialized[a].equals(task.GetName))
+			dupeTask = true;
+	}
+	if (!dupeTask)
+		task.Init();
+	char buf[40];
+	sprintf(buf, "Task %s initalized", task.GetName());
+	logger.Log(buf);
 }
 
 void OccupancyLibrary::Update()

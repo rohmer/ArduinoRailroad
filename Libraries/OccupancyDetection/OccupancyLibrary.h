@@ -23,6 +23,7 @@ class OccupancyLibrary
 	 int mPinA, mPinB, mPinC;
 	 Logger logger;
 	 std::vector<OccupancyBlock*> occupancyBlocks;
+	 std::vector<String> tasksInitialized;
 	 int currentNum;
 
  protected:
@@ -32,9 +33,10 @@ class OccupancyLibrary
 	 OccupancyLibrary(int multiplexerPinBitA, int multiplexerPinBitB, int multiplexerPinBitC, bool logSerial, bool logSD, Severity minSevToLog);		
 	 OccupancyLibrary(int multiplexerPinBitA, int multiplexerPinBitB, int multiplexerPinBitC, bool logSerial, bool logSD, Severity minSevToLog, bool debug);
 
-	 int CreateBlock(std::vector<DetectorPins> activationTriggers, std::vector<DetectorPins> closingTriggers, std::vector<BaseTask*> tasks);
+	 int CreateBlock(std::vector<DetectorPins> activationTriggers, std::vector<DetectorPins> closingTriggers);
 	 void AddAdjacentBlocks(int block, std::vector<int> adjacentBlocks);
-	 
+	 void AddBlockTask(int blockNumber, BaseTask task, std::vector<byte> arguments);
+
 	 void Update();
 
 };

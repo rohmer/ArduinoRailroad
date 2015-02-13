@@ -11,14 +11,16 @@
 
 #include <Servo.h>
 
-class ServoTask : BaseTask
+class ServoTask 
 {
  protected:
-
+	 byte pin, occupiedPosition, unoccupiedPosition, delay, step;
+	 Servo servo;
 
  public:
 	ServoTask(std::vector<byte> arguments, Logger log);
 	void Init();
+	String GetName();
 };
 
 #endif
