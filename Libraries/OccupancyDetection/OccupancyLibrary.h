@@ -35,7 +35,7 @@ class OccupancyLibrary
 
 	 int CreateBlock(std::vector<DetectorPins> activationTriggers, std::vector<DetectorPins> closingTriggers);
 	 void AddAdjacentBlocks(int block, std::vector<int> adjacentBlocks);
-	 void AddBlockTask(int blockNumber, BaseTask task, std::vector<byte> arguments);
+	 void AddBlockTask(int blockNumber, BaseTask* task, std::vector<byte> arguments);
 
 	 void Update();
 

@@ -35,7 +35,7 @@ class OccupancyBlock
 	 void ProcessBlock();
 	 void AddAdjacentBlock(OccupancyBlock* obPtr);
 	 void AdjacentOccupied(bool flag);	 
-	 void AddTask(BaseTask *task);
+	 void AddTask(BaseTask* task);
 };
 
 #endif

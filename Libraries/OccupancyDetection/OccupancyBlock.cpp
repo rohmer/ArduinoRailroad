@@ -39,7 +39,7 @@ void OccupancyBlock::AddClosingTrigger(int pin, int bit)
 	closingTriggers.push_back(detectorNum);
 }
 
-void OccupancyBlock::AddAdjacentBlock(OccupancyBlock *obPtr)
+void OccupancyBlock::AddAdjacentBlock(OccupancyBlock* obPtr)
 {
 	adjacentBlocks.push_back(obPtr);
 }

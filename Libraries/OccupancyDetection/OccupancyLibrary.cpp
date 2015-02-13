@@ -70,7 +70,7 @@ void OccupancyLibrary::AddAdjacentBlocks(int number, std::vector<int> adjacentBl
 	}
 }
 
-void OccupancyLibrary::AddBlockTask(int blockNumber, BaseTask task, std::vector<byte> arguments)
+void OccupancyLibrary::AddBlockTask(int blockNumber, BaseTask* task, std::vector<byte> arguments)
 {
 	if (blockNumber > currentNum)
 	{
@@ -78,17 +78,17 @@ void OccupancyLibrary::AddBlockTask(int blockNumber, BaseTask task, std::vector<
 		return;
 	}
 	
-	occupancyBlocks[blockNumber]->AddTask(task&);
+	occupancyBlocks[blockNumber]->AddTask(task);
 	bool dupeTask = false;
-	for (int a = 0; a <= tasksInitialized.size(); a++)
+	for (uint16_t a = 0; a <= tasksInitialized.size(); a++)
 	{
-		if (tasksInitialized[a].equals(task.GetName))
+		if (tasksInitialized[a].equals(task->GetName()))
 			dupeTask = true;
 	}
 	if (!dupeTask)
-		task.Init();
+		task->Init();
 	char buf[40];
-	sprintf(buf, "Task %s initalized", task.GetName());
+	sprintf(buf, "Task %s initalized", task->GetName().c_str());
 	logger.Log(buf);
 }
 
