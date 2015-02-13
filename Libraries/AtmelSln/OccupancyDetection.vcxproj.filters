@@ -1,0 +1,447 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="_core">
+      <UniqueIdentifier>{292d06bc-e255-4dd7-8368-7b414fd9e0f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_libraries">
+      <UniqueIdentifier>{7cdb7f1b-5a44-4d44-b8e3-d565d555969b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_libraries\SPI">
+      <UniqueIdentifier>{1f7a89c7-d60c-4e71-a79c-53754c40e3af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_libraries\Logger">
+      <UniqueIdentifier>{8c5428d7-a240-49ca-9a46-adf873a8a72f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_libraries\Logger\utility">
+      <UniqueIdentifier>{be984b3a-3b61-4591-a380-21b16ba0270d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_libraries\stlport">
+      <UniqueIdentifier>{81eba2d6-9b94-439f-aacc-1f3dd558b948}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_libraries\Servo">
+      <UniqueIdentifier>{458f55dc-4706-48e0-9af2-25f5d6083157}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_libraries\Servo\src">
+      <UniqueIdentifier>{90d4e8be-833a-4495-8010-9f5bbdba02e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_libraries\Servo\src\avr">
+      <UniqueIdentifier>{39855294-70bc-4ef6-a8a4-b8992c1c64bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_libraries\Servo\src\sam">
+      <UniqueIdentifier>{5f6f8b26-23bc-4b5f-8750-8e62279231c5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OccupancyDetection.ino" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Visual Micro\.OccupancyDetection.vsarduino.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DetectorCollection.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="OccupancyBlock.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="OccupancyLibrary.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseTask.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LEDTask.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LedControl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\Arduino.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\binary.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\Client.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\HardwareSerial.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\HardwareSerial_private.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\IPAddress.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\new.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\Print.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\Printable.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\Server.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\Stream.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\Udp.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\USBAPI.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\USBCore.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\USBDesc.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\WCharacter.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\wiring_private.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\WString.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\variants\mega\pins_arduino.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\libraries\SPI\SPI.h">
+      <Filter>_libraries\SPI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\Logger\Logger.h">
+      <Filter>_libraries\Logger</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\Logger\utility\FatStructs.h">
+      <Filter>_libraries\Logger\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\Logger\utility\SD.h">
+      <Filter>_libraries\Logger\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\Logger\utility\Sd2Card.h">
+      <Filter>_libraries\Logger\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\Logger\utility\Sd2PinMap.h">
+      <Filter>_libraries\Logger\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\Logger\utility\SdFat.h">
+      <Filter>_libraries\Logger\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\Logger\utility\SdFatmainpage.h">
+      <Filter>_libraries\Logger\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\Logger\utility\SdFatUtil.h">
+      <Filter>_libraries\Logger\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\Logger\utility\SdInfo.h">
+      <Filter>_libraries\Logger\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\Logger\utility\Time.h">
+      <Filter>_libraries\Logger\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\StandardCplusplus.h">
+      <Filter>_libraries\stlport</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\system_configuration.h">
+      <Filter>_libraries\stlport</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\unwind-cxx.h">
+      <Filter>_libraries\stlport</Filter>
+    </ClInclude>
+    <ClInclude Include="Common.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ServoTask.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Program Files (x86)\Arduino\libraries\Servo\src\Servo.h">
+      <Filter>_libraries\Servo\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Program Files (x86)\Arduino\libraries\Servo\src\avr\ServoTimers.h">
+      <Filter>_libraries\Servo\src\avr</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Program Files (x86)\Arduino\libraries\Servo\src\sam\ServoTimers.h">
+      <Filter>_libraries\Servo\src\sam</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="OccupancyLibrary.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="OccupancyBlock.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DetectorCollection.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseTask.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LEDTask.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LedControl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\abi.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\CDC.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\HardwareSerial.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\HardwareSerial0.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\HardwareSerial1.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\HardwareSerial2.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\HardwareSerial3.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\HID.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\hooks.c">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\IPAddress.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\main.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\new.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\Print.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\Stream.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\Tone.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\USBCore.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\WInterrupts.c">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\wiring.c">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\wiring_analog.c">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\wiring_digital.c">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\wiring_pulse.c">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\wiring_shift.c">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\WMath.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\WString.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\libraries\SPI\SPI.cpp">
+      <Filter>_libraries\SPI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\Logger\Logger.cpp">
+      <Filter>_libraries\Logger</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\Logger\utility\Appender.cpp">
+      <Filter>_libraries\Logger\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\Logger\utility\DateStrings.cpp">
+      <Filter>_libraries\Logger\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\Logger\utility\File.cpp">
+      <Filter>_libraries\Logger\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\Logger\utility\SD.cpp">
+      <Filter>_libraries\Logger\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\Logger\utility\Sd2Card.cpp">
+      <Filter>_libraries\Logger\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\Logger\utility\SDAppender.cpp">
+      <Filter>_libraries\Logger\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\Logger\utility\SdFile.cpp">
+      <Filter>_libraries\Logger\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\Logger\utility\SdVolume.cpp">
+      <Filter>_libraries\Logger\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\Logger\utility\SerialAppender.cpp">
+      <Filter>_libraries\Logger\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\Logger\utility\Time.cpp">
+      <Filter>_libraries\Logger\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\algorithm.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\associative_base.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\bitset.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\char_traits.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\complex.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\del_op.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\del_opnt.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\del_opvnt.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\deque.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\eh_alloc.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\eh_globals.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\exception.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\fstream.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\func_exception.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\iomanip.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\ios.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\iostream.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\istream.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\iterator.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\limits.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\list.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\locale.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\map.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\new_handler.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\new_op.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\new_opnt.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\new_opvnt.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\numeric.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\ostream.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\queue.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\set.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\sstream.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\stack.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\stdexcept.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\streambuf.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\string.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\support.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\typeinfo.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\utility.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\valarray.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\vector.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="ServoTask.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Program Files (x86)\Arduino\libraries\Servo\src\avr\Servo.cpp">
+      <Filter>_libraries\Servo\src\avr</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Program Files (x86)\Arduino\libraries\Servo\src\sam\Servo.cpp">
+      <Filter>_libraries\Servo\src\sam</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

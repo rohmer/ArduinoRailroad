@@ -1,0 +1,785 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>6.2</ProjectVersion>
+    <ToolchainName>com.Atmel.AVRGCC8.CPP</ToolchainName>
+    <ProjectGuid>{07b459b4-8d76-4638-bc6d-a459ba2d616b}</ProjectGuid>
+    <avrdevice>atmega2560</avrdevice>
+    <avrdeviceseries>none</avrdeviceseries>
+    <OutputType>Executable</OutputType>
+    <Language>CPP</Language>
+    <OutputFileName>$(MSBuildProjectName)</OutputFileName>
+    <OutputFileExtension>.elf</OutputFileExtension>
+    <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
+    <AssemblyName>OccupancyDetection</AssemblyName>
+    <Name>OccupancyDetection</Name>
+    <RootNamespace>OccupancyDetection</RootNamespace>
+    <ToolchainFlavour>Native</ToolchainFlavour>
+    <KeepTimersRunning>true</KeepTimersRunning>
+    <OverrideVtor>false</OverrideVtor>
+    <OverrideVtorValue>exception_table</OverrideVtorValue>
+    <eraseonlaunchrule>0</eraseonlaunchrule>
+    <ProgFlashFromRam>true</ProgFlashFromRam>
+    <RamSnippetAddress>0x20000000</RamSnippetAddress>
+    <CacheFlash>true</CacheFlash>
+    <UncachedRange />
+    <BootSegment>0</BootSegment>
+    <AsfFrameworkConfig>
+      <framework-data>
+        <options />
+        <configurations />
+        <files />
+        <documentation help="" />
+        <offline-documentation help="" />
+        <dependencies>
+          <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.10.1" />
+        </dependencies>
+      </framework-data>
+    </AsfFrameworkConfig>
+    <preserveEEPROM>true</preserveEEPROM>
+    <avrtool>com.atmel.avrdbg.tool.simulator</avrtool>
+    <com_atmel_avrdbg_tool_simulator>
+      <ToolOptions xmlns="">
+        <InterfaceProperties>
+        </InterfaceProperties>
+      </ToolOptions>
+      <ToolType xmlns="">com.atmel.avrdbg.tool.simulator</ToolType>
+      <ToolNumber xmlns="">
+      </ToolNumber>
+      <ToolName xmlns="">Simulator</ToolName>
+    </com_atmel_avrdbg_tool_simulator>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <ToolchainSettings>
+      <AvrGccCpp>
+  <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
+  <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
+  <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
+  <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
+  <avrgcc.common.outputfiles.usersignatures>False</avrgcc.common.outputfiles.usersignatures>
+  <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+  <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+  <avrgcc.compiler.symbols.DefSymbols>
+    <ListValues>
+      <Value>__AVR_ATmega2560__</Value>
+      <Value>ARDUINO=160</Value>
+      <Value>ARDUINO_MAIN</Value>
+      <Value>F_CPU=16000000L</Value>
+      <Value>__AVR__</Value>
+    </ListValues>
+  </avrgcc.compiler.symbols.DefSymbols>
+  <avrgcc.compiler.directories.IncludePaths>
+    <ListValues>
+      <Value></Value>
+      <Value>c:/program files (x86)/arduino/hardware/tools/avr/lib/gcc/avr/4.8.1/include/</Value>
+      <Value>c:/program files (x86)/arduino/hardware/tools/avr/avr/</Value>
+      <Value>c:/program files (x86)/arduino/hardware/tools/avr/avr/include/avr/</Value>
+      <Value>c:/program files (x86)/arduino/hardware/tools/avr/avr/include/</Value>
+      <Value>C:/Users/rohmer/Documents/Arduino/libraries</Value>
+      <Value>C:/Program Files (x86)/Visual Micro/Visual Micro for Arduino/Micro Platforms/default/debuggers</Value>
+      <Value>c:/Program Files (x86)/Arduino/hardware/arduino/avr/libraries</Value>
+      <Value>c:/Program Files (x86)/Arduino/libraries</Value>
+      <Value>C:/Users/rohmer/Documents/Arduino/libraries/stl/utility</Value>
+      <Value>C:/Users/rohmer/Documents/Arduino/libraries/stl</Value>
+      <Value>C:/Users/rohmer/Documents/Arduino/libraries/Logger/utility</Value>
+      <Value>C:/Users/rohmer/Documents/Arduino/libraries/Logger</Value>
+      <Value>c:/Program Files (x86)/Arduino/hardware/arduino/avr/libraries/SPI/utility</Value>
+      <Value>c:/Program Files (x86)/Arduino/hardware/arduino/avr/libraries/SPI</Value>
+      <Value>C:/Users/rohmer/Documents/Arduino/libraries/stlport/utility</Value>
+      <Value>C:/Users/rohmer/Documents/Arduino/libraries/stlport</Value>
+      <Value>c:/Program Files (x86)/Arduino/libraries/Servo/src/utility</Value>
+      <Value>c:/Program Files (x86)/Arduino/libraries/Servo/src</Value>
+      <Value>../../AtmelSln</Value>
+      <Value>c:/Program Files (x86)/Arduino/hardware/arduino/avr/variants/mega</Value>
+      <Value>c:/Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino</Value>
+    </ListValues>
+  </avrgcc.compiler.directories.IncludePaths>
+  <avrgcc.compiler.optimization.level>Optimize (-O1)</avrgcc.compiler.optimization.level>
+  <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+  <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+  <avrgcc.compiler.optimization.DebugLevel>Default (-g2)</avrgcc.compiler.optimization.DebugLevel>
+  <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+  <avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>
+  <avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>
+  <avrgcccpp.compiler.symbols.DefSymbols>
+    <ListValues>
+      <Value>__AVR_ATmega2560__</Value>
+      <Value>ARDUINO=160</Value>
+      <Value>ARDUINO_MAIN</Value>
+      <Value>F_CPU=16000000L</Value>
+      <Value>__AVR__</Value>
+    </ListValues>
+  </avrgcccpp.compiler.symbols.DefSymbols>
+  <avrgcccpp.compiler.directories.IncludePaths>
+    <ListValues>
+      <Value></Value>
+      <Value>c:/program files (x86)/arduino/hardware/tools/avr/lib/gcc/avr/4.8.1/include/</Value>
+      <Value>c:/program files (x86)/arduino/hardware/tools/avr/avr/</Value>
+      <Value>c:/program files (x86)/arduino/hardware/tools/avr/avr/include/avr/</Value>
+      <Value>c:/program files (x86)/arduino/hardware/tools/avr/avr/include/</Value>
+      <Value>C:/Users/rohmer/Documents/Arduino/libraries</Value>
+      <Value>C:/Program Files (x86)/Visual Micro/Visual Micro for Arduino/Micro Platforms/default/debuggers</Value>
+      <Value>c:/Program Files (x86)/Arduino/hardware/arduino/avr/libraries</Value>
+      <Value>c:/Program Files (x86)/Arduino/libraries</Value>
+      <Value>C:/Users/rohmer/Documents/Arduino/libraries/stl/utility</Value>
+      <Value>C:/Users/rohmer/Documents/Arduino/libraries/stl</Value>
+      <Value>C:/Users/rohmer/Documents/Arduino/libraries/Logger/utility</Value>
+      <Value>C:/Users/rohmer/Documents/Arduino/libraries/Logger</Value>
+      <Value>c:/Program Files (x86)/Arduino/hardware/arduino/avr/libraries/SPI/utility</Value>
+      <Value>c:/Program Files (x86)/Arduino/hardware/arduino/avr/libraries/SPI</Value>
+      <Value>C:/Users/rohmer/Documents/Arduino/libraries/stlport/utility</Value>
+      <Value>C:/Users/rohmer/Documents/Arduino/libraries/stlport</Value>
+      <Value>c:/Program Files (x86)/Arduino/libraries/Servo/src/utility</Value>
+      <Value>c:/Program Files (x86)/Arduino/libraries/Servo/src</Value>
+      <Value>../../AtmelSln</Value>
+      <Value>c:/Program Files (x86)/Arduino/hardware/arduino/avr/variants/mega</Value>
+      <Value>c:/Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino</Value>
+    </ListValues>
+  </avrgcccpp.compiler.directories.IncludePaths>
+  <avrgcccpp.compiler.optimization.level>Optimize (-O1)</avrgcccpp.compiler.optimization.level>
+  <avrgcccpp.compiler.optimization.PackStructureMembers>True</avrgcccpp.compiler.optimization.PackStructureMembers>
+  <avrgcccpp.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcccpp.compiler.optimization.AllocateBytesNeededForEnum>
+  <avrgcccpp.compiler.optimization.DebugLevel>Default (-g2)</avrgcccpp.compiler.optimization.DebugLevel>
+  <avrgcccpp.compiler.warnings.AllWarnings>True</avrgcccpp.compiler.warnings.AllWarnings>
+  <avrgcccpp.assembler.debugging.DebugLevel>Default (-Wa,-g)</avrgcccpp.assembler.debugging.DebugLevel>
+</AvrGccCpp>
+    </ToolchainSettings>
+    <VMSETTING_IncludePaths>c:/Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino;c:/Program Files (x86)/Arduino/hardware/arduino/avr/variants/mega;../../OccupancyDetection;c:/Program Files (x86)/Arduino/libraries;c:/Program Files (x86)/Arduino/hardware/arduino/avr/libraries;C:/Program Files (x86)/Visual Micro/Visual Micro for Arduino/Micro Platforms/default/debuggers;C:/Users/rohmer/Documents/Arduino/libraries;c:/program files (x86)/arduino/hardware/tools/avr/avr/include/;c:/program files (x86)/arduino/hardware/tools/avr/avr/include/avr/;c:/program files (x86)/arduino/hardware/tools/avr/avr/;c:/program files (x86)/arduino/hardware/tools/avr/lib/gcc/avr/4.8.1/include/;;C:/Users/rohmer/Documents/Arduino/libraries/Logger;C:/Users/rohmer/Documents/Arduino/libraries/Logger/utility;C:/Users/rohmer/Documents/Arduino/libraries/stlport;C:/Users/rohmer/Documents/Arduino/libraries/stlport/utility;c:/Program Files (x86)/Arduino/hardware/arduino/avr/libraries/SPI;c:/Program Files (x86)/Arduino/hardware/arduino/avr/libraries/SPI/utility;c:/Program Files (x86)/Arduino/libraries/Servo/src;c:/Program Files (x86)/Arduino/libraries/Servo/src/utility;../../AtmelSln;C:/Users/rohmer/Documents/Arduino/libraries/stl;C:/Users/rohmer/Documents/Arduino/libraries/stl/utility;</VMSETTING_IncludePaths>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <ToolchainSettings>
+      <AvrGccCpp>
+  <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
+  <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
+  <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
+  <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
+  <avrgcc.common.outputfiles.usersignatures>False</avrgcc.common.outputfiles.usersignatures>
+  <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+  <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+  <avrgcc.compiler.symbols.DefSymbols>
+    <ListValues>
+      <Value>__AVR_ATmega2560__</Value>
+      <Value>ARDUINO=160</Value>
+      <Value>ARDUINO_MAIN</Value>
+      <Value>F_CPU=16000000L</Value>
+      <Value>__AVR__</Value>
+    </ListValues>
+  </avrgcc.compiler.symbols.DefSymbols>
+  <avrgcc.compiler.directories.IncludePaths>
+    <ListValues>
+      <Value></Value>
+      <Value>c:/program files (x86)/arduino/hardware/tools/avr/lib/gcc/avr/4.8.1/include/</Value>
+      <Value>c:/program files (x86)/arduino/hardware/tools/avr/avr/</Value>
+      <Value>c:/program files (x86)/arduino/hardware/tools/avr/avr/include/avr/</Value>
+      <Value>c:/program files (x86)/arduino/hardware/tools/avr/avr/include/</Value>
+      <Value>C:/Users/rohmer/Documents/Arduino/libraries</Value>
+      <Value>C:/Program Files (x86)/Visual Micro/Visual Micro for Arduino/Micro Platforms/default/debuggers</Value>
+      <Value>c:/Program Files (x86)/Arduino/hardware/arduino/avr/libraries</Value>
+      <Value>c:/Program Files (x86)/Arduino/libraries</Value>
+      <Value>C:/Users/rohmer/Documents/Arduino/libraries/stl/utility</Value>
+      <Value>C:/Users/rohmer/Documents/Arduino/libraries/stl</Value>
+      <Value>C:/Users/rohmer/Documents/Arduino/libraries/Logger/utility</Value>
+      <Value>C:/Users/rohmer/Documents/Arduino/libraries/Logger</Value>
+      <Value>c:/Program Files (x86)/Arduino/hardware/arduino/avr/libraries/SPI/utility</Value>
+      <Value>c:/Program Files (x86)/Arduino/hardware/arduino/avr/libraries/SPI</Value>
+      <Value>C:/Users/rohmer/Documents/Arduino/libraries/stlport/utility</Value>
+      <Value>C:/Users/rohmer/Documents/Arduino/libraries/stlport</Value>
+      <Value>c:/Program Files (x86)/Arduino/libraries/Servo/src/utility</Value>
+      <Value>c:/Program Files (x86)/Arduino/libraries/Servo/src</Value>
+      <Value>../../AtmelSln</Value>
+      <Value>c:/Program Files (x86)/Arduino/hardware/arduino/avr/variants/mega</Value>
+      <Value>c:/Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino</Value>
+    </ListValues>
+  </avrgcc.compiler.directories.IncludePaths>
+  <avrgcc.compiler.optimization.level>Optimize (-O1)</avrgcc.compiler.optimization.level>
+  <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+  <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+  <avrgcc.compiler.optimization.DebugLevel>Default (-g2)</avrgcc.compiler.optimization.DebugLevel>
+  <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+  <avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>
+  <avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>
+  <avrgcccpp.compiler.symbols.DefSymbols>
+    <ListValues>
+      <Value>__AVR_ATmega2560__</Value>
+      <Value>ARDUINO=160</Value>
+      <Value>ARDUINO_MAIN</Value>
+      <Value>F_CPU=16000000L</Value>
+      <Value>__AVR__</Value>
+    </ListValues>
+  </avrgcccpp.compiler.symbols.DefSymbols>
+  <avrgcccpp.compiler.directories.IncludePaths>
+    <ListValues>
+      <Value></Value>
+      <Value>c:/program files (x86)/arduino/hardware/tools/avr/lib/gcc/avr/4.8.1/include/</Value>
+      <Value>c:/program files (x86)/arduino/hardware/tools/avr/avr/</Value>
+      <Value>c:/program files (x86)/arduino/hardware/tools/avr/avr/include/avr/</Value>
+      <Value>c:/program files (x86)/arduino/hardware/tools/avr/avr/include/</Value>
+      <Value>C:/Users/rohmer/Documents/Arduino/libraries</Value>
+      <Value>C:/Program Files (x86)/Visual Micro/Visual Micro for Arduino/Micro Platforms/default/debuggers</Value>
+      <Value>c:/Program Files (x86)/Arduino/hardware/arduino/avr/libraries</Value>
+      <Value>c:/Program Files (x86)/Arduino/libraries</Value>
+      <Value>C:/Users/rohmer/Documents/Arduino/libraries/stl/utility</Value>
+      <Value>C:/Users/rohmer/Documents/Arduino/libraries/stl</Value>
+      <Value>C:/Users/rohmer/Documents/Arduino/libraries/Logger/utility</Value>
+      <Value>C:/Users/rohmer/Documents/Arduino/libraries/Logger</Value>
+      <Value>c:/Program Files (x86)/Arduino/hardware/arduino/avr/libraries/SPI/utility</Value>
+      <Value>c:/Program Files (x86)/Arduino/hardware/arduino/avr/libraries/SPI</Value>
+      <Value>C:/Users/rohmer/Documents/Arduino/libraries/stlport/utility</Value>
+      <Value>C:/Users/rohmer/Documents/Arduino/libraries/stlport</Value>
+      <Value>c:/Program Files (x86)/Arduino/libraries/Servo/src/utility</Value>
+      <Value>c:/Program Files (x86)/Arduino/libraries/Servo/src</Value>
+      <Value>../../AtmelSln</Value>
+      <Value>c:/Program Files (x86)/Arduino/hardware/arduino/avr/variants/mega</Value>
+      <Value>c:/Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino</Value>
+    </ListValues>
+  </avrgcccpp.compiler.directories.IncludePaths>
+  <avrgcccpp.compiler.optimization.level>Optimize (-O1)</avrgcccpp.compiler.optimization.level>
+  <avrgcccpp.compiler.optimization.PackStructureMembers>True</avrgcccpp.compiler.optimization.PackStructureMembers>
+  <avrgcccpp.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcccpp.compiler.optimization.AllocateBytesNeededForEnum>
+  <avrgcccpp.compiler.optimization.DebugLevel>Default (-g2)</avrgcccpp.compiler.optimization.DebugLevel>
+  <avrgcccpp.compiler.warnings.AllWarnings>True</avrgcccpp.compiler.warnings.AllWarnings>
+  <avrgcccpp.assembler.debugging.DebugLevel>Default (-Wa,-g)</avrgcccpp.assembler.debugging.DebugLevel>
+</AvrGccCpp>
+    </ToolchainSettings>
+    <VMSETTING_IncludePaths>c:/Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino;c:/Program Files (x86)/Arduino/hardware/arduino/avr/variants/mega;../../OccupancyDetection;c:/Program Files (x86)/Arduino/libraries;c:/Program Files (x86)/Arduino/hardware/arduino/avr/libraries;C:/Program Files (x86)/Visual Micro/Visual Micro for Arduino/Micro Platforms/default/debuggers;C:/Users/rohmer/Documents/Arduino/libraries;c:/program files (x86)/arduino/hardware/tools/avr/avr/include/;c:/program files (x86)/arduino/hardware/tools/avr/avr/include/avr/;c:/program files (x86)/arduino/hardware/tools/avr/avr/;c:/program files (x86)/arduino/hardware/tools/avr/lib/gcc/avr/4.8.1/include/;;C:/Users/rohmer/Documents/Arduino/libraries/Logger;C:/Users/rohmer/Documents/Arduino/libraries/Logger/utility;C:/Users/rohmer/Documents/Arduino/libraries/stlport;C:/Users/rohmer/Documents/Arduino/libraries/stlport/utility;c:/Program Files (x86)/Arduino/hardware/arduino/avr/libraries/SPI;c:/Program Files (x86)/Arduino/hardware/arduino/avr/libraries/SPI/utility;c:/Program Files (x86)/Arduino/libraries/Servo/src;c:/Program Files (x86)/Arduino/libraries/Servo/src/utility;../../AtmelSln;C:/Users/rohmer/Documents/Arduino/libraries/stl;C:/Users/rohmer/Documents/Arduino/libraries/stl/utility;</VMSETTING_IncludePaths>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="OccupancyDetection.ino">
+      <SubType>compile</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="src\" />
+    <Folder Include="src\sketch-api-readonly\" />
+    <Folder Include="src\sketch-api-readonly\core\" />
+    <Folder Include="src\sketch-api-readonly\libraries\" />
+    <Folder Include="src\sketch-api-readonly\libraries\Logger\" />
+    <Folder Include="src\sketch-api-readonly\libraries\Logger\utility\" />
+    <Folder Include="src\sketch-api-readonly\libraries\Servo\" />
+    <Folder Include="src\sketch-api-readonly\libraries\Servo\src\" />
+    <Folder Include="src\sketch-api-readonly\libraries\Servo\src\avr\" />
+    <Folder Include="src\sketch-api-readonly\libraries\Servo\src\sam\" />
+    <Folder Include="src\sketch-api-readonly\libraries\SPI\" />
+    <Folder Include="src\sketch-api-readonly\libraries\stlport\" />
+    <Folder Include="src\sketch-api-readonly\variants\" />
+    <Folder Include="src\sketch-api-readonly\variants\mega\" />
+    <Folder Include="Visual Micro\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\Logger\Logger.cpp">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\libraries\Logger\Logger.cpp</Link>
+      <CustomCompilationSetting Condition="'$(Configuration)' == 'Debug'"> -I"C:\Users\rohmer\Documents\Arduino\libraries\Logger\utility"</CustomCompilationSetting>
+    </Compile>
+    <Compile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\Logger\Logger.h">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\libraries\Logger\Logger.h</Link>
+      <CustomCompilationSetting Condition="'$(Configuration)' == 'Debug'"> -I"C:\Users\rohmer\Documents\Arduino\libraries\Logger\utility"</CustomCompilationSetting>
+    </Compile>
+    <Compile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\Logger\utility\Appender.cpp">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\libraries\Logger\utility\Appender.cpp</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\Logger\utility\DateStrings.cpp">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\libraries\Logger\utility\DateStrings.cpp</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\Logger\utility\FatStructs.h">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\libraries\Logger\utility\FatStructs.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\Logger\utility\File.cpp">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\libraries\Logger\utility\File.cpp</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\Logger\utility\SD.cpp">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\libraries\Logger\utility\SD.cpp</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\Logger\utility\SD.h">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\libraries\Logger\utility\SD.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\Logger\utility\Sd2Card.cpp">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\libraries\Logger\utility\Sd2Card.cpp</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\Logger\utility\Sd2Card.h">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\libraries\Logger\utility\Sd2Card.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\Logger\utility\Sd2PinMap.h">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\libraries\Logger\utility\Sd2PinMap.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\Logger\utility\SDAppender.cpp">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\libraries\Logger\utility\SDAppender.cpp</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\Logger\utility\SdFat.h">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\libraries\Logger\utility\SdFat.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\Logger\utility\SdFatmainpage.h">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\libraries\Logger\utility\SdFatmainpage.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\Logger\utility\SdFatUtil.h">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\libraries\Logger\utility\SdFatUtil.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\Logger\utility\SdFile.cpp">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\libraries\Logger\utility\SdFile.cpp</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\Logger\utility\SdInfo.h">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\libraries\Logger\utility\SdInfo.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\Logger\utility\SdVolume.cpp">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\libraries\Logger\utility\SdVolume.cpp</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\Logger\utility\SerialAppender.cpp">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\libraries\Logger\utility\SerialAppender.cpp</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\Logger\utility\Time.cpp">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\libraries\Logger\utility\Time.cpp</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\Logger\utility\Time.h">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\libraries\Logger\utility\Time.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\algorithm.cpp">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\libraries\stlport\algorithm.cpp</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\associative_base.cpp">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\libraries\stlport\associative_base.cpp</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\bitset.cpp">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\libraries\stlport\bitset.cpp</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\char_traits.cpp">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\libraries\stlport\char_traits.cpp</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\complex.cpp">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\libraries\stlport\complex.cpp</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\del_op.cpp">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\libraries\stlport\del_op.cpp</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\del_opnt.cpp">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\libraries\stlport\del_opnt.cpp</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\del_opvnt.cpp">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\libraries\stlport\del_opvnt.cpp</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\deque.cpp">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\libraries\stlport\deque.cpp</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\eh_alloc.cpp">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\libraries\stlport\eh_alloc.cpp</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\eh_globals.cpp">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\libraries\stlport\eh_globals.cpp</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\exception.cpp">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\libraries\stlport\exception.cpp</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\fstream.cpp">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\libraries\stlport\fstream.cpp</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\func_exception.cpp">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\libraries\stlport\func_exception.cpp</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\iomanip.cpp">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\libraries\stlport\iomanip.cpp</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\ios.cpp">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\libraries\stlport\ios.cpp</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\iostream.cpp">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\libraries\stlport\iostream.cpp</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\istream.cpp">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\libraries\stlport\istream.cpp</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\iterator.cpp">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\libraries\stlport\iterator.cpp</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\limits.cpp">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\libraries\stlport\limits.cpp</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\list.cpp">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\libraries\stlport\list.cpp</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\locale.cpp">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\libraries\stlport\locale.cpp</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\map.cpp">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\libraries\stlport\map.cpp</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\new_handler.cpp">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\libraries\stlport\new_handler.cpp</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\new_op.cpp">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\libraries\stlport\new_op.cpp</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\new_opnt.cpp">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\libraries\stlport\new_opnt.cpp</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\new_opvnt.cpp">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\libraries\stlport\new_opvnt.cpp</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\numeric.cpp">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\libraries\stlport\numeric.cpp</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\ostream.cpp">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\libraries\stlport\ostream.cpp</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\queue.cpp">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\libraries\stlport\queue.cpp</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\set.cpp">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\libraries\stlport\set.cpp</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\sstream.cpp">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\libraries\stlport\sstream.cpp</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\stack.cpp">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\libraries\stlport\stack.cpp</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\StandardCplusplus.h">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\libraries\stlport\StandardCplusplus.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\stdexcept.cpp">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\libraries\stlport\stdexcept.cpp</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\streambuf.cpp">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\libraries\stlport\streambuf.cpp</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\string.cpp">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\libraries\stlport\string.cpp</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\support.cpp">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\libraries\stlport\support.cpp</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\system_configuration.h">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\libraries\stlport\system_configuration.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\typeinfo.cpp">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\libraries\stlport\typeinfo.cpp</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\unwind-cxx.h">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\libraries\stlport\unwind-cxx.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\utility.cpp">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\libraries\stlport\utility.cpp</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\valarray.cpp">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\libraries\stlport\valarray.cpp</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Users\rohmer\Documents\Arduino\libraries\stlport\vector.cpp">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\libraries\stlport\vector.cpp</Link>
+    </Compile>
+    <Compile Include="BaseTask.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="BaseTask.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="c:\Program Files %28x86%29\Arduino\hardware\arduino\avr\cores\arduino\abi.cpp">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\core\abi.cpp</Link>
+    </Compile>
+    <Compile Include="c:\Program Files %28x86%29\Arduino\hardware\arduino\avr\cores\arduino\Arduino.h">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\core\Arduino.h</Link>
+    </Compile>
+    <Compile Include="c:\Program Files %28x86%29\Arduino\hardware\arduino\avr\cores\arduino\binary.h">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\core\binary.h</Link>
+    </Compile>
+    <Compile Include="c:\Program Files %28x86%29\Arduino\hardware\arduino\avr\cores\arduino\CDC.cpp">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\core\CDC.cpp</Link>
+    </Compile>
+    <Compile Include="c:\Program Files %28x86%29\Arduino\hardware\arduino\avr\cores\arduino\Client.h">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\core\Client.h</Link>
+    </Compile>
+    <Compile Include="c:\Program Files %28x86%29\Arduino\hardware\arduino\avr\cores\arduino\HardwareSerial.cpp">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\core\HardwareSerial.cpp</Link>
+    </Compile>
+    <Compile Include="c:\Program Files %28x86%29\Arduino\hardware\arduino\avr\cores\arduino\HardwareSerial.h">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\core\HardwareSerial.h</Link>
+    </Compile>
+    <Compile Include="c:\Program Files %28x86%29\Arduino\hardware\arduino\avr\cores\arduino\HardwareSerial0.cpp">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\core\HardwareSerial0.cpp</Link>
+    </Compile>
+    <Compile Include="c:\Program Files %28x86%29\Arduino\hardware\arduino\avr\cores\arduino\HardwareSerial1.cpp">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\core\HardwareSerial1.cpp</Link>
+    </Compile>
+    <Compile Include="c:\Program Files %28x86%29\Arduino\hardware\arduino\avr\cores\arduino\HardwareSerial2.cpp">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\core\HardwareSerial2.cpp</Link>
+    </Compile>
+    <Compile Include="c:\Program Files %28x86%29\Arduino\hardware\arduino\avr\cores\arduino\HardwareSerial3.cpp">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\core\HardwareSerial3.cpp</Link>
+    </Compile>
+    <Compile Include="c:\Program Files %28x86%29\Arduino\hardware\arduino\avr\cores\arduino\HardwareSerial_private.h">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\core\HardwareSerial_private.h</Link>
+    </Compile>
+    <Compile Include="c:\Program Files %28x86%29\Arduino\hardware\arduino\avr\cores\arduino\HID.cpp">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\core\HID.cpp</Link>
+    </Compile>
+    <Compile Include="c:\Program Files %28x86%29\Arduino\hardware\arduino\avr\cores\arduino\hooks.c">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\core\hooks.c</Link>
+    </Compile>
+    <Compile Include="c:\Program Files %28x86%29\Arduino\hardware\arduino\avr\cores\arduino\IPAddress.cpp">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\core\IPAddress.cpp</Link>
+    </Compile>
+    <Compile Include="c:\Program Files %28x86%29\Arduino\hardware\arduino\avr\cores\arduino\IPAddress.h">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\core\IPAddress.h</Link>
+    </Compile>
+    <Compile Include="c:\Program Files %28x86%29\Arduino\hardware\arduino\avr\cores\arduino\main.cpp">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\core\main.cpp</Link>
+    </Compile>
+    <Compile Include="c:\Program Files %28x86%29\Arduino\hardware\arduino\avr\cores\arduino\new.cpp">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\core\new.cpp</Link>
+    </Compile>
+    <Compile Include="c:\Program Files %28x86%29\Arduino\hardware\arduino\avr\cores\arduino\new.h">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\core\new.h</Link>
+    </Compile>
+    <Compile Include="c:\Program Files %28x86%29\Arduino\hardware\arduino\avr\cores\arduino\Print.cpp">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\core\Print.cpp</Link>
+    </Compile>
+    <Compile Include="c:\Program Files %28x86%29\Arduino\hardware\arduino\avr\cores\arduino\Print.h">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\core\Print.h</Link>
+    </Compile>
+    <Compile Include="c:\Program Files %28x86%29\Arduino\hardware\arduino\avr\cores\arduino\Printable.h">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\core\Printable.h</Link>
+    </Compile>
+    <Compile Include="c:\Program Files %28x86%29\Arduino\hardware\arduino\avr\cores\arduino\Server.h">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\core\Server.h</Link>
+    </Compile>
+    <Compile Include="c:\Program Files %28x86%29\Arduino\hardware\arduino\avr\cores\arduino\Stream.cpp">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\core\Stream.cpp</Link>
+    </Compile>
+    <Compile Include="c:\Program Files %28x86%29\Arduino\hardware\arduino\avr\cores\arduino\Stream.h">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\core\Stream.h</Link>
+    </Compile>
+    <Compile Include="c:\Program Files %28x86%29\Arduino\hardware\arduino\avr\cores\arduino\Tone.cpp">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\core\Tone.cpp</Link>
+    </Compile>
+    <Compile Include="c:\Program Files %28x86%29\Arduino\hardware\arduino\avr\cores\arduino\Udp.h">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\core\Udp.h</Link>
+    </Compile>
+    <Compile Include="c:\Program Files %28x86%29\Arduino\hardware\arduino\avr\cores\arduino\USBAPI.h">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\core\USBAPI.h</Link>
+    </Compile>
+    <Compile Include="c:\Program Files %28x86%29\Arduino\hardware\arduino\avr\cores\arduino\USBCore.cpp">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\core\USBCore.cpp</Link>
+    </Compile>
+    <Compile Include="c:\Program Files %28x86%29\Arduino\hardware\arduino\avr\cores\arduino\USBCore.h">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\core\USBCore.h</Link>
+    </Compile>
+    <Compile Include="c:\Program Files %28x86%29\Arduino\hardware\arduino\avr\cores\arduino\USBDesc.h">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\core\USBDesc.h</Link>
+    </Compile>
+    <Compile Include="c:\Program Files %28x86%29\Arduino\hardware\arduino\avr\cores\arduino\WCharacter.h">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\core\WCharacter.h</Link>
+    </Compile>
+    <Compile Include="c:\Program Files %28x86%29\Arduino\hardware\arduino\avr\cores\arduino\WInterrupts.c">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\core\WInterrupts.c</Link>
+    </Compile>
+    <Compile Include="c:\Program Files %28x86%29\Arduino\hardware\arduino\avr\cores\arduino\wiring.c">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\core\wiring.c</Link>
+    </Compile>
+    <Compile Include="c:\Program Files %28x86%29\Arduino\hardware\arduino\avr\cores\arduino\wiring_analog.c">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\core\wiring_analog.c</Link>
+    </Compile>
+    <Compile Include="c:\Program Files %28x86%29\Arduino\hardware\arduino\avr\cores\arduino\wiring_digital.c">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\core\wiring_digital.c</Link>
+    </Compile>
+    <Compile Include="c:\Program Files %28x86%29\Arduino\hardware\arduino\avr\cores\arduino\wiring_private.h">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\core\wiring_private.h</Link>
+    </Compile>
+    <Compile Include="c:\Program Files %28x86%29\Arduino\hardware\arduino\avr\cores\arduino\wiring_pulse.c">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\core\wiring_pulse.c</Link>
+    </Compile>
+    <Compile Include="c:\Program Files %28x86%29\Arduino\hardware\arduino\avr\cores\arduino\wiring_shift.c">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\core\wiring_shift.c</Link>
+    </Compile>
+    <Compile Include="c:\Program Files %28x86%29\Arduino\hardware\arduino\avr\cores\arduino\WMath.cpp">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\core\WMath.cpp</Link>
+    </Compile>
+    <Compile Include="c:\Program Files %28x86%29\Arduino\hardware\arduino\avr\cores\arduino\WString.cpp">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\core\WString.cpp</Link>
+    </Compile>
+    <Compile Include="c:\Program Files %28x86%29\Arduino\hardware\arduino\avr\cores\arduino\WString.h">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\core\WString.h</Link>
+    </Compile>
+    <Compile Include="c:\Program Files %28x86%29\Arduino\hardware\arduino\avr\libraries\SPI\SPI.cpp">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\libraries\SPI\SPI.cpp</Link>
+    </Compile>
+    <Compile Include="c:\Program Files %28x86%29\Arduino\hardware\arduino\avr\libraries\SPI\SPI.h">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\libraries\SPI\SPI.h</Link>
+    </Compile>
+    <Compile Include="c:\Program Files %28x86%29\Arduino\hardware\arduino\avr\variants\mega\pins_arduino.h">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\variants\mega\pins_arduino.h</Link>
+    </Compile>
+    <Compile Include="c:\Program Files %28x86%29\Arduino\libraries\Servo\src\avr\Servo.cpp">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\libraries\Servo\src\avr\Servo.cpp</Link>
+    </Compile>
+    <Compile Include="c:\Program Files %28x86%29\Arduino\libraries\Servo\src\avr\ServoTimers.h">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\libraries\Servo\src\avr\ServoTimers.h</Link>
+    </Compile>
+    <Compile Include="c:\Program Files %28x86%29\Arduino\libraries\Servo\src\sam\Servo.cpp">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\libraries\Servo\src\sam\Servo.cpp</Link>
+    </Compile>
+    <Compile Include="c:\Program Files %28x86%29\Arduino\libraries\Servo\src\sam\ServoTimers.h">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\libraries\Servo\src\sam\ServoTimers.h</Link>
+    </Compile>
+    <Compile Include="c:\Program Files %28x86%29\Arduino\libraries\Servo\src\Servo.h">
+      <SubType>compile</SubType>
+      <Link>src\sketch-api-readonly\libraries\Servo\src\Servo.h</Link>
+    </Compile>
+    <Compile Include="Common.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="DetectorCollection.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="DetectorCollection.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="LedControl.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="LedControl.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="LEDTask.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="LEDTask.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="OccupancyBlock.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="OccupancyBlock.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="OccupancyLibrary.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="OccupancyLibrary.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ServoTask.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ServoTask.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Visual Micro\.AtmelSln.vsarduino.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Visual Micro\.OccupancyDetection.vsarduino.h">
+      <SubType>compile</SubType>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
+</Project>
