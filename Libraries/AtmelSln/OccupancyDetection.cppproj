@@ -49,6 +49,7 @@
       </ToolNumber>
       <ToolName xmlns="">Simulator</ToolName>
     </com_atmel_avrdbg_tool_simulator>
+    <UseGdb>True</UseGdb>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <ToolchainSettings>
@@ -146,6 +147,11 @@
 </AvrGccCpp>
     </ToolchainSettings>
     <VMSETTING_IncludePaths>c:/Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino;c:/Program Files (x86)/Arduino/hardware/arduino/avr/variants/mega;../../OccupancyDetection;c:/Program Files (x86)/Arduino/libraries;c:/Program Files (x86)/Arduino/hardware/arduino/avr/libraries;C:/Program Files (x86)/Visual Micro/Visual Micro for Arduino/Micro Platforms/default/debuggers;C:/Users/rohmer/Documents/Arduino/libraries;c:/program files (x86)/arduino/hardware/tools/avr/avr/include/;c:/program files (x86)/arduino/hardware/tools/avr/avr/include/avr/;c:/program files (x86)/arduino/hardware/tools/avr/avr/;c:/program files (x86)/arduino/hardware/tools/avr/lib/gcc/avr/4.8.1/include/;;C:/Users/rohmer/Documents/Arduino/libraries/Logger;C:/Users/rohmer/Documents/Arduino/libraries/Logger/utility;C:/Users/rohmer/Documents/Arduino/libraries/stlport;C:/Users/rohmer/Documents/Arduino/libraries/stlport/utility;c:/Program Files (x86)/Arduino/hardware/arduino/avr/libraries/SPI;c:/Program Files (x86)/Arduino/hardware/arduino/avr/libraries/SPI/utility;c:/Program Files (x86)/Arduino/libraries/Servo/src;c:/Program Files (x86)/Arduino/libraries/Servo/src/utility;../../AtmelSln;C:/Users/rohmer/Documents/Arduino/libraries/stl;C:/Users/rohmer/Documents/Arduino/libraries/stl/utility;</VMSETTING_IncludePaths>
+    <VisualMicroSettings>
+      <VisualMicroSettings>
+        <VM_ReCompileLibsOnSourceMacroChange>1</VM_ReCompileLibsOnSourceMacroChange>
+      </VisualMicroSettings>
+    </VisualMicroSettings>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <ToolchainSettings>
@@ -243,6 +249,11 @@
 </AvrGccCpp>
     </ToolchainSettings>
     <VMSETTING_IncludePaths>c:/Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino;c:/Program Files (x86)/Arduino/hardware/arduino/avr/variants/mega;../../OccupancyDetection;c:/Program Files (x86)/Arduino/libraries;c:/Program Files (x86)/Arduino/hardware/arduino/avr/libraries;C:/Program Files (x86)/Visual Micro/Visual Micro for Arduino/Micro Platforms/default/debuggers;C:/Users/rohmer/Documents/Arduino/libraries;c:/program files (x86)/arduino/hardware/tools/avr/avr/include/;c:/program files (x86)/arduino/hardware/tools/avr/avr/include/avr/;c:/program files (x86)/arduino/hardware/tools/avr/avr/;c:/program files (x86)/arduino/hardware/tools/avr/lib/gcc/avr/4.8.1/include/;;C:/Users/rohmer/Documents/Arduino/libraries/Logger;C:/Users/rohmer/Documents/Arduino/libraries/Logger/utility;C:/Users/rohmer/Documents/Arduino/libraries/stlport;C:/Users/rohmer/Documents/Arduino/libraries/stlport/utility;c:/Program Files (x86)/Arduino/hardware/arduino/avr/libraries/SPI;c:/Program Files (x86)/Arduino/hardware/arduino/avr/libraries/SPI/utility;c:/Program Files (x86)/Arduino/libraries/Servo/src;c:/Program Files (x86)/Arduino/libraries/Servo/src/utility;../../AtmelSln;C:/Users/rohmer/Documents/Arduino/libraries/stl;C:/Users/rohmer/Documents/Arduino/libraries/stl/utility;</VMSETTING_IncludePaths>
+    <VisualMicroSettings>
+      <VisualMicroSettings>
+        <VM_ReCompileLibsOnSourceMacroChange>1</VM_ReCompileLibsOnSourceMacroChange>
+      </VisualMicroSettings>
+    </VisualMicroSettings>
   </PropertyGroup>
   <ItemGroup>
     <None Include="OccupancyDetection.ino">

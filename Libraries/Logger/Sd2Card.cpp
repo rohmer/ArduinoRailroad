@@ -42,7 +42,7 @@ static uint8_t mosipinmask, clkpinmask, misopinmask;
 
 #ifndef SOFTWARE_SPI
   #ifdef USE_SPI_LIB
-    #include <SPI.h>
+    #include "SPI.h"
   #endif
   // functions for hardware SPI
   /** Send a byte to the card */

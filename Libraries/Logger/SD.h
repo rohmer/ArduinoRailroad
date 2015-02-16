@@ -21,9 +21,9 @@
 #include "WProgram.h"
 #endif
 
-#include <SPI.h>
-#include "utility\SdFat.h"
-#include "utility\SdFatUtil.h"
+#include "SPI.h"
+#include "SdFat.h"
+#include "SdFatUtil.h"
 
 #define FILE_READ O_READ
 #define FILE_WRITE (O_READ | O_WRITE | O_CREAT)
