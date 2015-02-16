@@ -41,10 +41,16 @@ void LoggerClass::SetSerial(uint8_t serialTXPin, uint8_t serialRXpin, long seria
 
 String LoggerClass::setMessage(SEVERITY sev, String msg)
 {
-	String ret = hour() + ":" + minute();
-	ret.concat(":" + second());
-	ret.concat(" - " + sev);
-	ret.concat(" - " + msg);
+	String ret;
+	ret.concat(hour());
+	ret.concat(":");
+	ret.concat(minute());
+	ret.concat(":");
+	ret.concat(second());
+	ret.concat(" - ");
+	ret.concat(sev);
+	ret.concat(" - ");
+	ret.concat(msg);
 	return msg;
 }
 
@@ -63,16 +69,13 @@ void LoggerClass::Log(SEVERITY sev, String msg)
 	}
 	if (logSD)
 	{
+		File logFile = SD.open("log.txt", FILE_WRITE);
 		if (logFile)
 		{
 			logFile.println(msg);			
+			logFile.close();
 		}
-		else
-		{
-			logFile = SD.open("log.txt", FILE_WRITE);
-			if(logFile)
-				logFile.println(msg);
-		}
+		
 	}
 }
 
@@ -95,17 +98,10 @@ void LoggerClass::initSD()
 	pinMode(csPinSD, OUTPUT);
 	if (!SD.begin(csPinSD))
 		return;
-	logFile = SD.open("log.txt", FILE_WRITE);
 }
 
 LoggerClass::~LoggerClass()
 {
-	if (logSD)
-	{
-		if (logFile)
-			logFile.flush();
-		logFile.close();
-	}
 }
 
 LoggerClass Logger(SEVERITY minimumSevToLog, bool logToSerial, bool logToSD);

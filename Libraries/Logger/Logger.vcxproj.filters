@@ -13,5 +13,351 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="_core">
+      <UniqueIdentifier>{758c7889-ceae-4593-9ddc-ddda8908229d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_libraries">
+      <UniqueIdentifier>{b1b07508-667b-4371-b795-234e55cc3021}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_libraries\stlport">
+      <UniqueIdentifier>{dfb4af47-f916-4596-b7ef-8d58b9c02456}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Logger.ino" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Visual Micro\.Logger.vsarduino.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\Arduino.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\binary.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\Client.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\HardwareSerial.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\HardwareSerial_private.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\IPAddress.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\new.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\Print.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\Printable.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\Server.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\Stream.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\Udp.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\USBAPI.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\USBCore.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\USBDesc.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\WCharacter.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\wiring_private.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\WString.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\variants\mega\pins_arduino.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="Logging.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\stlport\StandardCplusplus.h">
+      <Filter>_libraries\stlport</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\stlport\system_configuration.h">
+      <Filter>_libraries\stlport</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\stlport\unwind-cxx.h">
+      <Filter>_libraries\stlport</Filter>
+    </ClInclude>
+    <ClInclude Include="utility\FatStructs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="utility\SD.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="utility\Sd2Card.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="utility\Sd2PinMap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="utility\SdFat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="utility\SdFatmainpage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="utility\SdFatUtil.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="utility\SdInfo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="utility\SoftwareSerial.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="utility\SPI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="utility\Time.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\abi.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\CDC.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\HardwareSerial.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\HardwareSerial0.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\HardwareSerial1.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\HardwareSerial2.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\HardwareSerial3.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\HID.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\hooks.c">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\IPAddress.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\main.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\new.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\Print.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\Stream.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\Tone.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\USBCore.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\WInterrupts.c">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\wiring.c">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\wiring_analog.c">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\wiring_digital.c">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\wiring_pulse.c">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\wiring_shift.c">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\WMath.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\WString.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="Logging.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\stlport\algorithm.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\stlport\associative_base.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\stlport\bitset.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\stlport\char_traits.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\stlport\complex.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\stlport\del_op.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\stlport\del_opnt.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\stlport\del_opvnt.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\stlport\deque.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\stlport\eh_alloc.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\stlport\eh_globals.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\stlport\exception.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\stlport\fstream.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\stlport\func_exception.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\stlport\iomanip.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\stlport\ios.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\stlport\iostream.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\stlport\istream.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\stlport\iterator.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\stlport\limits.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\stlport\list.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\stlport\locale.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\stlport\map.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\stlport\new_handler.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\stlport\new_op.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\stlport\new_opnt.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\stlport\new_opvnt.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\stlport\numeric.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\stlport\ostream.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\stlport\queue.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\stlport\set.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\stlport\sstream.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\stlport\stack.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\stlport\stdexcept.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\stlport\streambuf.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\stlport\string.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\stlport\support.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\stlport\typeinfo.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\stlport\utility.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\stlport\valarray.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\stlport\vector.cpp">
+      <Filter>_libraries\stlport</Filter>
+    </ClCompile>
+    <ClCompile Include="utility\Sd2Card.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="utility\DateStrings.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="utility\File.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="utility\SD.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="utility\SdFile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="utility\SdVolume.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="utility\SoftwareSerial.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="utility\Time.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="utility\SPI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

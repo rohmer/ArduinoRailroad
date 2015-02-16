@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Logger" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug Win32">
+				<Option output="Logger" prefix_auto="1" extension_auto="1" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-D__AVR_ATmega2560__" />
+					<Add option="-DARDUINO=160" />
+					<Add option="-DARDUINO_MAIN" />
+					<Add option="-D__AVR__" />
+					<Add option="-DF_CPU=16000000L" />
+					<Add option="-D__cplusplus" />
+					<Add option="-DGCC_VERSION=40301" />
+					<Add option="-DARDUINO_ARCH_AVR" />
+					<Add option="-DARDUINO_AVR_MEGA2560" />
+					<Add directory="c:/Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino" />
+					<Add directory="c:/Program Files (x86)/Arduino/hardware/arduino/avr/variants/mega" />
+					<Add directory="C:/Users/rohmer/Documents/Arduino/Logger" />
+					<Add directory="C:/Users/rohmer/Documents/Arduino/libraries/stlport" />
+					<Add directory="C:/Users/rohmer/Documents/Arduino/libraries/stlport/utility" />
+					<Add directory="c:/Program Files (x86)/Arduino/libraries" />
+					<Add directory="c:/Program Files (x86)/Arduino/hardware/arduino/avr/libraries" />
+					<Add directory="C:/Program Files (x86)/Visual Micro/Visual Micro for Arduino/Micro Platforms/default/debuggers" />
+					<Add directory="C:/Users/rohmer/Documents/Arduino/libraries" />
+					<Add directory="c:/program files (x86)/arduino/hardware/tools/avr/avr/include/" />
+					<Add directory="c:/program files (x86)/arduino/hardware/tools/avr/avr/include/avr/" />
+					<Add directory="c:/program files (x86)/arduino/hardware/tools/avr/avr/" />
+					<Add directory="c:/program files (x86)/arduino/hardware/tools/avr/lib/gcc/avr/4.8.1/include/" />
+				</Compiler>
+			</Target>
+			<Target title="Release Win32">
+				<Option output="Logger" prefix_auto="1" extension_auto="1" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+			</Target>
+		</Build>
+		<Unit filename="../../../../../Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/Arduino.h" />
+		<Unit filename="../../../../../Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/CDC.cpp" />
+		<Unit filename="../../../../../Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/Client.h" />
+		<Unit filename="../../../../../Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/HID.cpp" />
+		<Unit filename="../../../../../Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/HardwareSerial.cpp" />
+		<Unit filename="../../../../../Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/HardwareSerial.h" />
+		<Unit filename="../../../../../Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/HardwareSerial0.cpp" />
+		<Unit filename="../../../../../Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/HardwareSerial1.cpp" />
+		<Unit filename="../../../../../Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/HardwareSerial2.cpp" />
+		<Unit filename="../../../../../Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/HardwareSerial3.cpp" />
+		<Unit filename="../../../../../Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/HardwareSerial_private.h" />
+		<Unit filename="../../../../../Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/IPAddress.cpp" />
+		<Unit filename="../../../../../Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/IPAddress.h" />
+		<Unit filename="../../../../../Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/Print.cpp" />
+		<Unit filename="../../../../../Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/Print.h" />
+		<Unit filename="../../../../../Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/Printable.h" />
+		<Unit filename="../../../../../Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/Server.h" />
+		<Unit filename="../../../../../Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/Stream.cpp" />
+		<Unit filename="../../../../../Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/Stream.h" />
+		<Unit filename="../../../../../Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/Tone.cpp" />
+		<Unit filename="../../../../../Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/USBAPI.h" />
+		<Unit filename="../../../../../Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/USBCore.cpp" />
+		<Unit filename="../../../../../Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/USBCore.h" />
+		<Unit filename="../../../../../Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/USBDesc.h" />
+		<Unit filename="../../../../../Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/Udp.h" />
+		<Unit filename="../../../../../Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/WCharacter.h" />
+		<Unit filename="../../../../../Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/WInterrupts.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../../../Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/WMath.cpp" />
+		<Unit filename="../../../../../Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/WString.cpp" />
+		<Unit filename="../../../../../Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/WString.h" />
+		<Unit filename="../../../../../Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/abi.cpp" />
+		<Unit filename="../../../../../Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/binary.h" />
+		<Unit filename="../../../../../Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/hooks.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../../../Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/main.cpp" />
+		<Unit filename="../../../../../Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/new.cpp" />
+		<Unit filename="../../../../../Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/new.h" />
+		<Unit filename="../../../../../Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/wiring.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../../../Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/wiring_analog.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../../../Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/wiring_digital.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../../../Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/wiring_private.h" />
+		<Unit filename="../../../../../Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/wiring_pulse.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../../../Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/wiring_shift.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../../../Program Files (x86)/Arduino/hardware/arduino/avr/variants/mega/pins_arduino.h" />
+		<Unit filename="../libraries/stlport/StandardCplusplus.h" />
+		<Unit filename="../libraries/stlport/algorithm.cpp" />
+		<Unit filename="../libraries/stlport/associative_base.cpp" />
+		<Unit filename="../libraries/stlport/bitset.cpp" />
+		<Unit filename="../libraries/stlport/char_traits.cpp" />
+		<Unit filename="../libraries/stlport/complex.cpp" />
+		<Unit filename="../libraries/stlport/del_op.cpp" />
+		<Unit filename="../libraries/stlport/del_opnt.cpp" />
+		<Unit filename="../libraries/stlport/del_opvnt.cpp" />
+		<Unit filename="../libraries/stlport/deque.cpp" />
+		<Unit filename="../libraries/stlport/eh_alloc.cpp" />
+		<Unit filename="../libraries/stlport/eh_globals.cpp" />
+		<Unit filename="../libraries/stlport/exception.cpp" />
+		<Unit filename="../libraries/stlport/fstream.cpp" />
+		<Unit filename="../libraries/stlport/func_exception.cpp" />
+		<Unit filename="../libraries/stlport/iomanip.cpp" />
+		<Unit filename="../libraries/stlport/ios.cpp" />
+		<Unit filename="../libraries/stlport/iostream.cpp" />
+		<Unit filename="../libraries/stlport/istream.cpp" />
+		<Unit filename="../libraries/stlport/iterator.cpp" />
+		<Unit filename="../libraries/stlport/limits.cpp" />
+		<Unit filename="../libraries/stlport/list.cpp" />
+		<Unit filename="../libraries/stlport/locale.cpp" />
+		<Unit filename="../libraries/stlport/map.cpp" />
+		<Unit filename="../libraries/stlport/new_handler.cpp" />
+		<Unit filename="../libraries/stlport/new_op.cpp" />
+		<Unit filename="../libraries/stlport/new_opnt.cpp" />
+		<Unit filename="../libraries/stlport/new_opvnt.cpp" />
+		<Unit filename="../libraries/stlport/numeric.cpp" />
+		<Unit filename="../libraries/stlport/ostream.cpp" />
+		<Unit filename="../libraries/stlport/queue.cpp" />
+		<Unit filename="../libraries/stlport/set.cpp" />
+		<Unit filename="../libraries/stlport/sstream.cpp" />
+		<Unit filename="../libraries/stlport/stack.cpp" />
+		<Unit filename="../libraries/stlport/stdexcept.cpp" />
+		<Unit filename="../libraries/stlport/streambuf.cpp" />
+		<Unit filename="../libraries/stlport/string.cpp" />
+		<Unit filename="../libraries/stlport/support.cpp" />
+		<Unit filename="../libraries/stlport/system_configuration.h" />
+		<Unit filename="../libraries/stlport/typeinfo.cpp" />
+		<Unit filename="../libraries/stlport/unwind-cxx.h" />
+		<Unit filename="../libraries/stlport/utility.cpp" />
+		<Unit filename="../libraries/stlport/valarray.cpp" />
+		<Unit filename="../libraries/stlport/vector.cpp" />
+		<Unit filename="DateStrings.cpp" />
+		<Unit filename="FatStructs.h" />
+		<Unit filename="Logger.ino" />
+		<Unit filename="Logging.cpp" />
+		<Unit filename="Logging.h" />
+		<Unit filename="SD.h" />
+		<Unit filename="SPI.cpp" />
+		<Unit filename="SPI.h" />
+		<Unit filename="Sd2Card.h" />
+		<Unit filename="Sd2PinMap.h" />
+		<Unit filename="SdFat.h" />
+		<Unit filename="SdFatUtil.h" />
+		<Unit filename="SdFatmainpage.h" />
+		<Unit filename="SdInfo.h" />
+		<Unit filename="SoftwareSerial.cpp" />
+		<Unit filename="SoftwareSerial.h" />
+		<Unit filename="Time.cpp" />
+		<Unit filename="Time.h" />
+		<Unit filename="Visual Micro/.Logger.vsarduino.h" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

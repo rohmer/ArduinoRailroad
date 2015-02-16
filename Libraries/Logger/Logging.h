@@ -9,11 +9,11 @@
 	#include "WProgram.h"
 #endif
 
-#include "SoftwareSerial.h"
+#include <Logger/utility/SoftwareSerial.h>
 #include <string>
-#include "Time.h"
-#include "SD.h"
-#include "SPI.h"
+#include <Logger/utility/Time.h>
+#include <Logger/utility/SD.h>
+#include <Logger/utility/SPI.h>
 
 enum SEVERITY { INFO, WARN, ERROR };
 
@@ -30,8 +30,7 @@ class LoggerClass
 	 uint8_t serialTX, serialRX;
 	 long serialSpeed;	
 	 SEVERITY minSev;
-	 static SoftwareSerial serial;
-	 File logFile;
+	 static SoftwareSerial serial;	 
 
  protected:
 
